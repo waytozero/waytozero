@@ -10,10 +10,55 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_12_104527) do
+ActiveRecord::Schema.define(version: 2019_11_12_112412) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "achievement_categories", force: :cascade do |t|
+    t.string "name"
+    t.bigint "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_achievement_categories_on_category_id"
+  end
+
+  create_table "achievement_numbers", force: :cascade do |t|
+    t.string "name"
+    t.integer "number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "challenges", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.integer "intensity"
+    t.boolean "map"
+    t.integer "gender_specific"
+    t.integer "plastic"
+    t.boolean "size"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_challenges_on_category_id"
+  end
+
+  create_table "successes", force: :cascade do |t|
+    t.string "achievement_type"
+    t.bigint "achievement_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["achievement_type", "achievement_id"], name: "index_successes_on_achievement_type_and_achievement_id"
+    t.index ["user_id"], name: "index_successes_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +72,21 @@ ActiveRecord::Schema.define(version: 2019_11_12_104527) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "weekly_challenges", force: :cascade do |t|
+    t.integer "week"
+    t.integer "year"
+    t.boolean "status_challenge"
+    t.bigint "challenge_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["challenge_id"], name: "index_weekly_challenges_on_challenge_id"
+    t.index ["user_id"], name: "index_weekly_challenges_on_user_id"
+  end
+
+  add_foreign_key "achievement_categories", "categories"
+  add_foreign_key "challenges", "categories"
+  add_foreign_key "successes", "users"
+  add_foreign_key "weekly_challenges", "challenges"
+  add_foreign_key "weekly_challenges", "users"
 end
