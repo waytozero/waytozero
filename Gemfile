@@ -6,6 +6,7 @@ gem 'devise'
 gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
 gem 'puma'
+gem 'faker'
 gem 'rails', '5.2.3'
 gem 'redis'
 
