@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :challenges, only: [:index, :show, :update]
-  devise_for :users do
+  devise_for :users, controllers: { sessions: 'users/sessions' } do
     resources :sucesses, only: [:index, :new, :create, :update]
     resources :weekly_challenges, only: [:index, :show, :update]
   end
