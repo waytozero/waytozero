@@ -13,6 +13,19 @@ Category.create!(name: 'Apparel')
 Category.create!(name: 'Work')
 Category.create!(name: 'Social life')
 
+15.times do
+  user = User.create!(
+    email: Faker::Internet.email,
+    username: Faker::Internet.username,
+    password: 123456,
+    xp: (0..1000).to_a.sample,
+    level: (0..50).to_a.sample,
+    gender: (0..2).to_a.sample,
+    address: Faker::Address.full_address,
+    tree_count: (0..10).to_a.sample
+  )
+end
+
 50.times do
   challenge = Challenge.new(
     name: Faker::Lorem.sentences,
