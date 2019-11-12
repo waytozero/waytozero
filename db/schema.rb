@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_12_112412) do
+ActiveRecord::Schema.define(version: 2019_11_12_132845) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,8 +40,8 @@ ActiveRecord::Schema.define(version: 2019_11_12_112412) do
     t.string "name"
     t.string "description"
     t.integer "intensity"
-    t.boolean "map"
-    t.integer "gender_specific"
+    t.boolean "map", default: false
+    t.integer "gender_specific", default: 0
     t.integer "plastic"
     t.boolean "size"
     t.datetime "created_at", null: false
@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(version: 2019_11_12_112412) do
   create_table "weekly_challenges", force: :cascade do |t|
     t.integer "week"
     t.integer "year"
-    t.boolean "status_challenge"
+    t.boolean "status_challenge", default: false
     t.bigint "challenge_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
