@@ -17,10 +17,18 @@ Rails.application.routes.draw do
   get 'users/edit'
   get 'users/update'
 
-  #  good routes
+  #  good routes ?
   get '/dashboard', to: 'pages#dashboard'
   patch '/weekly_challenges/:id', to: 'weekly_challenges#update', as: 'update_challenge'
   devise_for :users
+  resources :challenges, only: [:index, :show]
+  devise_for :users, controllers: { sessions: 'users/sessions' } do
+    resources :sucesses, only: [:index, :new, :create, :update]
+  end
+  resources :category, only: [:index] do
+    resources :achievement_category, only: [:index]
+    resources :achievement_number, only: [:index]
+  end
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
