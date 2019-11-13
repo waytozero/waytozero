@@ -6,5 +6,7 @@ class PagesController < ApplicationController
 
   def dashboard
     @user = current_user
+    @weekly_challenges = @user.weekly_challenges
+    @categories = Category.all
   end
 end

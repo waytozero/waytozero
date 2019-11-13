@@ -42,7 +42,7 @@ end
 
 20.times do
   challenge = Challenge.new(
-    name: Faker::Lorem.sentences,
+    name: Faker::Lorem.sentence,
     description: Faker::Lorem.paragraph(sentence_count: (5..10).to_a.sample),
     intensity: [0, 1, 2].sample,
     map: [true, false].sample,
@@ -52,4 +52,14 @@ end
   )
   challenge.category = Category.all.sample
   challenge.save
+end
+
+3.times do
+  user1 = User.find(1)
+  challenge = Challenge.find((1..20).to_a.sample)
+  userchallenge = WeeklyChallenge.new(
+    )
+  userchallenge.user = user1
+  userchallenge.challenge = challenge
+  userchallenge.save
 end
