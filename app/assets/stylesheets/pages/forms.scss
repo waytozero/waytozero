@@ -1,18 +1,20 @@
-.log_in_box {
+.info_box {
   background: #fff;
   border-radius: 10px;
   position: relative;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-.log_in_h2 {
+.to_change_h2 {
   margin-top: 1rem;
 }
 
-.form-actions_log_in {
+.form-actions {
   border-radius: 3px;
 }
 
-.form-inputs_log_in label {
+.form-inputs label {
   margin-top: 0.7rem;
   display: block;
   margin-bottom: 0.3rem;
@@ -20,25 +22,26 @@
   position: relative;
 }
 
-.form-inputs_log_in input {
-  width: 99%;
-}
-#Log_in-btn {
+.Log_in-btn {
   background-color: #00D68B;
   border-color: #00D68B;
   width: 100%;
   margin-bottom: 10px;
+  margin-top: 10px;
+  color: white;
 }
 
-#Log_in-btn:hover {
+.Log_in-btn:hover {
   background-color: #01c07d;
   border-color: #01c07d;
+  color: white;
 }
 
-.form-inputs_log_in input {
+.form-inputs input {
   background-color: #F4F4F4;
   border-style: none;
   height: 40px;
+  width: 99%;
 }
 
 .user_remember_me label {
@@ -51,3 +54,7 @@
     width: auto;
     margin-right: 10px;
 }
+
+// .simple_form a {
+//   margin-bottom: 50px;
+// }
