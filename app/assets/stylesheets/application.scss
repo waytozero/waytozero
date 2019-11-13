@@ -1,5 +1,4 @@
-// Graphical variables
-@import "config/fonts";
+// Graphical variables 1
 @import "config/colors";
 @import "config/bootstrap_variables";
 
@@ -7,6 +6,9 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+
+// Graphical variables 2
+@import "config/fonts";
 
 // Your CSS partials
 @import "components/index";
