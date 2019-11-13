@@ -1,5 +1,6 @@
 class WeeklyChallengesController < ApplicationController
   def index
+    @weekly_challenge = WeeklyChallenge.all
   end
 
   def create
