@@ -9,5 +9,6 @@ Rails.application.routes.draw do
     resources :achievement_number, only: [:index]
   end
   root to: 'pages#home'
+  get '/dashboard/', to: 'pages#dashboard', as: 'dashboard'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
