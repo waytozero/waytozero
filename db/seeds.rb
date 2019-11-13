@@ -42,7 +42,7 @@ end
 
 20.times do
   challenge = Challenge.new(
-    name: Faker::Lorem.sentences,
+    name: Faker::Lorem.sentence,
     description: Faker::Lorem.paragraph(sentence_count: (5..10).to_a.sample),
     intensity: [0, 1, 2].sample,
     map: [true, false].sample,

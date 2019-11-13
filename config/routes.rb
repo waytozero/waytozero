@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 
   #  good routes
   get '/dashboard', to: 'pages#dashboard'
+  patch '/weekly_challenges/:id', to: 'weekly_challenges#update', as: 'update_challenge'
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

@@ -6,12 +6,15 @@ class WeeklyChallengesController < ApplicationController
   end
 
   def update
-    @challenge = Challenge.find(params[@challenge.id])
+    @challenge = WeeklyChallenge.find(params[:id])
     @user = current_user
-    @challenge.size == true ? xp = 50 : xp = 25
+    @challenge.status_challenge = true
+    @challenge.save
+    @challenge.challenge.size == true ? xp = 50 : xp = 25
     @user.xp += xp
     @user.level += 1 while level_up?
     @user.save
+    redirect_to dashboard_path
   end
 
   private
