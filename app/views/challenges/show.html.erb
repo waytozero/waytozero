@@ -11,6 +11,9 @@
 <br>
 <%= @challenge.size %>
 
+
+<%= link_to "add this challenge to my weekly challenges", weekly_challenges_path(@challenge), method: :post %>
+
 <%= link_to "go to all challenges categories", categories_path %>
 
 
