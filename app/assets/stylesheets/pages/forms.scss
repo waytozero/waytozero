@@ -1,19 +1,20 @@
-.sign_up_box {
+.info_box {
   background: #fff;
   border-radius: 10px;
   position: relative;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-.sign_up_h2 {
+.to_change_h2 {
   margin-top: 1rem;
-  font-weight: 0rem;
 }
 
-.form-actions_sign_up {
+.form-actions {
   border-radius: 3px;
 }
 
-.form-inputs_sign_up label {
+.form-inputs label {
   margin-top: 0.7rem;
   display: block;
   margin-bottom: 0.3rem;
@@ -21,26 +22,26 @@
   position: relative;
 }
 
-.form-inputs_sign_up input {
-  width: 99%;
-}
-#sign_up-btn {
+.Log_in-btn {
   background-color: #00D68B;
   border-color: #00D68B;
   width: 100%;
-  margin-top: 10px;
   margin-bottom: 10px;
+  margin-top: 10px;
+  color: white;
 }
 
-#sign_up-btn:hover {
-  background-color: #0e8259;
-  border-color: #0e8259;
+.Log_in-btn:hover {
+  background-color: #01c07d;
+  border-color: #01c07d;
+  color: white;
 }
 
-.form-inputs_sign_up input {
+.form-inputs input {
   background-color: #F4F4F4;
   border-style: none;
   height: 40px;
+  width: 99%;
 }
 
 .user_remember_me label {
@@ -54,3 +55,6 @@
     margin-right: 10px;
 }
 
+// .simple_form a {
+//   margin-bottom: 50px;
+// }
