@@ -1,7 +1,4 @@
 class WeeklyChallengesController < ApplicationController
-  def index
-    @weekly_challenge = WeeklyChallenge.all
-  end
 
   def create
     @weekly_challenge = WeeklyChallenge.new
@@ -11,7 +8,7 @@ class WeeklyChallengesController < ApplicationController
     # @weekly_challenge.year = ?
     @weekly_challenge.user = current_user
     @weekly_challenge.save
-    redirect_to challenge_path
+    redirect_to dashboard_path
   end
 
   def update
