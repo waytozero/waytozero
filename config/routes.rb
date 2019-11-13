@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :challenges, only: [:show, :update]
   get '/dashboard/', to: 'pages#dashboard'
   resources :weekly_challenges, only: [:update]
-  devise_for :users, controllers: { sessions: 'users/sessions' } do
+  devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations' } do
     resources :sucesses, only: [:index, :new, :create, :update]
     resources :weekly_challenges, only: [:index]
   end

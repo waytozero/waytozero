@@ -3,7 +3,7 @@
   <p> <%= @user.username %> </p>
   <p> <%= challenge.challenge.name  %> </p>
   <p> <%= challenge.challenge.description %> </p>
-  <%= link_to "Challenge done", update_challenge_path(challenge), method: 'patch' %>
+  <%= link_to "Challenge done", weekly_challenge_path(challenge), method: 'patch' %>
 <% end %>
 
 <%= @user.username %>
