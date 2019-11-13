@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :challenges, only: [:index, :show, :update]
-  devise_for :users do
+  devise_for :users, controllers: { sessions: 'users/sessions' } do
     resources :sucesses, only: [:index, :new, :create, :update]
     resources :weekly_challenges, only: [:index, :show, :update]
   end
@@ -9,5 +9,6 @@ Rails.application.routes.draw do
     resources :achievement_number, only: [:index]
   end
   root to: 'pages#home'
+  get '/dashboard/', to: 'pages#dashboard', as: 'dashboard'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
