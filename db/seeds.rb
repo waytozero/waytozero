@@ -53,3 +53,13 @@ end
   challenge.category = Category.all.sample
   challenge.save
 end
+
+3.times do
+  user1 = User.find(1)
+  challenge = Challenge.find((1..20).to_a.sample)
+  userchallenge = WeeklyChallenge.new(
+    )
+  userchallenge.user = user1
+  userchallenge.challenge = challenge
+  userchallenge.save
+end

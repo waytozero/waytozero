@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  # ?
   get 'achievement_numbers/index'
   get 'achievement_categories/index'
   get 'categories/index'
@@ -14,6 +16,9 @@ Rails.application.routes.draw do
   get 'successes/create'
   get 'users/edit'
   get 'users/update'
+
+  #  good routes
+  get '/dashboard', to: 'pages#dashboard'
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
