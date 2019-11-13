@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :sucesses, only: [:index, :new, :create, :update]
     resources :weekly_challenges, only: [:index]
   end
-  resources :category, only: [:index] do
+  resources :categories, only: [:index] do
     resources :challenges, only: [:index]
     resources :achievement_category, only: [:index]
     resources :achievement_number, only: [:index]

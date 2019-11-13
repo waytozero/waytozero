@@ -1,8 +1,9 @@
 <h2> <%= @category.name %> challenges</h2>
 
-<% @challenges.each do |category| %>
+<% @challenges.each do |challenge| %>
 <br>
-<%= category.name %>
+<%= challenge.name %>
+<%= link_to "see more", challenge_path(challenge) %>
 <br>
 <% end %>
 
