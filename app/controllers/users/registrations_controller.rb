@@ -10,9 +10,19 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    super
+    weekly_challenge = WeeklyChallenge.new
+    weekly_challenge.user = current_user
+    weekly_challenge.challenge = Challenge.where(size: true).sample
+    weekly_challenge.save!
+    2.times do
+      small_challenge = WeeklyChallenge.new
+      small_challenge.user = current_user
+      weekly_challenge.challenge = Challenge.where(size: false).sample
+    end
+    small_challenge.save!
+  end
 
   # GET /resource/edit
   # def edit
