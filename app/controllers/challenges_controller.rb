@@ -1,5 +1,6 @@
 class ChallengesController < ApplicationController
   def index
+    @challenge = Challenge.all
   end
 
   def show
