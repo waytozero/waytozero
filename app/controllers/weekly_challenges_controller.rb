@@ -1,9 +1,14 @@
 class WeeklyChallengesController < ApplicationController
-  def index
-    @weekly_challenge = WeeklyChallenge.all
-  end
 
   def create
+    @weekly_challenge = WeeklyChallenge.new
+    challenge = Challenge.find(params[:format])
+    @weekly_challenge.challenge = challenge
+    # @weekly_challenge.week = ?
+    # @weekly_challenge.year = ?
+    @weekly_challenge.user = current_user
+    @weekly_challenge.save
+    redirect_to dashboard_path
   end
 
   def update
@@ -19,6 +24,10 @@ class WeeklyChallengesController < ApplicationController
   end
 
   private
+
+  def weekly_challenges_params
+    params.require(:weekly_challenge).permit(:status_challenge, :week, :year)
+  end
 
   def level_up?
     if @user.level.zero?
