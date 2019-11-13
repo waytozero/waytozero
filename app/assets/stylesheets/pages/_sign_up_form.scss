@@ -1,0 +1,56 @@
+.sign_up_box {
+  background: #fff;
+  border-radius: 10px;
+  position: relative;
+}
+
+.sign_up_h2 {
+  margin-top: 1rem;
+  font-weight: 0rem;
+}
+
+.form-actions_sign_up {
+  border-radius: 3px;
+}
+
+.form-inputs_sign_up label {
+  margin-top: 0.7rem;
+  display: block;
+  margin-bottom: 0.3rem;
+  width: 80%;
+  position: relative;
+}
+
+.form-inputs_sign_up input {
+  width: 99%;
+}
+#sign_up-btn {
+  background-color: #00D68B;
+  border-color: #00D68B;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#sign_up-btn:hover {
+  background-color: #0e8259;
+  border-color: #0e8259;
+}
+
+.form-inputs_sign_up input {
+  background-color: #F4F4F4;
+  border-style: none;
+  height: 40px;
+}
+
+.user_remember_me label {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.user_remember_me input {
+    width: auto;
+    margin-right: 10px;
+}
+
