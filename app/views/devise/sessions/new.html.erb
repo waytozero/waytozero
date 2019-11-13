@@ -1,5 +1,4 @@
 <div class="container">
-
   <div class="col-6 mt-5 offset-3 card">
   <h2 class="log_in_h2" style="text-align: center">Log in</h2>
     <div class= "log_in_box">
@@ -9,12 +8,6 @@
           <%= f.input :password, required: false, placeholder: "●●●●●●●●" %>
           <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
         </div>
-
-            <div class="form-actions_log_in">
-              <%= f.button :submit, "Log in", class: "btn btn-secondary btn-log", id: "Log_in-btn"%>
-            </div>
-          <% end %>
-        </div>
         <div class="form-actions_log_in">
           <%= f.button :submit, "Log in", class: "btn btn-secondary btn-log", id: "Log_in-btn"%>
         </div>
@@ -23,3 +16,4 @@
       <%= render "devise/shared/links" %>
   </div>
 </div>
+
