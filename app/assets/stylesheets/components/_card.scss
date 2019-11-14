@@ -7,3 +7,16 @@
   background-image: asset-url('welcome.png');
   min-height: 17rem;
 }
+
+.card-dashboard {
+  margin: 0 2rem;
+  padding: 1rem 1rem 1rem 1rem;
+  min-height: 10rem;
+}
+
+.card-community-dashboard {
+  margin: 0 2rem;
+  padding: 1rem 1rem 1rem 1rem;
+  min-height: 10rem;
+  background: linear-gradient(217deg, rgba(0, 214, 139, 1), rgba(1, 192, 125, 1) 70.71%);
+}
