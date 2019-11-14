@@ -1,2 +1,10 @@
-document.querySelector("[data-challenge-id='<%= @challenge.challenge.id %>'] a")
+document.querySelector("[data-challenge-id='<%= @challenge.challenge.id %>']")
   .remove();
+
+
+var levelNumber = document.querySelector("#level_info h2")
+levelNumber.innerText = 'Level: <%= @user.level %>'
+
+
+var xpCurrent = +document.querySelector("#level_info .progress .progress-bar").attributes['aria-valuenow']
+xpCurrent.value = '<%= @user.xp %>'
