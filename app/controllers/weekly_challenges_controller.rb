@@ -7,9 +7,14 @@ class WeeklyChallengesController < ApplicationController
     # @weekly_challenge.week = ?
     # @weekly_challenge.year = ?
     if params[:done] == "true"
-      @weekly_challenge.status_challenge = "done"
-      # increment xp !! see update with Antoine br to make sure it is ok
-
+      @weekly_challenge.status_challenge = true
+      @user = current_user
+      @weekly_challenge.save
+      @weekly_challenge.challenge.size == true ? xp = 50 : xp = 25
+      @user.xp += xp
+      @user.level += 1 while level_up?
+      @user.save
+      # check with Antoine br to make sure it is ok
     end
 
     @weekly_challenge.user = current_user
