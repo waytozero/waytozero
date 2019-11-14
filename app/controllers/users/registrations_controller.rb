@@ -13,7 +13,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     super
     weekly_challenge = WeeklyChallenge.new
-    user = build_resource(sign_up_params)
+    build_resource(sign_up_params).save
     weekly_challenge.user = current_user
     weekly_challenge.challenge = Challenge.where(size: true).sample
     weekly_challenge.week = 1
