@@ -1,0 +1,60 @@
+.info_box {
+  background: #fff;
+  border-radius: 10px;
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.to_change_h2 {
+  margin-top: 1rem;
+}
+
+.form-actions {
+  border-radius: 3px;
+}
+
+.form-inputs label {
+  margin-top: 0.7rem;
+  display: block;
+  margin-bottom: 0.3rem;
+  width: 80%;
+  position: relative;
+}
+
+.Log_in-btn {
+  background-color: #00D68B;
+  border-color: #00D68B;
+  width: 100%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  color: white;
+}
+
+.Log_in-btn:hover {
+  background-color: #01c07d;
+  border-color: #01c07d;
+  color: white;
+}
+
+.form-inputs input {
+  background-color: #F4F4F4;
+  border-style: none;
+  height: 40px;
+  width: 99%;
+}
+
+.user_remember_me label {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.user_remember_me input {
+    width: auto;
+    margin-right: 10px;
+}
+
+// .simple_form a {
+//   margin-bottom: 50px;
+// }
