@@ -64,14 +64,16 @@
 <p><%= link_to "#{category.name}", category_challenges_path(category) %></p>
 <% end %>
 
-<% @weekly_challenges.each do |wchallenge| %>
-  <p> <%= @user.username %> </p>
-  <p> <%= wchallenge.challenge.name  %> </p>
-  <p> <%= wchallenge.challenge.description %> </p>
-  <p> <%= wchallenge.status_challenge %></p>
-  <% if wchallenge.status_challenge == false %>
-    <%= link_to "Challenge done", weekly_challenge_path(wchallenge), method: 'patch' %>
-  <% end %>
+<% @weekly_challenges.each do |challenge| %>
+  <li data-challenge-id="<%= challenge.challenge.id %>">
+    <p> <%= @user.username %> </p>
+    <p> <%= challenge.challenge.name  %> </p>
+    <p> <%= challenge.challenge.description %> </p>
+    <p> <%= challenge.status_challenge %></p>
+    <% if challenge.status_challenge == false %>
+      <%= link_to "Challenge done", weekly_challenge_path(challenge), method: 'patch', remote: true %>
+    <% end %>
+  </li>
 <% end %>
 
 <p>

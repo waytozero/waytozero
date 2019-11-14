@@ -31,7 +31,7 @@ class WeeklyChallengesController < ApplicationController
     @user.xp += xp
     @user.level += 1 while level_up?
     @user.save
-    redirect_to dashboard_path
+    # redirect_to dashboard_path
   end
 
   private
