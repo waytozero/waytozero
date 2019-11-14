@@ -2,12 +2,13 @@
 
 <% @small_challenges.each do |small_challenge| %>
 <br>
-<%= small_challenge.name %>
+<p><%= small_challenge.name %></p>
 <%= link_to "see more", challenge_path(small_challenge) %>
 <br>
 <%= link_to "add this challenge to my weekly challenges", weekly_challenges_path(small_challenge), method: :post %>
+<%= link_to "mark as done this challenge to my weekly challenges", weekly_challenges_path(small_challenge, done: "true"), method: :post %>
+
 <br>
-<%= link_to "mark as already done (add to my weekly challenges and mark it as done)", weekly_challenges_path(small_challenge) %>
 <% end %>
 
 

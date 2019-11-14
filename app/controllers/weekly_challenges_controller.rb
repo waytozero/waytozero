@@ -6,6 +6,12 @@ class WeeklyChallengesController < ApplicationController
     @weekly_challenge.challenge = challenge
     # @weekly_challenge.week = ?
     # @weekly_challenge.year = ?
+    if params[:done] == "true"
+      @weekly_challenge.status_challenge = "done"
+      # increment xp !! see update with Antoine br to make sure it is ok
+
+    end
+
     @weekly_challenge.user = current_user
     @weekly_challenge.save
     redirect_to dashboard_path
