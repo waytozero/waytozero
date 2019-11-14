@@ -34,7 +34,7 @@
                     <%= image_tag("trees.svg", :style => 'max-height: 2rem') %>
                   </div>
                   <div class="col-9">
-                    <h3 style="font-size: 1.75rem; text-align: right;">127 trees</h3>
+                    <h3 style="font-size: 1.75rem; text-align: right;"><%= @user.tree_count %> trees</h3>
                   </div>
                 </div>
               </div>
@@ -68,7 +68,6 @@
   <%= @user.xp %>
   <%= @user.gender %>
   <%= @user.address %>
-  <%= @user.tree_count %>
 </p>
 
 <% @categories.each do |category| %>
