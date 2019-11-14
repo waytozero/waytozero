@@ -47,14 +47,38 @@
 </div>
 <div class="col-12">
   <div class="row">
-    <div class="col-8">
+    <div class="col-7">
       <div class="card card-dashboard">
         <h2>Weekly Challenges</h2>
       </div>
     </div>
-    <div class="col-4">
+    <div class="col-5">
       <div class="card card-community-dashboard">
-        <h2 style="color:white;">Results of all the SuperZeroes</h2>
+        <h2 class="mb-3" style="color:white;">Results of all the SuperZeroes</h2>
+        <div class="row">
+          <div class="col-6">
+            <h2 style="font-size: 1rem; text-align: justify; color: #c1edcc;">Total saved plastic:</h2>
+            <div class="row">
+              <div class="col-3">
+                <%= image_tag("plastic2.svg", :style => 'max-height: 2rem; fill: white') %>
+              </div>
+              <div class="col-9">
+                <h3 style="font-size: 1.75rem; text-align: right;">10,273kg</h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <h2 style="font-size: 1rem; text-align: justify; color: #c1edcc;">Total planted trees:</h2>
+            <div class="row">
+              <div class="col-3">
+                <%= image_tag("trees2.svg", :style => 'max-height: 2rem') %>
+              </div>
+              <div class="col-9">
+                <h3 style="font-size: 1.75rem; text-align: right;">1,981 trees</h3>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
