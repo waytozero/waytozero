@@ -14,7 +14,7 @@
               <%= @user.xp %>/100 XP
               </div>
             </div>
-            <p>Only <strong>25 XP</strong> left before reaching the next level !</p>
+            <p>Only <strong><%= 100 - @user.xp %> XP</strong> left before reaching the next level !</p>
             <div class="row">
               <div class="col-6">
                 <h2 style="font-size: 1rem; text-align: justify;">Amount of plastic saved:</h2>
