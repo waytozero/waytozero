@@ -1,1 +1,63 @@
 // Specific CSS for your home-page
+.banner-home-page {
+  background-image: url(asset-path('jilbert-ebrahimi-b0p818k8Ok8-unsplash.jpg'));
+  width: 100vw;
+  height: 80vh;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+}
+
+.card-1-home {
+  margin-top: 70px;
+}
+
+.img-card-2 img {
+  // max-width: 100%;
+  width: 1000px;
+  height: 400px;
+  // height: auto;
+   margin-top: -50px;
+  margin-left: 50px;
+  clip-path: polygon(0 0, 100% 11%, 100% 100%, 0% 100%);
+}
+
+.card2-home {
+  margin-top: 40px;
+  margin-right: 30px;
+}
+
+#count {
+  font-weight: bold;
+  font-size: 70px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+#count-txt {
+  font-weight: bold;
+  font-size: 35px;
+  margin-top: -10px;
+}
+
+#dotted-border {
+  border-left: 3px solid gray;
+  border-style: none none none dotted;
+}
+
+.img-card-3 {
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+.card3-home {
+  margin-top: 50px;
+  margin-left: 150px;
+}
+
+.page-footer {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: -30px;
+}
+
