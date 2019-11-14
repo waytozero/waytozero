@@ -13,17 +13,23 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     super
     weekly_challenge = WeeklyChallenge.new
-    build_resource(sign_up_params).save
     weekly_challenge.user = current_user
     weekly_challenge.challenge = Challenge.where(size: true).sample
     weekly_challenge.week = 1
     weekly_challenge.save!
+    raise
     2.times do
       small_challenge = WeeklyChallenge.new
       small_challenge.user = current_user
       small_challenge.challenge = Challenge.where(size: false).sample
       small_challenge.week = 1
       small_challenge.save!
+    end
+    number = params[:question].values.sum
+    if number > 18
+      current_user.level = 10
+    elsif number <= 18 && number > 9
+      current_user.level = 5
     end
   end
 
@@ -56,7 +62,7 @@ private
   # If you have extra params to permit, append them to the sanitizer.
 
 def configure_sign_up_params
-   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
+   devise_parameter_sanitizer.permit(:sign_up, keys: [:gender])
 end
 
   # If you have extra params to permit, append them to the sanitizer.
