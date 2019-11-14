@@ -5,7 +5,11 @@
         <h1 class="mb-3" style="font-size: 2rem">Ready to save the world, SuperZero?</h1>
         <div class="row">
           <div class="col-4">
-            <%= image_tag("superwoman.svg", :style => 'max-height: 10rem') %>
+            <% if @user.gender == 1 %>
+              <%= image_tag("superwoman.svg", :style => 'max-height: 10rem') %>
+            <% else %>
+              <%= image_tag("superman.svg", :style => 'max-height: 10rem') %>
+            <% end %>
           </div>
           <div class="col-8">
           <h2>Level: <%= @user.level %></h2>
@@ -50,6 +54,28 @@
     <div class="col-7">
       <div class="card card-dashboard">
         <h2>Weekly Challenges</h2>
+        <% @weekly_challenges.each do |challenge| %>
+        <div class="notification">
+          <div class="col-9">
+            <div class="notification-content">
+              <p><small><%= challenge.challenge.name  %></small></p>
+              <p><%= challenge.challenge.description %></p>
+              <p> <%= challenge.status_challenge %></p>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="notification-actions">
+              <div data-challenge-id="<%= challenge.challenge.id %>">
+                <% if challenge.status_challenge == false %>
+                  <%= link_to weekly_challenge_path(challenge), method: 'patch', remote: true do %>
+                  Mark as done <i class="fas fa-check-square"></i>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
       </div>
     </div>
     <div class="col-5">
@@ -83,29 +109,11 @@
     </div>
   </div>
 </div>
-
-
-<p>
-  <%= @user.username %>
-  <%= @user.email %>
-  <%= @user.gender %>
-  <%= @user.address %>
-</p>
-
-<% @categories.each do |category| %>
-<p><%= link_to "#{category.name}", category_challenges_path(category) %></p>
-<% end %>
-
-<% @weekly_challenges.each do |challenge| %>
-  <div data-challenge-id="<%= challenge.challenge.id %>">
-    <br>
-    <p> <%= @user.username %> </p>
-    <p> <%= challenge.challenge.name  %> </p>
-    <p> <%= challenge.challenge.description %> </p>
-    <p> <%= challenge.status_challenge %></p>
-    <% if challenge.status_challenge == false %>
-      <%= link_to "Challenge done", weekly_challenge_path(challenge), method: 'patch', remote: true %>
+<div class="col-12">
+  <div class="card card-dashboard" style="margin-top: 2rem; margin-bottom: 2rem;">
+    <h2>Categories</h2>
+    <% @categories.each do |category| %>
+      <p><%= link_to "#{category.name}", category_challenges_path(category) %></p>
     <% end %>
-    <br>
   </div>
-<% end %>
+</div>
