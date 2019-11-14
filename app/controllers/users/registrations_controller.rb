@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
-  # before_action :configure_sign_up_params, only: [:create]
+  before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
@@ -13,15 +13,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     super
     weekly_challenge = WeeklyChallenge.new
+    user = build_resource(sign_up_params)
     weekly_challenge.user = current_user
     weekly_challenge.challenge = Challenge.where(size: true).sample
+    weekly_challenge.week = 1
     weekly_challenge.save!
     2.times do
       small_challenge = WeeklyChallenge.new
       small_challenge.user = current_user
-      weekly_challenge.challenge = Challenge.where(size: false).sample
+      small_challenge.challenge = Challenge.where(size: false).sample
+      small_challenge.week = 1
+      small_challenge.save!
     end
-    small_challenge.save!
   end
 
   # GET /resource/edit
@@ -48,12 +51,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # protected
+private
 
   # If you have extra params to permit, append them to the sanitizer.
-  # def configure_sign_up_params
-  #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
-  # end
+
+def configure_sign_up_params
+   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
+end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_account_update_params
