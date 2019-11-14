@@ -60,21 +60,6 @@
   </div>
 </div>
 
-<% @categories.each do |category| %>
-<p><%= link_to "#{category.name}", category_challenges_path(category) %></p>
-<% end %>
-
-<% @weekly_challenges.each do |challenge| %>
-  <li data-challenge-id="<%= challenge.challenge.id %>">
-    <p> <%= @user.username %> </p>
-    <p> <%= challenge.challenge.name  %> </p>
-    <p> <%= challenge.challenge.description %> </p>
-    <p> <%= challenge.status_challenge %></p>
-    <% if challenge.status_challenge == false %>
-      <%= link_to "Challenge done", weekly_challenge_path(challenge), method: 'patch', remote: true %>
-    <% end %>
-  </li>
-<% end %>
 
 <p>
   <%= @user.username %>
@@ -85,3 +70,21 @@
   <%= @user.address %>
   <%= @user.tree_count %>
 </p>
+
+<% @categories.each do |category| %>
+<p><%= link_to "#{category.name}", category_challenges_path(category) %></p>
+<% end %>
+
+<% @weekly_challenges.each do |challenge| %>
+  <div data-challenge-id="<%= challenge.challenge.id %>">
+    <br>
+    <p> <%= @user.username %> </p>
+    <p> <%= challenge.challenge.name  %> </p>
+    <p> <%= challenge.challenge.description %> </p>
+    <p> <%= challenge.status_challenge %></p>
+    <% if challenge.status_challenge == false %>
+      <%= link_to "Challenge done", weekly_challenge_path(challenge), method: 'patch', remote: true %>
+    <% end %>
+    <br>
+  </div>
+<% end %>
