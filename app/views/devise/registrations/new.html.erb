@@ -9,6 +9,29 @@
           <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), placeholder: "●●●●●●" %>
           <%= f.input :password_confirmation, required: true, placeholder: "●●●●●●" %>
         </div>
+         <label class="question" for="question_1"><h3>Fusce dapibus diam augue, sit amet pretium sapien vestibulum ac?</h3></label>
+        <div class="form-inputs">
+          <div class="question-choices">
+            <div class="question-choice">
+                <input hidden type="radio" name="question_1_answer" id="question_1_1" value="1"><label for="question_1_1">Lorem Ipsum</label>
+            </div>
+            <div class="question-choice">
+                <input hidden type="radio" name="question_1_answer" id="question_1_2" value="2"><label for="question_1_2">Lorem Ipsum</label>
+            </div>
+            <div class="question-choice">
+                <input hidden type="radio" name="question_1_answer" id="question_1_3" value="3"><label for="question_1_3">Lorem Ipsum</label>
+            </div>
+            <div class="question-choice">
+                <input hidden type="radio" name="question_1_answer" id="question_1_4" value="4"><label for="question_1_4">Lorem Ipsum</label>
+            </div>
+            <div class="question-choice">
+                <input hidden type="radio" name="question_1_answer" id="question_1_5" value="5"><label for="question_1_5">Lorem Ipsum</label>
+            </div>
+            <div class="question-choice">
+                <input hidden type="radio" name="question_1_answer" id="question_1_6" value="6"><label for="question_1_6">Lorem Ipsum</label>
+            </div>
+          </div>
+        </div>
         <div class="form-actions">
           <%= f.button :submit, "Sign up", class: "Log_in-btn", style: "margin-top: 1.3rem;"%>
         </div>
@@ -17,3 +40,4 @@
     <%= render "devise/shared/links" %>
   </div>
 </div>
+
