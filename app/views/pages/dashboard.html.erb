@@ -28,7 +28,7 @@
                       <%= image_tag("plastic.svg", :style => 'max-height: 2rem') %>
                     </div>
                     <div class="col-9">
-                      <h3 style="font-size: 1.75rem; text-align: right;">492kg</h3>
+                      <h3 style="font-size: 1.75rem; text-align: right;"><%= @user_plastic %>kg</h3>
                     </div>
                   </div>
                 </div>
@@ -93,7 +93,7 @@
                 <%= image_tag("plastic2.svg", :style => 'max-height: 2rem; fill: white') %>
               </div>
               <div class="col-9">
-                <h3 style="font-size: 1.75rem; text-align: right;">10,273kg</h3>
+                <h3 style="font-size: 1.75rem; text-align: right;"><%= @total_plastic %>kg</h3>
               </div>
             </div>
           </div>
@@ -104,7 +104,7 @@
                 <%= image_tag("trees2.svg", :style => 'max-height: 2rem') %>
               </div>
               <div class="col-9">
-                <h3 style="font-size: 1.75rem; text-align: right;">1,981 trees</h3>
+                <h3 style="font-size: 1.75rem; text-align: right;"><%= @total_trees %></h3>
               </div>
             </div>
           </div>
