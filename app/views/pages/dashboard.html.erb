@@ -125,12 +125,12 @@
     <div class="row">
       <div class="col-4">
         <h3>Home</h3>
+        <div class="card card-category">
         <% @categories.each do |category| %>
-          <div class="card card-category">
-            <%= cl_image_tag category.photo, height: 400, width: 400, crop: :fill %>
-            <p><%= link_to "#{category.name}", category_challenges_path(category) %></p>
-          </div>
+            <p><%= cl_image_tag category.photo, height: 400, width: 400, crop: :fill %>
+            <%= link_to "#{category.name}", category_challenges_path(category) %></p>
         <% end %>
+        </div>
       </div>
     </div>
   </div>
