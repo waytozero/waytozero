@@ -1,13 +1,18 @@
 document.querySelector("[data-challenge-id='<%= @challenge.challenge.id %>']")
   .remove();
 
-
 var levelNumber = document.querySelector("#level_info h2")
 levelNumber.innerText = 'Level: <%= @user.level %>'
 
 
 var xpCurrent = document.querySelector("#level_info .progress .progress-bar").attributes['aria-valuenow'].value
-xpCurrent = 50
+xpCurrent = '<%= @user.xp %>'
+
+var xpMax = document.querySelector("#level_info .progress .progress-bar").attributes['aria-valuemax'].value
+xpMax.innerText = '<%= @max_xp %>'
 
 var xpCurrentText = document.querySelector("#level_info .progress .progress-bar")
-xpCurrentText.innerText = '<%= @user.xp %>/100 XP'
+xpCurrentText.innerText = `${xpCurrent}/${xpMax} XP`
+
+var Proportion = parseInt((xpCurrent/xpMax)*100)
+document.querySelector("#level_info .progress .progress-bar").style.width =  `${Proportion}%`
