@@ -64,7 +64,12 @@
               <div class="notification-content">
                 <p><small><%= challenge.challenge.name  %></small></p>
                 <p><%= challenge.challenge.description %></p>
-                <p> <%= challenge.status_challenge %></p>
+                <% if challenge.challenge.size == false %>
+                <%= "25 xp" %>
+                <% else %>
+                <%= "50 xp" %>
+                <% end %>
+                <p> <%=  %></p>
               </div>
             </div>
             <div class="col-3">
