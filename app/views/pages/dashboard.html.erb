@@ -12,33 +12,35 @@
             <% end %>
           </div>
           <div class="col-8">
-          <h2>Level: <%= @user.level %></h2>
-            <div class="progress">
-              <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="<%= @user.xp %>" aria-valuemin="0" aria-valuemax="<%= @max_xp %>" style="width: <%= @user.xp %>%">
-              <%= @user.xp %>/<%= @max_xp %> XP
-              </div>
-            </div>
-            <p>Only <strong><%= @max_xp - @user.xp %> XP</strong> left before reaching the next level !</p>
-            <div class="row">
-              <div class="col-6">
-                <h2 style="font-size: 1rem; text-align: justify;">Amount of plastic saved:</h2>
-                <div class="row">
-                  <div class="col-3">
-                    <%= image_tag("plastic.svg", :style => 'max-height: 2rem') %>
-                  </div>
-                  <div class="col-9">
-                    <h3 style="font-size: 1.75rem; text-align: right;">492kg</h3>
-                  </div>
+            <div id="level_info">
+            <h2>Level: <%= @user.level %></h2>
+              <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="<%= @user.xp %>" aria-valuemin="0" aria-valuemax="<%= @max_xp %>" style="width: <%= @user.xp %>%">
+                <%= @user.xp %>/100 XP
                 </div>
               </div>
-              <div class="col-6">
-                <h2 style="font-size: 1rem; text-align: justify;">Number of trees planted:</h2>
-                <div class="row">
-                  <div class="col-3">
-                    <%= image_tag("trees.svg", :style => 'max-height: 2rem') %>
+              <p>Only <strong><%= @max_xp - @user.xp %> XP</strong> left before reaching the next level !</p>
+              <div class="row">
+                <div class="col-6">
+                  <h2 style="font-size: 1rem; text-align: justify;">Amount of plastic saved:</h2>
+                  <div class="row">
+                    <div class="col-3">
+                      <%= image_tag("plastic.svg", :style => 'max-height: 2rem') %>
+                    </div>
+                    <div class="col-9">
+                      <h3 style="font-size: 1.75rem; text-align: right;">492kg</h3>
+                    </div>
                   </div>
-                  <div class="col-9">
-                    <h3 style="font-size: 1.75rem; text-align: right;"><%= @user.tree_count %> trees</h3>
+                </div>
+                <div class="col-6">
+                  <h2 style="font-size: 1rem; text-align: justify;">Number of trees planted:</h2>
+                  <div class="row">
+                    <div class="col-3">
+                      <%= image_tag("trees.svg", :style => 'max-height: 2rem') %>
+                    </div>
+                    <div class="col-9">
+                      <h3 style="font-size: 1.75rem; text-align: right;"><%= @user.tree_count %> trees</h3>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -53,27 +55,29 @@
   <div class="row">
     <div class="col-7">
       <div class="card card-dashboard">
-        <h2>Weekly Challenges</h2>
+        <h2>Challenges</h2>
         <% @weekly_challenges.each do |challenge| %>
-        <div class="notification">
-          <div class="col-9">
-            <div class="notification-content">
-              <p><small><%= challenge.challenge.name  %></small></p>
-              <p><%= challenge.challenge.description %></p>
-              <p> <%= challenge.status_challenge %></p>
+        <div data-challenge-id="<%= challenge.challenge.id %>">
+          <% if challenge.status_challenge == false %>
+          <div class="notification">
+            <div class="col-9">
+              <div class="notification-content">
+                <p><small><%= challenge.challenge.name  %></small></p>
+                <p><%= challenge.challenge.description %></p>
+                <p> <%= challenge.status_challenge %></p>
+              </div>
             </div>
-          </div>
-          <div class="col-3">
-            <div class="notification-actions">
-              <div data-challenge-id="<%= challenge.challenge.id %>">
-                <% if challenge.status_challenge == false %>
-                  <%= link_to weekly_challenge_path(challenge), method: 'patch', remote: true do %>
-                  Mark as done <i class="fas fa-check-square"></i>
+            <div class="col-3">
+              <div class="notification-actions">
+                  <% if challenge.status_challenge == false %>
+                    <%= link_to weekly_challenge_path(challenge), method: 'patch', remote: true do %>
+                    Mark as done <i class="fas fa-check-square"></i>
+                    <% end %>
                   <% end %>
-                <% end %>
               </div>
             </div>
           </div>
+          <% end %>
         </div>
         <% end %>
       </div>
@@ -112,8 +116,15 @@
 <div class="col-12">
   <div class="card card-dashboard" style="margin-top: 2rem; margin-bottom: 2rem;">
     <h2>Categories</h2>
-    <% @categories.each do |category| %>
-      <p><%= link_to "#{category.name}", category_challenges_path(category) %></p>
-    <% end %>
+    <div class="row">
+      <div class="col-4">
+        <h3>Home</h3>
+        <% @categories.each do |category| %>
+          <div class="card card-category">
+            <p><%= link_to "#{category.name}", category_challenges_path(category) %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>

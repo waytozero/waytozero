@@ -1,16 +1,16 @@
 // Specific CSS for your home-page
 .banner-home-page {
-  background-image: url(asset-path('jilbert-ebrahimi-b0p818k8Ok8-unsplash.jpg'));
+  background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.8)), url(asset-path('jilbert-ebrahimi-b0p818k8Ok8-unsplash.jpg'));
   width: 100vw;
   height: 80vh;
   background-size: 100%;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: bottom;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
 }
 
 .card-1-home {
-  margin-top: 70px;
+  margin-top: 7rem;
 }
 
 .img-card-2 img {
@@ -61,3 +61,22 @@
   margin-bottom: -30px;
 }
 
+.cta-btn {
+  background-color: #00D68B;
+  border-color: #00D68B;
+  width: 80%;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  padding: 0.8rem;
+  color: white;
+  position: relative;
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.cta-btn:hover {
+  background-color: #01c07d;
+  border-color: #01c07d;
+  color: white;
+}
