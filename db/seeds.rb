@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Category.create!(name: 'Hygiene & healthcare', photo: 'https://res.cloudinary.com/dr3uy796x/image/upload/c_scale,e_blur:100,w_875/v1572601779/samples/food/spices.jpg')
 Category.create!(name: 'Kitchen', photo: 'https://res.cloudinary.com/dr3uy796x/image/upload/v1572601772/samples/food/pot-mussels.jpg')
-Category.create!(name: 'Home maintenance', photo:'https://res.cloudinary.com/dr3uy796x/image/upload/v1572601772/samples/food/fish-vegetables.jpg')
+Category.create!(name: 'Home maintenance', photo: 'https://res.cloudinary.com/dr3uy796x/image/upload/v1572601772/samples/food/fish-vegetables.jpg')
 Category.create!(name: 'Leasure', photo: 'https://res.cloudinary.com/dr3uy796x/image/upload/v1572601770/samples/food/dessert.jpg')
 Category.create!(name: 'Apparel', photo: 'https://res.cloudinary.com/dr3uy796x/image/upload/v1572601775/samples/people/jazz.jpg')
 Category.create!(name: 'Work', photo: 'https://res.cloudinary.com/dr3uy796x/image/upload/v1572601775/samples/people/boy-snow-hoodie.jpg')
