@@ -4,4 +4,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :weekly_challenges
+  has_many :challenges, through: :weekly_challenges
 end

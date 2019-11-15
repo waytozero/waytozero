@@ -6,8 +6,8 @@
         <%= f.error_notification %>
         <div class="form-inputs">
           <%= f.input :email, required: true, autofocus: true, placeholder: "email@email.com"%>
-          <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), placeholder: "your password" %>
-          <%= f.input :password_confirmation, required: true, placeholder: "your password" %>
+          <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), placeholder: "••••••" %>
+          <%= f.input :password_confirmation, required: true, placeholder: "••••••" %>
           <label class="radio_buttons optional">Gender</label>
           <div class="input form-check form-check-inline radio_buttons optional user_gender field_without_errors">
           <input type="hidden" name="user[gender]" value="">
