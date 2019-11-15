@@ -121,6 +121,7 @@
         <h3>Home</h3>
         <% @categories.each do |category| %>
           <div class="card card-category">
+            <%= cl_image_tag category.photo, height: 300, width: 400, crop: :fill %>
             <p><%= link_to "#{category.name}", category_challenges_path(category) %></p>
           </div>
         <% end %>
