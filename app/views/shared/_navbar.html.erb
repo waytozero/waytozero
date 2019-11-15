@@ -11,7 +11,7 @@
   </button>
 
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
 
@@ -32,6 +32,12 @@
 
       <% else %>
         <li class="nav-item">
+          <%= link_to "Join the movement", new_user_registration_path, class: "btn register-btn" %>
+        </li>
+        <li class="nav-item ml-3 mr-1" style="display: flex; align-items: center;">
+          |
+        </li>
+        <li class="nav-item" style="display: flex; align-items: center;">
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
         </li>
       <% end %>

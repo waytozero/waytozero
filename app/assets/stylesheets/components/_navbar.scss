@@ -19,3 +19,21 @@
   display: flex;
   align-items: center;
 }
+
+.register-btn {
+    background-color: #00D68B;
+    border-color: #00D68B;
+    width: 100%;
+    padding: 0.8rem;
+    color: white;
+    position: relative;
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.register-btn:hover {
+  background-color: #01c07d;
+  border-color: #01c07d;
+  color: white;
+}

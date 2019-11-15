@@ -6,5 +6,8 @@ var levelNumber = document.querySelector("#level_info h2")
 levelNumber.innerText = 'Level: <%= @user.level %>'
 
 
-var xpCurrent = +document.querySelector("#level_info .progress .progress-bar").attributes['aria-valuenow']
-xpCurrent.value = '<%= @user.xp %>'
+var xpCurrent = document.querySelector("#level_info .progress .progress-bar").attributes['aria-valuenow'].value
+xpCurrent = 50
+
+var xpCurrentText = document.querySelector("#level_info .progress .progress-bar")
+xpCurrentText.innerText = '<%= @user.xp %>/100 XP'
