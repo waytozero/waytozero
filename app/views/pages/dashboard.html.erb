@@ -15,8 +15,8 @@
             <div id="level_info">
             <h2>Level: <%= @user.level %></h2>
               <div class="progress">
-                <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="<%= @user.xp %>" aria-valuemin="0" aria-valuemax="<%= @max_xp %>" style="width: <%= @user.xp %>%">
-                <%= @user.xp %>/100 XP
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="<%= @user.xp %>" aria-valuemin="0" aria-valuemax="<%= @max_xp %>" style="width: <%= ((@user.xp.to_f / @max_xp.to_f)*100).to_i %>%">
+                  <%= @user.xp %>/<%= @max_xp %> XP
                 </div>
               </div>
               <p>Only <strong><%= @max_xp - @user.xp %> XP</strong> left before reaching the next level !</p>
@@ -58,8 +58,8 @@
         <h2>Challenges</h2>
         <p><%= link_to "All my challenges done", index_done_path %></p>
         <% @weekly_challenges.each do |challenge| %>
+        <% if challenge.status_challenge == false %>
         <div data-challenge-id="<%= challenge.challenge.id %>">
-          <% if challenge.status_challenge == false %>
           <div class="notification">
             <div class="col-9">
               <div class="notification-content">
@@ -78,13 +78,14 @@
                   <% if challenge.status_challenge == false %>
                     <%= link_to weekly_challenge_path(challenge), method: 'patch', remote: true do %>
                     Mark as done <i class="fas fa-check-square"></i>
+                    <%  %>
                     <% end %>
                   <% end %>
               </div>
             </div>
           </div>
-          <% end %>
         </div>
+        <% end %>
         <% end %>
       </div>
     </div>
