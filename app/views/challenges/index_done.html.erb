@@ -1,0 +1,9 @@
+<h2> Challenges done this week, <%= @user.username %>congrat's!</h2>
+
+<% @user_wchallenges_done.each do |done_challenge| %>
+<br>
+<p><%= done_challenge.challenge.name %></p>
+<% end %>
+
+
+

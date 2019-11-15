@@ -28,7 +28,7 @@
                       <%= image_tag("plastic.svg", :style => 'max-height: 2rem') %>
                     </div>
                     <div class="col-9">
-                      <h3 style="font-size: 1.75rem; text-align: right;">492kg</h3>
+                      <h3 style="font-size: 1.75rem; text-align: right;"><%= @user_plastic %>kg</h3>
                     </div>
                   </div>
                 </div>
@@ -56,6 +56,7 @@
     <div class="col-7">
       <div class="card card-dashboard">
         <h2>Challenges</h2>
+        <p><%= link_to "All my challenges done", index_done_path %></p>
         <% @weekly_challenges.each do |challenge| %>
         <div data-challenge-id="<%= challenge.challenge.id %>">
           <% if challenge.status_challenge == false %>
@@ -64,7 +65,12 @@
               <div class="notification-content">
                 <p><small><%= challenge.challenge.name  %></small></p>
                 <p><%= challenge.challenge.description %></p>
-                <p> <%= challenge.status_challenge %></p>
+                <% if challenge.challenge.size == false %>
+                <%= "25 xp" %>
+                <% else %>
+                <%= "50 xp" %>
+                <% end %>
+                <p> <%=  %></p>
               </div>
             </div>
             <div class="col-3">
@@ -93,7 +99,7 @@
                 <%= image_tag("plastic2.svg", :style => 'max-height: 2rem; fill: white') %>
               </div>
               <div class="col-9">
-                <h3 style="font-size: 1.75rem; text-align: right;">10,273kg</h3>
+                <h3 style="font-size: 1.75rem; text-align: right;"> <span class="plastic-counter"><%= @total_plastic %></span>kg</h3>
               </div>
             </div>
           </div>
@@ -101,10 +107,10 @@
             <h2 style="font-size: 1rem; text-align: justify; color: #c1edcc;">Total planted trees:</h2>
             <div class="row">
               <div class="col-3">
-                <%= image_tag("trees2.svg", :style => 'max-height: 2rem') %>
+                <%= image_tag("trees2.svg", :style => 'max-height: 2rem; fill: white') %>
               </div>
               <div class="col-9">
-                <h3 style="font-size: 1.75rem; text-align: right;">1,981 trees</h3>
+                <h3 style="font-size: 1.75rem; text-align: right;"><span class="tree-counter"><%= @total_trees %></span></h3>
               </div>
             </div>
           </div>
@@ -119,12 +125,12 @@
     <div class="row">
       <div class="col-4">
         <h3>Home</h3>
+        <div class="card card-category">
         <% @categories.each do |category| %>
-          <div class="card card-category">
             <%= cl_image_tag category.photo, height: 400, width: 400, crop: :fill %>
             <p><%= link_to "#{category.name}", category_challenges_path(category) %></p>
-          </div>
         <% end %>
+        </div>
       </div>
     </div>
   </div>

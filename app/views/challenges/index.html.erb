@@ -1,6 +1,4 @@
-<h2> <%= @category.name %> small challenges (big ones are only sent once a week)</h2>
-
-<% @small_challenges.each do |small_challenge| %>
+<% @small_challenges_displayed.each do |small_challenge| %>
 <br>
 <p><%= small_challenge.name %></p>
 <%= link_to "see more", challenge_path(small_challenge) %>
