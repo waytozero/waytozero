@@ -6,8 +6,48 @@
         <%= f.error_notification %>
         <div class="form-inputs">
           <%= f.input :email, required: true, autofocus: true, placeholder: "email@email.com"%>
-          <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), placeholder: "●●●●●●" %>
-          <%= f.input :password_confirmation, required: true, placeholder: "●●●●●●" %>
+          <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), placeholder: "your password" %>
+          <%= f.input :password_confirmation, required: true, placeholder: "your password" %>
+          <label class="radio_buttons optional">Gender</label>
+          <div class="input form-check form-check-inline radio_buttons optional user_gender field_without_errors">
+          <input type="hidden" name="user[gender]" value="">
+          <label for="user_gender_1">
+          <input class="radio_buttons optional" type="radio" value="1" name="user[gender]" id="user_gender_1">Woman</label>
+          <label for="user_gender_2"><input class="radio_buttons optional" type="radio" value="2" name="user[gender]" id="user_gender_2">Man</label>
+          <label for="user_gender_0"><input class="radio_buttons optional" type="radio" value="0" checked="checked" name="user[gender]" id="user_gender_0">Not specified or other</label>
+          </div>
+        </div>
+         <label class="question" for="question"><h3>Fusce dapibus diam augue, sit amet pretium sapien vestibulum ac?</h3></label>
+        <div class="form-inputs">
+          <div class="question-choices">
+            <div class="question-choice">
+                <input hidden type="checkbox" name="question[question_answer_1]" id="question_1" value="3"><p for="question_1">Lorem Ipsum</p>
+            </div>
+            <div class="question-choice">
+                <input hidden type="checkbox" name="question[question_answer_2]" id="question_2" value="3"><p for="question_2">Lorem Ipsum</p>
+            </div>
+            <div class="question-choice">
+                <input hidden type="checkbox" name="question[question_answer_3]" id="question_3" value="3"><p for="question_3">Lorem Ipsum</p>
+            </div>
+            <div class="question-choice">
+                <input hidden type="checkbox" name="question[question_answer_4]" id="question_4" value="3"><p for="question_4">Lorem Ipsum</p>
+            </div>
+            <div class="question-choice">
+                <input hidden type="checkbox" name="question[question_answer_5]" id="question_5" value="3"><p for="question_5">Lorem Ipsum</p>
+            </div>
+            <div class="question-choice">
+                <input hidden type="checkbox" name="question[question_answer_6]" id="question_6" value="3"><p for="question_6">Lorem Ipsum</p>
+            </div>
+            <div class="question-choice">
+                <input hidden type="checkbox" name="question[question_answer_7]" id="question_7" value="3"><p for="question_7">Lorem Ipsum</p>
+            </div>
+            <div class="question-choice">
+                <input hidden type="checkbox" name="question[question_answer_8]" id="question_8" value="3"><p for="question_8">Lorem Ipsum</p>
+            </div>
+            <div class="question-choice">
+                <input type="checkbox" name="question[question_answer_9]" id="question_9" value="3"><p for="question_9">Lorem Ipsum</p>
+            </div>
+          </div>
         </div>
         <div class="form-actions">
           <%= f.button :submit, "Sign up", class: "Log_in-btn", style: "margin-top: 1.3rem;"%>
@@ -17,3 +57,4 @@
     <%= render "devise/shared/links" %>
   </div>
 </div>
+

@@ -15,11 +15,11 @@
             <div id="level_info">
             <h2>Level: <%= @user.level %></h2>
               <div class="progress">
-                <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="<%= @user.xp %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= @user.xp %>%">
+                <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="<%= @user.xp %>" aria-valuemin="0" aria-valuemax="<%= @max_xp %>" style="width: <%= @user.xp %>%">
                 <%= @user.xp %>/100 XP
                 </div>
               </div>
-              <p>Only <strong><%= 100 - @user.xp %> XP</strong> left before reaching the next level !</p>
+              <p>Only <strong><%= @max_xp - @user.xp %> XP</strong> left before reaching the next level !</p>
               <div class="row">
                 <div class="col-6">
                   <h2 style="font-size: 1rem; text-align: justify;">Amount of plastic saved:</h2>
