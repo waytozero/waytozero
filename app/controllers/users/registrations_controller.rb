@@ -13,7 +13,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     super
     weekly_challenge = WeeklyChallenge.new
-    build_resource(sign_up_params).save
     weekly_challenge.user = current_user
     weekly_challenge.challenge = Challenge.where(size: true).sample
     weekly_challenge.week = 1
@@ -65,9 +64,9 @@ end
   # end
 
   # The path used after sign up.
-  # def after_sign_up_path_for(resource)
-  #   super(resource)
-  # end
+  #def after_sign_up_path_for(resource)
+  # redirect_to dashboard_path
+  #end
 
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)
