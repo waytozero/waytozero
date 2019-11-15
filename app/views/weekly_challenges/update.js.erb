@@ -1,7 +1,7 @@
 document.querySelector("[data-challenge-id='<%= @challenge.challenge.id %>']")
   .remove();
 
-var levelNumber = document.querySelector("#level_info h2")
+var levelNumber = document.querySelector("#level_info h2");
 levelNumber.innerText = 'Level: <%= @user.level %>'
 
 
