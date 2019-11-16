@@ -50,7 +50,7 @@ AchievementNumber.create!(
 
 Category.all.each do |category|
   AchievementCategory.create!(
-    name: "You did all the challenges from the category #{category}. Congrats!!",
+    name: "You did all the challenges from the category #{category.name}. Congrats!!",
     category: category
   )
 end

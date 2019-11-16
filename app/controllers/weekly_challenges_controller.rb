@@ -20,19 +20,21 @@ class WeeklyChallengesController < ApplicationController
     @weekly_challenge.user = current_user
     @weekly_challenge.save
     achievement_number?
+    achievement_category?
     redirect_to dashboard_path
   end
 
   def update
-    @challenge = WeeklyChallenge.find(params[:id])
+    @weekly_challenge = WeeklyChallenge.find(params[:id])
     @user = current_user
-    @challenge.status_challenge = true
-    @challenge.save
-    @challenge.challenge.size == true ? xp = 50 : xp = 25
+    @weekly_challenge.status_challenge = true
+    @weekly_challenge.save
+    @weekly_challenge.challenge.size == true ? xp = 50 : xp = 25
     @user.xp += xp
     @user.level += 1 while level_up?
     @user.save
     achievement_number?
+    achievement_category?
     # redirect_to dashboard_path
   end
 
@@ -61,14 +63,25 @@ class WeeklyChallengesController < ApplicationController
     size = WeeklyChallenge.where(user: @user, status_challenge: true).size
     case size
     when 5, 10, 20, 30
-      new_succesnumber(size)
+      new_successnumber(size)
     end
   end
 
   def achievement_category?
+    picked_category = @weekly_challenge.challenge.category
+    total_number = picked_category.challenges.where(size: false).size # Right now the achievement is only on the SMALL challenges
+    grouped_challenge = []
+    WeeklyChallenge.where(user: @user, status_challenge: true).each do |challenge|
+      grouped_challenge << challenge if challenge.challenge.category == picked_category
+    end
+    new_successcategory(picked_category) if total_number == grouped_challenge.size
   end
 
-  def new_succesnumber(number)
+  def new_successnumber(number)
     Success.create!(user: @user, achievement: AchievementNumber.find_by(number: number))
+  end
+
+  def new_successcategory(category)
+    Success.create!(user: @user, achievement: AchievementCategory.find_by(category: category))
   end
 end
