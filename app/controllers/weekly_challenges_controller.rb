@@ -19,6 +19,7 @@ class WeeklyChallengesController < ApplicationController
 
     @weekly_challenge.user = current_user
     @weekly_challenge.save
+    achievement_number?
     redirect_to dashboard_path
   end
 
@@ -31,6 +32,7 @@ class WeeklyChallengesController < ApplicationController
     @user.xp += xp
     @user.level += 1 while level_up?
     @user.save
+    achievement_number?
     # redirect_to dashboard_path
   end
 
@@ -53,5 +55,20 @@ class WeeklyChallengesController < ApplicationController
     else
       false
     end
+  end
+
+  def achievement_number?
+    size = WeeklyChallenge.where(user: @user, status_challenge: true).size
+    case size
+    when 5, 10, 20, 30
+      new_succesnumber(size)
+    end
+  end
+
+  def achievement_category?
+  end
+
+  def new_succesnumber(number)
+    Success.create!(user: @user, achievement: AchievementNumber.find_by(number: number))
   end
 end
