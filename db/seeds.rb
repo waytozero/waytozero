@@ -54,6 +54,34 @@ Category.all.each do |category|
   )
 end
 
+# 50.times do
+#   challenge = Challenge.new(
+#   name: Faker::Lorem.sentence,
+#   description: Faker::Lorem.paragraph(sentence_count: (5..10).to_a.sample),
+#   intensity: [0, 1, 2].sample,
+#   map: [true, false].sample,
+#   gender_specific: [0, 1, 2].sample,
+#   plastic: (10..50).to_a.sample,
+#   size: false
+# )
+# challenge.category = Category.all.sample
+# challenge.save
+# end
+
+# 20.times do
+#   challenge = Challenge.new(
+#   name: Faker::Lorem.sentence,
+#   description: Faker::Lorem.paragraph(sentence_count: (5..10).to_a.sample),
+#   intensity: [0, 1, 2].sample,
+#   map: [true, false].sample,
+#   gender_specific: [0, 1, 2].sample,
+#   plastic: (10..50).to_a.sample,
+#   size: true
+# )
+# challenge.category = Category.all.sample
+# challenge.save
+# end
+
 challenge = Challenge.new(
    name: "Body wash",
    description: "easy challenge = free XP for you! Go to a nearby shop and buy your first eco soap! You won’t be disappointed we promise you!",
