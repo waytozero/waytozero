@@ -1,8 +1,35 @@
-<h1>Find below all the challenges categories</h1>
-
-<% @categories.each do |category| %>
-<br>
-<%= category.name %>
-<%= link_to "see challenges in that category", category_challenges_path(category) %>
-<br>
-<% end %>
+<div class="col-12">
+  <div class="card card-dashboard" style="margin-top: 2rem; margin-bottom: 2rem;">
+    <h2 class="mb-3">Categories</h2>
+    <ul class="list-inline tabs-underlined mb-3">
+      <li>
+        <a href="#" class="tab-underlined active">All the challenges</a>
+      </li>
+      <li>
+        <a href="#" class="tab-underlined"><i class="fas fa-home"></i> Home</a>
+      </li>
+      <li>
+        <a href="#" class="tab-underlined"><i class="fas fa-briefcase"></i> Work</a>
+      </li>
+      <li>
+        <a href="#" class="tab-underlined"><i class="fas fa-laugh-beam"></i> Leisure</a>
+      </li>
+      <li>
+        <a href="#" class="tab-underlined"><i class="fas fa-user-friends"></i> Social Life</a>
+      </li>
+    </ul>
+    <div class="row mt-3 cards-category">
+      <% @categories.each do |category| %>
+        <%= link_to category_challenges_path(category) do %>
+          <div class="card card-category">
+            <div class="row">
+              <%= cl_image_tag category.photo, height: 60, width: 60, crop: :fill %>
+            </div>
+            <br>
+            <p><%="#{category.name}"%></p>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
