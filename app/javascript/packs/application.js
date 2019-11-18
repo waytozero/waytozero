@@ -1,6 +1,7 @@
 import "bootstrap";
-// import {eventForm} from "../partials/form";
-// import {count} from "../partials/count.js";
+import {eventForm} from "../partials/form";
+import {count} from "../partials/count.js";
 eventForm();
-// count('.plastic-counter');
-// count('.tree-counter');
+count('.plastic-counter');
+count('.tree-counter');
+import "../partials/challengeDone";
