@@ -1,9 +1,17 @@
-document.querySelector("[data-challenge-id='<%= @challenge.challenge.id %>']")
-  .remove();
+//var buttonCompleted = document.querySelector("[btn-challenge-id='<%= @challenge.challenge.id %>'] a")
+
+//var click = document.querySelector("[data-challenge-id='<%= @challenge.challenge.id %>']")
+
+//click.addEventListener('click', function() {
+//  buttonCompleted.innerHTML = "<i class='fas fa-check-circle'></i> Marked as done";
+//  console.log("prout")
+//});
+
+//document.querySelector("[data-challenge-id='<%= @challenge.challenge.id %>']")
+//  .remove();
 
 var levelNumber = document.querySelector("#level_info h2")
 levelNumber.innerText = 'Level: <%= @user.level %>'
-
 
 var xpCurrent = document.querySelector("#level_info .progress .progress-bar").attributes['aria-valuenow'].value
 xpCurrent = '<%= @user.xp %>'
@@ -16,3 +24,6 @@ xpCurrentText.innerText = `${xpCurrent}/${xpMax} XP`
 
 var Proportion = parseInt((xpCurrent/xpMax)*100)
 document.querySelector("#level_info .progress .progress-bar").style.width =  `${Proportion}%`
+
+var xpLeft = (xpMax-xpCurrent)
+document.querySelector("#level_info p strong").innerText = `${xpLeft}`

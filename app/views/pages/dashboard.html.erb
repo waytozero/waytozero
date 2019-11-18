@@ -57,36 +57,39 @@
       <div class="card card-dashboard">
         <h2>Challenges</h2>
         <p><%= link_to "All my challenges done", index_done_path %></p>
-        <% @weekly_challenges.each do |challenge| %>
-        <% if challenge.status_challenge == false %>
-        <div data-challenge-id="<%= challenge.challenge.id %>">
-          <div class="notification">
-            <div class="col-9">
-              <div class="notification-content">
-                <p><small><%= challenge.challenge.name  %></small></p>
-                <p><%= challenge.challenge.description %></p>
-                <% if challenge.challenge.size == false %>
-                <%= "25 xp" %>
-                <% else %>
-                <%= "50 xp" %>
-                <% end %>
-                <p> <%=  %></p>
-              </div>
-            </div>
-            <div class="col-3">
-              <div class="notification-actions">
-                  <% if challenge.status_challenge == false %>
-                    <%= link_to weekly_challenge_path(challenge), method: 'patch', remote: true do %>
-                    Mark as done <i class="fas fa-check-square"></i>
-                    <%  %>
-                    <% end %>
+        <div class="challenges">
+          <% @weekly_challenges.each do |challenge| %>
+          <% if challenge.status_challenge == false %>
+          <div data-challenge-id="<%= challenge.challenge.id %>">
+            <div class="notification">
+              <div class="col-8">
+                <div class="notification-content">
+                  <p><small style="font-size: 1rem;"><%= challenge.challenge.name  %></small></p>
+                  <% if challenge.challenge.size == false %>
+                  <p><small style="color: #91a5b9">Experience: <%= "25 xp" %></small></p>
+                  <% else %>
+                  <p><small style="color: #91a5b9">Experience: <%= "50 xp" %></small></p>
                   <% end %>
+                  <p><%= challenge.challenge.description %></p>
+                  <p> <%= link_to "See details", challenge_path(challenge) %></p>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="notification-actions">
+                    <% if challenge.status_challenge == false %>
+                    <div btn-challenge-id="<%= challenge.challenge.id %>">
+                      <%= link_to weekly_challenge_path(challenge), class: "btn register-btn", id:'completed', method: 'patch', remote: true do %>
+                      Mark as completed
+                      <% end %>
+                    </div>
+                    <% end %>
+                </div>
               </div>
             </div>
           </div>
+          <% end %>
+          <% end %>
         </div>
-        <% end %>
-        <% end %>
       </div>
     </div>
     <div class="col-5">
@@ -122,20 +125,54 @@
 </div>
 <div class="col-12">
   <div class="card card-dashboard" style="margin-top: 2rem; margin-bottom: 2rem;">
-    <h2>Categories</h2>
-    <div class="row">
-      <div class="col-4">
-        <h3>Home</h3>
+    <h2 class="mb-3">Categories</h2>
+    <ul class="list-inline tabs-underlined mb-3">
+      <li>
+        <a href="#" class="tab-underlined active">All the challenges</a>
+      </li>
+      <li>
+        <a href="#" class="tab-underlined"><i class="fas fa-home"></i> Home</a>
+      </li>
+      <li>
+        <a href="#" class="tab-underlined"><i class="fas fa-briefcase"></i> Work</a>
+      </li>
+      <li>
+        <a href="#" class="tab-underlined"><i class="fas fa-laugh-beam"></i> Leisure</a>
+      </li>
+      <li>
+        <a href="#" class="tab-underlined"><i class="fas fa-user-friends"></i> Social Life</a>
+      </li>
+    </ul>
+    <div class="row mt-3 cards-category">
+      <% @categories.each do |category| %>
         <div class="card card-category">
-        <% @categories.each do |category| %>
-            <%= cl_image_tag category.photo, height: 400, width: 400, crop: :fill %>
-            <p><%= link_to "#{category.name}", category_challenges_path(category) %></p>
-        <% end %>
+          <div class="row">
+            <%= cl_image_tag category.photo, height: 60, width: 60, crop: :fill %>
+          </div>
+          <div class="row">
+          <%= link_to "#{category.name}", category_challenges_path(category) %>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
   </div>
   <% @successes.each do |success| %>
     <p> <%= success.achievement.name %> </p>
   <% end %>
 </div>
+
+<script>
+
+var challengesClass = document.querySelector(".challenges")
+const removeChallenge = (remove) => {
+  remove.closest(".notification").remove()
+};
+
+challengesClass.addEventListener('click', function(event) {
+  event.target.innerHTML = "<i class='fas fa-check-circle'></i> Marked as done";
+  // Wait 2 seconds
+  setTimeout(() => removeChallenge(event.target), 1000);
+  // Remove smoothly parent class
+
+});
+</script>
