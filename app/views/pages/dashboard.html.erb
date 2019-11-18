@@ -58,36 +58,36 @@
         <h2>Challenges</h2>
         <p><%= link_to "All my challenges done", index_done_path %></p>
         <div class="challenges">
-          <% @weekly_challenges.each do |challenge| %>
-          <% if challenge.status_challenge == false %>
-          <div data-challenge-id="<%= challenge.challenge.id %>">
-            <div class="notification">
-              <div class="col-8">
-                <div class="notification-content">
-                  <p><small style="font-size: 1rem;"><%= challenge.challenge.name  %></small></p>
-                  <% if challenge.challenge.size == false %>
-                  <p><small style="color: #91a5b9">Experience: <%= "25 xp" %></small></p>
-                  <% else %>
-                  <p><small style="color: #91a5b9">Experience: <%= "50 xp" %></small></p>
-                  <% end %>
-                  <p><%= challenge.challenge.description %></p>
-                  <p> <%= link_to "See details", challenge_path(challenge) %></p>
-                </div>
-              </div>
-              <div class="col-4">
-                <div class="notification-actions">
-                    <% if challenge.status_challenge == false %>
-                    <div btn-challenge-id="<%= challenge.challenge.id %>">
-                      <%= link_to weekly_challenge_path(challenge), class: "btn register-btn", id:'completed', method: 'patch', remote: true do %>
-                      Mark as completed
-                      <% end %>
-                    </div>
+          <% if @weekly_challenges.empty? %>
+            <p>prout</p>
+          <% else %>
+            <% @weekly_challenges.each do |challenge| %>
+            <% if challenge.status_challenge == false %>
+            <div data-challenge-id="<%= challenge.challenge.id %>">
+              <div class="notification">
+                <div class="col-8">
+                  <div class="notification-content">
+                    <p><small style="font-size: 1rem;"><%= challenge.challenge.name  %></small></p>
+                    <% if challenge.challenge.size == false %>
+                    <p><small style="color: #91a5b9">Experience: <%= "25 xp" %></small></p>
+                    <% else %>
+                    <p><small style="color: #91a5b9">Experience: <%= "50 xp" %></small></p>
                     <% end %>
+                    <p><%= challenge.challenge.description %></p>
+                    <p> <%= link_to "See details", challenge_path(challenge) %></p>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="notification-actions justify-content-center">
+                      <% if challenge.status_challenge == false %>
+                        <%= button_to "Mark as done", challenge, class: "btn mark-as-done-btn", disabled: false, method: :put, remote: true %>
+                      <% end %>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <% end %>
+            <% end %>
+            <% end %>
           <% end %>
         </div>
       </div>
@@ -137,7 +137,7 @@
         <a href="#" class="tab-underlined"><i class="fas fa-briefcase"></i> Work</a>
       </li>
       <li>
-        <a href="#" class="tab-underlined"><i class="fas fa-laugh-beam"></i> Leisure</a>
+        <a href="#" class="tab-underlined"><i class="fas fa-laugh-beam"></i> Leasure</a>
       </li>
       <li>
         <a href="#" class="tab-underlined"><i class="fas fa-user-friends"></i> Social Life</a>
@@ -160,19 +160,3 @@
     <p> <%= success.achievement.name %> </p>
   <% end %>
 </div>
-
-<script>
-
-var challengesClass = document.querySelector(".challenges")
-const removeChallenge = (remove) => {
-  remove.closest(".notification").remove()
-};
-
-challengesClass.addEventListener('click', function(event) {
-  event.target.innerHTML = "<i class='fas fa-check-circle'></i> Marked as done";
-  // Wait 2 seconds
-  setTimeout(() => removeChallenge(event.target), 1000);
-  // Remove smoothly parent class
-
-});
-</script>

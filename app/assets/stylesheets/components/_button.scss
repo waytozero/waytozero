@@ -9,3 +9,23 @@
   background-color: #01c07d;
   border-color: #01c07d;
 }
+
+.mark-as-done-btn {
+    background-color: #00D68B;
+    border-color: #00D68B;
+    width: 100%;
+    padding: 0.8rem;
+    color: white;
+    position: relative;
+    font-size: 1rem;
+    font-weight: 600;
+    display: inline-block;
+}
+.mark-as-done-btn.sent{
+  opacity: .7
+}
+.mark-as-done-btn:hover {
+  background-color: #01c07d;
+  border-color: #01c07d;
+  color: white;
+}
