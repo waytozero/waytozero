@@ -1915,6 +1915,11 @@ cosmiconfig@^5.0.0, cosmiconfig@^5.2.0:
     js-yaml "^3.13.1"
     parse-json "^4.0.0"
 
+countjs@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/countjs/-/countjs-1.2.0.tgz#6aa0332f9f4d7f6ffef55902c82c0384800cc3f3"
+  integrity sha1-aqAzL59Nf2/+9VkCyCwDhIAMw/M=
+
 countup.js@^2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/countup.js/-/countup.js-2.0.4.tgz#8c845452e499b16187c0d1beb1e5d717bda90005"

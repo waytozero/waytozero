@@ -12,6 +12,7 @@ class PagesController < ApplicationController
     @max_xp = xp_counter
     @total_plastic = plastic_counter
     @user_plastic = plastic_user
+    @successes = Success.where(user: @user)
   end
 
   private

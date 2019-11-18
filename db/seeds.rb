@@ -27,33 +27,60 @@ Category.create!(name: 'Social life', photo: 'https://res.cloudinary.com/dr3uy79
   )
 end
 
-# 50.times do
-#   challenge = Challenge.new(
-#     name: Faker::Lorem.sentences,
-#     description: Faker::Lorem.paragraph(sentence_count: (5..10).to_a.sample),
-#     intensity: [0, 1, 2].sample,
-#     map: [true, false].sample,
-#     gender_specific: [0, 1, 2].sample,
-#     plastic: (10..50).to_a.sample,
-#     size: false
-#   )
-#   challenge.category = Category.all.sample
-#   challenge.save
-# end
+AchievementNumber.create!(
+  name: "You did 5 challenges! Congrats!!",
+  number: 5
+  )
 
-# 20.times do
-#   challenge = Challenge.new(
-#     name: Faker::Lorem.sentence,
-#     description: Faker::Lorem.paragraph(sentence_count: (5..10).to_a.sample),
-#     intensity: [0, 1, 2].sample,
-#     map: [true, false].sample,
-#     gender_specific: [0, 1, 2].sample,
-#     plastic: (10..50).to_a.sample,
-#     size: true
-#   )
-#   challenge.category = Category.all.sample
-#   challenge.save
-# end
+AchievementNumber.create!(
+  name: "You did 10 challenges! Congrats!!",
+  number: 10
+  )
+
+AchievementNumber.create!(
+  name: "You did 20 challenges! Congrats!!",
+  number: 20
+  )
+
+AchievementNumber.create!(
+  name: "You did 30 challenges! Congrats!!",
+  number: 30
+  )
+
+Category.all.each do |category|
+  AchievementCategory.create!(
+    name: "You did all the challenges from the category #{category.name}. Congrats!!",
+    category: category
+  )
+end
+
+50.times do
+  challenge = Challenge.new(
+  name: Faker::Lorem.sentence,
+  description: Faker::Lorem.paragraph(sentence_count: (5..10).to_a.sample),
+  intensity: [0, 1, 2].sample,
+  map: [true, false].sample,
+  gender_specific: [0, 1, 2].sample,
+  plastic: (10..50).to_a.sample,
+  size: false
+)
+challenge.category = Category.all.sample
+challenge.save
+end
+
+20.times do
+  challenge = Challenge.new(
+  name: Faker::Lorem.sentence,
+  description: Faker::Lorem.paragraph(sentence_count: (5..10).to_a.sample),
+  intensity: [0, 1, 2].sample,
+  map: [true, false].sample,
+  gender_specific: [0, 1, 2].sample,
+  plastic: (10..50).to_a.sample,
+  size: true
+)
+challenge.category = Category.all.sample
+challenge.save
+end
 
 challenge = Challenge.new(
    name: "Body wash",

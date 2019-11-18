@@ -20,6 +20,7 @@
   color: #01c07d;
   font-weight: bold;
 }
+
 .notification .notification-actions {
   opacity: 0;
   display: flex;
@@ -31,11 +32,11 @@
 }
 
 .notification .notification-actions a {
-  color: #C5E7E2;
-  margin-left: 16px;
+  color: #FFFFFF;
   font-size: 14px;
+  opacity: 1;
 }
 
 .notification .notification-actions a:hover {
-  color: #4a4a4a;
+  color: white;
 }
