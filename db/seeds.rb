@@ -54,7 +54,6 @@ Category.all.each do |category|
   )
 end
 
-
 AchievementCategory.all.each do |achievementcat|
   case achievementcat.category.name
 
