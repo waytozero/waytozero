@@ -135,4 +135,7 @@
       </div>
     </div>
   </div>
+  <% @successes.each do |success| %>
+    <p> <%= success.achievement.name %> </p>
+  <% end %>
 </div>
