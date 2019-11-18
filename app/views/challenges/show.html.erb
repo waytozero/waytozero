@@ -10,7 +10,11 @@
 <%= @challenge.plastic %> grams of plastic spared
 <br>
 <%= @challenge.size %>
-
+<br>
+<% if @challenge.video_link %>
+<%= @challenge.video_link.html_safe %>
+<% end %>
+<br>
 
 <%= link_to "add this challenge to my weekly challenges", weekly_challenges_path(@challenge), method: :post %>
 
