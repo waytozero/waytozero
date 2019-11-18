@@ -159,5 +159,6 @@
   </div>
   <% @successes.each do |success| %>
     <p> <%= success.achievement.name %> </p>
+    <%= cl_image_tag success.achievement.photo %>
   <% end %>
 </div>

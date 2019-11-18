@@ -54,6 +54,28 @@ Category.all.each do |category|
   )
 end
 
+
+AchievementCategory.all.each do |achievementcat|
+  case achievementcat.category.name
+
+  when 'Hygiene & healthcare'
+    achievementcat.photo = 'https://res.cloudinary.com/dr3uy796x/image/upload/v1574077938/badges_categories/badge_hygiene_un4sr7.png'
+  when 'Kitchen'
+    achievementcat.photo = 'https://res.cloudinary.com/dr3uy796x/image/upload/v1574077938/badges_categories/badge_kitchen_wjzrja.png'
+  when 'Home maintenance'
+    achievementcat.photo = 'https://res.cloudinary.com/dr3uy796x/image/upload/v1574077938/badges_categories/badge_homemaintenance_vd0e7n.png'
+  when 'Leasure'
+    achievementcat.photo = 'https://res.cloudinary.com/dr3uy796x/image/upload/v1574077938/badges_categories/badge_leisure_e6v71a.png'
+  when 'Apparel'
+    achievementcat.photo = 'https://res.cloudinary.com/dr3uy796x/image/upload/v1574077938/badges_categories/badge_apparel_aeqvip.png'
+  when 'Work'
+    achievementcat.photo = 'https://res.cloudinary.com/dr3uy796x/image/upload/v1574077938/badges_categories/badge_work_zpvmmr.png'
+  when 'Social life'
+    achievementcat.photo = 'https://res.cloudinary.com/dr3uy796x/image/upload/v1574077938/badges_categories/badge_social_life_aq9eec.png'
+  end
+  achievementcat.save!
+end
+
 # 50.times do
 #   challenge = Challenge.new(
 #   name: Faker::Lorem.sentence,
