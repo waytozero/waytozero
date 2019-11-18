@@ -103,7 +103,8 @@ challenge = Challenge.new(
    map: false,
    gender_specific: 0,
    plastic: 200,
-   size: false
+   size: false,
+   video_link: "<iframe width='560' height='315' src='https://www.youtube.com/embed/E8S0Pz-KskE' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
  )
 challenge.category = Category.all.sample
 challenge.save
