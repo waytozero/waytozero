@@ -11,12 +11,4 @@ class ChallengesController < ApplicationController
   def show
     @challenge = Challenge.find(params[:id])
   end
-
-  def index_done
-    @user = current_user
-
-    @user_wchallenges_done = @user.weekly_challenges.where(status_challenge: true)
-    # ask Antoine or raise ticket later but it should display the challenges
-    # done meaning all challenges, not only the weekly ones we may need includes or joins...
-  end
 end
