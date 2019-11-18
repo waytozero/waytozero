@@ -145,14 +145,15 @@
     </ul>
     <div class="row mt-3 cards-category">
       <% @categories.each do |category| %>
-        <div class="card card-category">
-          <div class="row">
-            <%= cl_image_tag category.photo, height: 60, width: 60, crop: :fill %>
+        <%= link_to category_challenges_path(category) do %>
+          <div class="card card-category">
+            <div class="row">
+              <%= cl_image_tag category.photo, height: 60, width: 60, crop: :fill %>
+            </div>
+            <br>
+            <p><%="#{category.name}"%></p>
           </div>
-          <div class="row">
-          <%= link_to "#{category.name}", category_challenges_path(category) %>
-          </div>
-        </div>
+        <% end %>
       <% end %>
     </div>
   </div>
