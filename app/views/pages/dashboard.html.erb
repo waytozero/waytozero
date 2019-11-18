@@ -150,8 +150,10 @@
             <div class="row">
               <%= cl_image_tag category.photo, height: 60, width: 60, crop: :fill %>
             </div>
-            <br>
-            <p><%="#{category.name}"%></p>
+              <br>
+              <p><%="#{category.name}"%></p>
+              <p><%= category.challenges.where(size: true).count %> small challenge(s) left</p>
+              <p><%= category.challenges.where(size: false).count %> big challenge(s) left</p>
           </div>
         <% end %>
       <% end %>

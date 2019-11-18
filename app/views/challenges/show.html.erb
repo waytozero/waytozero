@@ -1,24 +1,31 @@
-<%= @challenge.name %>
-<br>
-<%= @challenge.description %>
-<br>
-<%= @challenge.intensity %>
-<%= @challenge.map %>
-<br>
-<%= @challenge.gender_specific %>
-<br>
-<%= @challenge.plastic %> grams of plastic spared
-<br>
-<%= @challenge.size %>
-<br>
-<% if @challenge.video_link %>
-<%= @challenge.video_link.html_safe %>
-<% end %>
-<br>
-
-<%= link_to "add this challenge to my weekly challenges", weekly_challenges_path(@challenge), method: :post %>
-
-<%= link_to "go to all challenges categories", categories_path %>
-
+<div class="col-12">
+  <div class="col-6">
+    <div class="card card-challenge-show">
+        <h1><%= @challenge.name %></h1>
+        <p><%= @challenge.description %></p>
+        <p>Save up to <%= @challenge.plastic %> kg of plastic !!!</p>
+          <%= link_to "ADD to my weekly challenges", weekly_challenges_path(@challenge), method: :post, class: "btn button-show" %>
+    </div>
+  </div>
+  <div class="col-3">
+    <div class="card card-challenge-show">
+        <% if @challenge.video_link %>
+          <%= @challenge.video_link.html_safe %>
+        <% else %>
+          <%= "There is no video yet for this challenge" %>
+        <% end %>
+    </div>
+  </div>
+  <div class="col-3">
+    <div class="card card-challenge-show">
+      <% if @challenge.map %>
+      <%= "display the map with partners later" %>
+      <% else %>
+      <%= "There is no map with partners yet for this challenge" %>
+      <% end %>
+    </div>
+    <%= link_to "Go to all challenges categories", categories_path %>
+  </div>
+</div>
 
 
