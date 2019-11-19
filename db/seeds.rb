@@ -27,24 +27,35 @@ Category.create!(name: 'Social life', photo: 'https://res.cloudinary.com/dr3uy79
   )
 end
 
+
+AchievementNumber.create!(
+  name: "You did 1 challenges! Congrats!!",
+  number: 1,
+  photo: "https://res.cloudinary.com/dr3uy796x/image/upload/v1574156562/badges_numbers/badgelevel1_e5c6nc.png"
+  )
+
 AchievementNumber.create!(
   name: "You did 5 challenges! Congrats!!",
-  number: 5
+  number: 5,
+  photo: "https://res.cloudinary.com/dr3uy796x/image/upload/v1574156562/badges_numbers/badgelevel5_iteh7w.png"
   )
 
 AchievementNumber.create!(
   name: "You did 10 challenges! Congrats!!",
-  number: 10
+  number: 10,
+  photo: "https://res.cloudinary.com/dr3uy796x/image/upload/v1574156562/badges_numbers/badgelevel10_x4wgeb.png"
   )
 
 AchievementNumber.create!(
   name: "You did 20 challenges! Congrats!!",
-  number: 20
+  number: 20,
+  photo: "https://res.cloudinary.com/dr3uy796x/image/upload/v1574156562/badges_numbers/badgelevel20_yocyq5.png"
   )
 
 AchievementNumber.create!(
   name: "You did 30 challenges! Congrats!!",
-  number: 30
+  number: 30,
+  photo: "https://res.cloudinary.com/dr3uy796x/image/upload/v1574156562/badges_numbers/badgelevel30_cg96z1.png"
   )
 
 Category.all.each do |category|
