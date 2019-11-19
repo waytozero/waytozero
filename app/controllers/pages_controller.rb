@@ -15,6 +15,12 @@ class PagesController < ApplicationController
     @successes = Success.where(user: @user)
   end
 
+  def journal
+    @user = current_user
+    @challenges = WeeklyChallenge.where(user: @user)
+    @successes = Success.where(user: @user)
+  end
+
   private
 
   def tree_counter

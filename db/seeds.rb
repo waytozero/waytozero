@@ -6,6 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+##=================================================================##
+## Categories ##
+##=================================================================##
+
 Category.create!(name: 'Hygiene & healthcare', photo: 'https://res.cloudinary.com/dr3uy796x/image/upload/v1573823091/categories/cleaning_iz2fmz.svg')
 Category.create!(name: 'Kitchen', photo: 'https://res.cloudinary.com/dr3uy796x/image/upload/v1573823091/categories/kitchen_zigzli.svg')
 Category.create!(name: 'Home maintenance', photo: 'https://res.cloudinary.com/dr3uy796x/image/upload/v1573824264/categories/hammer_zsryt4.svg')
@@ -14,10 +18,37 @@ Category.create!(name: 'Apparel', photo: 'https://res.cloudinary.com/dr3uy796x/i
 Category.create!(name: 'Work', photo: 'https://res.cloudinary.com/dr3uy796x/image/upload/v1573823092/categories/suitcase_ijpqps.svg')
 Category.create!(name: 'Social life', photo: 'https://res.cloudinary.com/dr3uy796x/image/upload/v1574076592/categories/social_life_nofvqe.svg')
 
+
+##=================================================================##
+## Random users ##
+##=================================================================##
+
+15.times do
+  user = User.create!(
+    email: Faker::Internet.email,
+    username: Faker::Internet.username,
+    password: 123456,
+    xp: (0..1000).to_a.sample,
+    level: (0..50).to_a.sample,
+    gender: (0..2).to_a.sample,
+    address: Faker::Address.full_address,
+    tree_count: (0..10).to_a.sample
+  )
+end
+
+##=================================================================##
+## Achievements ##
+##=================================================================##
+
 AchievementNumber.create!(
   name: "You did 1 challenges! Congrats!!",
   number: 1,
   photo: "https://res.cloudinary.com/dr3uy796x/image/upload/v1574156562/badges_numbers/badgelevel1_e5c6nc.png"
+  )
+
+AchievementNumber.create!(
+  name: "You did 1 challenge! Congrats!!",
+  number: 1
   )
 
 AchievementNumber.create!(
@@ -53,7 +84,6 @@ end
 
 AchievementCategory.all.each do |achievementcat|
   case achievementcat.category.name
-
   when 'Hygiene & healthcare'
     achievementcat.photo = 'https://res.cloudinary.com/dr3uy796x/image/upload/v1574077938/badges_categories/badge_hygiene_un4sr7.png'
   when 'Kitchen'
@@ -72,6 +102,10 @@ AchievementCategory.all.each do |achievementcat|
   achievementcat.save!
 end
 
+
+##=================================================================##
+## Paolo challenges ##
+##=================================================================##
 challenge = Challenge.new(
    name: "Body wash",
    description: "easy challenge = free XP for you! Go to a nearby shop and buy your first eco soap! You won’t be disappointed we promise you!",
@@ -304,6 +338,77 @@ challenge.save
 #  )
 # challenge.category = Category.all.sample
 # challenge.save
+
+
+##=================================================================##
+## Journal of a primary user ##
+##=================================================================##
+
+primary_user = User.create!(
+    email: 'antoine.braconnier@hotmail.com',
+    username: 'Antoine',
+    password: '123456',
+    xp: 20,
+    level: 7,
+    gender: 2,
+    address: 'Brussels',
+    tree_count: 8
+)
+
+big_challenges = Challenge.where(size: true)
+small_challenges = Challenge.where(size: false)
+
+WeeklyChallenge.create!(
+  status_challenge: false,
+  challenge: big_challenges.sample,
+  user: primary_user,
+  week: Date.today.cweek,
+  year: 2019
+)
+
+2.times do WeeklyChallenge.create!(
+  status_challenge: false,
+  challenge: small_challenges.sample,
+  user: primary_user,
+  week: Date.today.cweek,
+  year: 2019
+)
+end
+
+15.times do WeeklyChallenge.create!(
+  status_challenge: true,
+  challenge: small_challenges.sample,
+  user: primary_user,
+  week: (35..46).to_a.sample,
+  year: 2019
+  )
+end
+
+7.times do WeeklyChallenge.create!(
+  status_challenge: true,
+  challenge: big_challenges.sample,
+  user: primary_user,
+  week: (35..46).to_a.sample,
+  year: 2019
+  )
+end
+
+
+5.times do Success.create!(
+  user: primary_user,
+  achievement: AchievementNumber.all.sample,
+  week: (35..46).to_a.sample,
+  year: 2019
+  )
+end
+
+5.times do Success.create!(
+  user: primary_user,
+  achievement: AchievementCategory.all.sample,
+  week: (35..46).to_a.sample,
+  year: 2019
+  )
+end
 
 # challenge = Challenge.new(
 #    name: '',

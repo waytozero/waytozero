@@ -24,12 +24,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
       small_challenge.week = 1
       small_challenge.save!
     end
-    array = params[:question].values.map { |string| string.to_i }
-    number = array.sum
-    if number > 18
+    array = params[:question].values.map { |string| string.to_i } if params[:question]
+    number = array.sum if array
+    if number && number > 18
       current_user.update(level: 10)
       flash[:alert] = "Congrats, you're already a super zero! You start at level 10."
-    elsif number <= 18 && number > 9
+    elsif number && number <= 18 && number > 9
       current_user.update(level: 5)
       flash[:alert] = "Congrats, you're already a super zero! You start at level 5."
     end
@@ -76,9 +76,6 @@ private
   #def after_sign_up_path_for(resource)
   # redirect_to dashboard_path
   #end
-  def after_sign_up_path_for(resource)
-    dashboard_path
-  end
 
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)

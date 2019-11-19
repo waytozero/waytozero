@@ -1,0 +1,31 @@
+<h1 style="text-align: center">Your journal</h3>
+
+<div class="timeline">
+    <div class="timeline__wrap">
+        <div class="timeline__items">
+          <% weeks = (30..Date.today.cweek).to_a.reverse %>
+          <% weeks.each do |week|%>
+          <div class="timeline__item">
+                <div class="timeline__content">
+                  <p> Week number <%= week %> </p>
+                  <% if @challenges.where(week: week).any? %>
+                    <h3><%= 'Challenges done' %></h3>
+                    <% @challenges.where(week: week).each do |challenge| %>
+                      <p> <%= challenge.challenge.name %> </p>
+                    <% end %>
+                  <% end %>
+                  <% if @successes.where(week: week).any? %>
+                    <h3><%= 'Achievements done' %></h3>
+                    <% @successes.where(week: week).each do |success| %>
+                      <p> <%= success.achievement.name %> </p>
+                    <% end %>
+                  <% end %>
+                </div>
+            </div>
+          <% end %>
+        </div>
+    </div>
+</div>
+
+
+
