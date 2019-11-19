@@ -65,6 +65,11 @@ AchievementNumber.create!(
   )
 
 AchievementNumber.create!(
+  name: "You did 1 challenge! Congrats!!",
+  number: 1
+  )
+
+AchievementNumber.create!(
   name: "You did 5 challenges! Congrats!!",
   number: 5,
   photo: "https://res.cloudinary.com/dr3uy796x/image/upload/v1574156562/badges_numbers/badgelevel5_iteh7w.png"

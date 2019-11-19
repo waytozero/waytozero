@@ -30,18 +30,31 @@ class WeeklyChallengesController < ApplicationController
     @weekly_challenge.week = Date.today.cweek
     @weekly_challenge.year = Time.now.year
     @weekly_challenge.save
-    @weekly_challenge.challenge.size == true ? xp = 50 : xp = 25
-    @user.xp += xp
+    @xp = 0
+    @weekly_challenge.challenge.size == true ? @xp = 50 : @xp = 25
+    @user.xp += @xp
     @user.level += 1 while level_up?
     @user.save
     achievement_number?
     achievement_category?
+    @max_xp = xp_counter
+    # redirect_to dashboard_path
   end
 
   private
 
   def weekly_challenges_params
     params.require(:weekly_challenge).permit(:status_challenge, :week, :year)
+  end
+
+  def xp_counter
+    if @user.level.zero?
+      25
+    elsif @user.level <= 9
+      50
+    else
+      @user.level * 10
+    end
   end
 
   def level_up?

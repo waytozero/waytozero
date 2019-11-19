@@ -1,17 +1,82 @@
-var levelNumber = document.querySelector("#level_info h2")
-levelNumber.innerText = 'Level: <%= @user.level %>'
+// 1. acceder au niveau de l'elf !
+let formerLevelBox = document.querySelector("#level")
+let formerLevel = parseInt(formerLevelBox.innerText)
 
-var xpCurrent = document.querySelector("#level_info .progress .progress-bar").attributes['aria-valuenow'].value
-xpCurrent = '<%= @user.xp %>'
+// Total point pour former level
+let xpFormerMax = +document.querySelector("#level_info .progress .progress-bar").attributes['aria-valuemax'].value
 
-var xpMax = document.querySelector("#level_info .progress .progress-bar").attributes['aria-valuemax'].value
-xpMax.innerText = '<%= @max_xp %>'
+// total de points necessaire pour completer le current level
+let xpCurrentMax = parseInt('<%= @max_xp %>')
+
+//2. XP du challenge qui vient d'etre mark as done
+let xpChallenge = parseInt('<%= @xp %>')
+
+
+let xpCurrent = parseInt('<%= @user.xp %>')
+let levelCurrent = parseInt('<%= @user.level %>')
+let xpFormer = xpCurrent - xpChallenge
+
 
 var xpCurrentText = document.querySelector("#level_info .progress .progress-bar")
-xpCurrentText.innerText = `${xpCurrent}/${xpMax} XP`
+xpCurrentText.innerText = `${xpCurrent}/${xpCurrentMax} XP`
 
-var Proportion = parseInt((xpCurrent/xpMax)*100)
-document.querySelector("#level_info .progress .progress-bar").style.width =  `${Proportion}%`
+console.log({xpFormer}, {xpChallenge}, {xpFormerMax}, {xpCurrent})
 
-var xpLeft = (xpMax-xpCurrent)
-document.querySelector("#level_info p strong").innerText = `${xpLeft}`
+var proportion = parseInt((xpCurrent/xpCurrentMax)*100);
+
+var progressBar = document.querySelector("#level_info .progress .progress-bar");
+let leftPoints = parseInt('<%= @max_xp - @user.xp %>')
+let xpLeft = document.querySelector('#xp-left')
+xpLeft.innerText = leftPoints
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+var animateProgressBar = async() => {
+  await sleep(500)
+  progressBar.classList.add('notransition');
+  progressBar.style.width = '0%';
+  await sleep(200)
+  progressBar.classList.remove('notransition');
+  progressBar.style.width = `${proportion}%`;
+  progressBar.removeEventListener('transitionend', animateProgressBar);
+}
+
+if ((xpFormer < 0)) {
+
+  progressBar.style.width = '100%';
+  formerLevelBox.innerText = '<%= @user.level %>';
+  progressBar.addEventListener('transitionend', animateProgressBar);
+  console.log({xpFormer}, {xpChallenge}, {xpFormerMax}, {xpCurrent})
+
+
+} else {
+
+  progressBar.style.width =  `${proportion}%`;
+  console.log({xpFormer}, {xpChallenge}, {xpFormerMax}, {xpCurrent})
+
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//var xpLeft = (xpMax-xpCurrent)
+//document.querySelector("#level_info p strong").innerText = `${xpLeft}`
