@@ -54,33 +54,6 @@ Category.all.each do |category|
   )
 end
 
-# 50.times do
-#   challenge = Challenge.new(
-#   name: Faker::Lorem.sentence,
-#   description: Faker::Lorem.paragraph(sentence_count: (5..10).to_a.sample),
-#   intensity: [0, 1, 2].sample,
-#   map: [true, false].sample,
-#   gender_specific: [0, 1, 2].sample,
-#   plastic: (10..50).to_a.sample,
-#   size: false
-# )
-# challenge.category = Category.all.sample
-# challenge.save
-# end
-
-# 20.times do
-#   challenge = Challenge.new(
-#   name: Faker::Lorem.sentence,
-#   description: Faker::Lorem.paragraph(sentence_count: (5..10).to_a.sample),
-#   intensity: [0, 1, 2].sample,
-#   map: [true, false].sample,
-#   gender_specific: [0, 1, 2].sample,
-#   plastic: (10..50).to_a.sample,
-#   size: true
-# )
-# challenge.category = Category.all.sample
-# challenge.save
-# end
 
 challenge = Challenge.new(
    name: "Body wash",
@@ -90,7 +63,8 @@ challenge = Challenge.new(
    map: false,
    gender_specific: 0,
    plastic: 400,
-   size: false
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/QMAo9O40zp0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
  )
 challenge.category = Category.all.sample
 challenge.save
@@ -118,7 +92,8 @@ challenge = Challenge.new(
    map: false,
    gender_specific: 0,
    plastic: 100,
-   size: false
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/QyKnnioHtWw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
  )
 challenge.category = Category.all.sample
 challenge.save
@@ -138,7 +113,8 @@ challenge = Challenge.new(
    map: false,
    gender_specific:  0,
    plastic:  1000,
-   size: true
+   size: true,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/q8Pybboa3Lg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
  )
 challenge.category = Category.all.sample
 challenge.save
@@ -152,7 +128,8 @@ challenge = Challenge.new(
    map: false,
    gender_specific: 0,
    plastic: 70,
-   size: true
+   size: true,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/_CAim_uGjcI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
  )
 challenge.category = Category.all.sample
 challenge.save
@@ -176,7 +153,10 @@ challenge = Challenge.new(
    map: false,
    gender_specific: 0,
    plastic: 0,
-   size: true
+   size: true,
+   video_link: '
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5J3cw4biWWo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+'
    )
 challenge.category = Category.all.sample
 challenge.save
@@ -189,7 +169,8 @@ challenge = Challenge.new(
    map: false,
    gender_specific: 0,
    plastic: 0,
-   size: true
+   size: true,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/88daKoFHepc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
  )
 challenge.category = Category.all.sample
 challenge.save
@@ -203,7 +184,8 @@ challenge = Challenge.new(
    map: false,
    gender_specific: 0,
    plastic: 100,
-   size: true
+   size: true,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/3ClRZiwHptA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
    )
 challenge.category = Category.all.sample
 challenge.save
@@ -212,12 +194,13 @@ challenge = Challenge.new(
    name: "Bring your own mug",
    description: "STOP going to the coffee shop nearby and using a different cup every day. In today’s challenges you have to buy your own mug that you’ll use every day so choose it well it will become your new daily best friend.
    Challenge: go to your coffee shop and ask them to serve you your coffee in your mug and nowhere else, ",
-   short_description: "",
+   short_description: "STOP going to the coffee shop nearby and using a different cup every day, take your own",
    intensity: 2,
    map: false,
    gender_specific: 0,
    plastic: 300,
-   size: false
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/iQZmK9nRilk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
    )
 challenge.category = Category.all.sample
 challenge.save
@@ -230,7 +213,8 @@ challenge = Challenge.new(
    map: false,
    gender_specific: 0,
    plastic: 500,
-   size: false
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
  )
 challenge.category = Category.all.sample
 challenge.save
@@ -240,34 +224,81 @@ challenge = Challenge.new(
    description: "We all know what plastic Earbuds do to our oceans, it is time for you to go to the nearest pharmacy and buy your first and last stainless steel pick! ",
    short_description: "We all know what plastic Earbuds do to our oceans, it is time for you to go to the nearest pharmacy and buy your first and last stainless steel pick!",
    intensity: 1,
-   map: false ,
+   map: false,
    gender_specific: 0,
    plastic: 400,
-   size: false
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/bRIv3cLAO4I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.category = Category.all.sample
+challenge.save
+
+challenge = Challenge.new(
+   name: '',
+   description:'',
+   short_description: '',
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   size: false,
+   video_link: ''
+ )
+challenge.category = Category.all.sample
+challenge.save
+
+challenge = Challenge.new(
+   name: '',
+   description:'',
+   short_description: '',
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   size: false,
+   video_link: ''
+ )
+challenge.category = Category.all.sample
+challenge.save
+
+challenge = Challenge.new(
+   name: '',
+   description:'',
+   short_description: '',
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   size: false,
+   video_link: ''
+ )
+challenge.category = Category.all.sample
+challenge.save
+
+challenge = Challenge.new(
+   name: '',
+   description:'',
+   short_description: '',
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   size: false,
+   video_link: ''
  )
 challenge.category = Category.all.sample
 challenge.save
 
 # challenge = Challenge.new(
-
-#  )
-# challenge.category = Category.all.sample
-# challenge.save
-
-# challenge = Challenge.new(
-
-#  )
-# challenge.category = Category.all.sample
-# challenge.save
-
-# challenge = Challenge.new(
-
-#  )
-# challenge.category = Category.all.sample
-# challenge.save
-
-# challenge = Challenge.new(
-
+#    name: '',
+#    description:'',
+#    short_description: '',
+#    intensity: 1,
+#    map: false,
+#    gender_specific: 0,
+#    plastic: 500,
+#    size: false,
+#    video_link: ''
 #  )
 # challenge.category = Category.all.sample
 # challenge.save
