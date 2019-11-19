@@ -1,6 +1,12 @@
 <%= link_to "Go back to all challenges categories", categories_path %>
 
-
+<div class="col-12">
+  <div class="col-9">
+    <div class="card card-challenge-show d-flex justify-content-center">
+      <h1><%= @category.name %> related challenges</h1>
+    </div>
+  </div>
+</div>
 <div class="col-12">
   <div class="col-9">
     <% if @small_challenges_displayed.empty? %>
