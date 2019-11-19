@@ -111,7 +111,7 @@ challenge = Challenge.new(
    map: false,
    gender_specific: 0,
    plastic: 400,
-   size: false
+   size: false,
  )
 challenge.category = Category.all.sample
 challenge.save
