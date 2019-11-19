@@ -62,7 +62,7 @@ class WeeklyChallengesController < ApplicationController
   def achievement_number?
     size = WeeklyChallenge.where(user: @user, status_challenge: true).size
     case size
-    when 5, 10, 20, 30
+    when 1, 5, 10, 20, 30
       new_successnumber(size)
     end
   end

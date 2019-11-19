@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_18_141708) do
+
+ActiveRecord::Schema.define(version: 2019_11_19_091512)
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +21,7 @@ ActiveRecord::Schema.define(version: 2019_11_18_141708) do
     t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo"
     t.index ["category_id"], name: "index_achievement_categories_on_category_id"
   end
 
@@ -28,6 +30,7 @@ ActiveRecord::Schema.define(version: 2019_11_18_141708) do
     t.integer "number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -49,6 +52,8 @@ ActiveRecord::Schema.define(version: 2019_11_18_141708) do
     t.datetime "updated_at", null: false
     t.bigint "category_id"
     t.string "short_description"
+    t.string "video_link"
+    t.string "photo"
     t.index ["category_id"], name: "index_challenges_on_category_id"
   end
 
