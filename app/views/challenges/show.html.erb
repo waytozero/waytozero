@@ -4,6 +4,7 @@
     <div class="col-12">
       <div class="card card-challenge-show">
           <h1><%= @challenge.name %></h1>
+          <br>
           <p><%= @challenge.description.html_safe %></p>
           <p>Save up to <%= @challenge.plastic %> kg of plastic !!!</p>
             <% if @challenge.video_link %>

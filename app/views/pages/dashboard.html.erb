@@ -13,8 +13,8 @@
           </div>
           <div class="col-8">
             <div id="level_info">
-            <span>Level:</span>
-            <span id='level'><%= @user.level %></span>
+            <h2><span>Level:</span>
+            <span id='level'><%= @user.level %></span></h2>
               <div class="progress">
                 <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="<%= @user.xp %>" aria-valuemin="0" aria-valuemax="<%= @max_xp %>" style="width: <%= ((@user.xp.to_f / @max_xp.to_f)*100).to_i %>%">
                   <%= @user.xp %>/<%= @max_xp %> XP
@@ -57,7 +57,6 @@
     <div class="col-7">
       <div class="card card-dashboard">
         <h2>Challenges</h2>
-        <p><%= link_to "My journal", journal_path %></p>
         <div class="challenges">
           <% if @weekly_challenges.empty? %>
             <p>prout</p>
