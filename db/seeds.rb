@@ -18,23 +18,6 @@ Category.create!(name: 'Apparel', photo: 'https://res.cloudinary.com/dr3uy796x/i
 Category.create!(name: 'Work', photo: 'https://res.cloudinary.com/dr3uy796x/image/upload/v1573823092/categories/suitcase_ijpqps.svg')
 Category.create!(name: 'Social life', photo: 'https://res.cloudinary.com/dr3uy796x/image/upload/v1574076592/categories/social_life_nofvqe.svg')
 
-##=================================================================##
-## Random challenges ##
-##=================================================================##
-
-50.times do
-  challenge = Challenge.new(
-  name: Faker::Lorem.sentence,
-  description: Faker::Lorem.paragraph(sentence_count: (5..10).to_a.sample),
-  intensity: [0, 1, 2].sample,
-  map: [true, false].sample,
-  gender_specific: [0, 1, 2].sample,
-  plastic: (10..50).to_a.sample,
-  size: false
-)
-challenge.category = Category.all.sample
-challenge.save
-end
 
 ##=================================================================##
 ## Random users ##
@@ -57,11 +40,15 @@ end
 ## Achievements ##
 ##=================================================================##
 
-
 AchievementNumber.create!(
   name: "You did 1 challenges! Congrats!!",
   number: 1,
   photo: "https://res.cloudinary.com/dr3uy796x/image/upload/v1574156562/badges_numbers/badgelevel1_e5c6nc.png"
+  )
+
+AchievementNumber.create!(
+  name: "You did 1 challenge! Congrats!!",
+  number: 1
   )
 
 AchievementNumber.create!(
@@ -115,38 +102,10 @@ AchievementCategory.all.each do |achievementcat|
   achievementcat.save!
 end
 
-# 50.times do
-#   challenge = Challenge.new(
-#   name: Faker::Lorem.sentence,
-#   description: Faker::Lorem.paragraph(sentence_count: (5..10).to_a.sample),
-#   intensity: [0, 1, 2].sample,
-#   map: [true, false].sample,
-#   gender_specific: [0, 1, 2].sample,
-#   plastic: (10..50).to_a.sample,
-#   size: false
-# )
-# challenge.category = Category.all.sample
-# challenge.save
-# end
-
-# 20.times do
-#   challenge = Challenge.new(
-#   name: Faker::Lorem.sentence,
-#   description: Faker::Lorem.paragraph(sentence_count: (5..10).to_a.sample),
-#   intensity: [0, 1, 2].sample,
-#   map: [true, false].sample,
-#   gender_specific: [0, 1, 2].sample,
-#   plastic: (10..50).to_a.sample,
-#   size: true
-# )
-# challenge.category = Category.all.sample
-# challenge.save
-# end
 
 ##=================================================================##
 ## Paolo challenges ##
 ##=================================================================##
-
 challenge = Challenge.new(
    name: "Body wash",
    description: "easy challenge = free XP for you! Go to a nearby shop and buy your first eco soap! You won’t be disappointed we promise you!",
@@ -157,8 +116,7 @@ challenge = Challenge.new(
    plastic: 400,
    size: false,
    video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/QMAo9O40zp0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
- )
-
+   )
 challenge.category = Category.all.sample
 challenge.save
 
@@ -194,13 +152,13 @@ challenge.save
 challenge = Challenge.new(
    name: "Zero waste BBQ",
    description: "Let’s be honest. It’s almost impossible to throw a totally zero waste BBQ or party. But hosting one that’s (nearly) zero waste is actually pretty easy.
-    For this challenge, we will give you a few tips to make this change happen.
-    1. Set yourself up for success by letting people know that your goal is a zero waste party. Explain what that is and give some clear guidelines. Explicitly give your guests guidance, such as ‘Recyclables OK,’ or ‘Please consider bringing your potluck dish in a washable container with a lid rather than covering it with plastic wrap.’
-    2. Ask people to bring their own utensils and cups for the party, you can suggest them camping tray for example.
-    3. Give your guests clear guidance on what to do with the various dishes, cups, utensils, recyclables and food waste. You’ll be pleasantly surprised by how many paper plate diehards just roll with it.
-    4. Hide the trashcan! If they can’t find it, they’ll look for an alternative and use the bus bins and compost! With this sly eco trick, the amount of captured and compostable food waste increases dramatically. Worst case scenario, if they can’t figure out where to throw stuff away, they’ll ask, and you or someone else will redirect them.
-    5. Build your stash of reusable party-ware over time! If you throw a lot of parties and you have the storage space, it’s worth investing in enough dishes, glasses and utensils for your parties. It’s completely ok to use and (re-use).
-    Good luck with this challenges, if it’s too cold to throw a BBQ party, get the tip 5 ready during the week and you can consider your challenges as done ",
+    For this challenge, we will give you a few tips to make this change happen.<br>
+    <br>1. Set yourself up for success by letting people know that your goal is a zero waste party. Explain what that is and give some clear guidelines. Explicitly give your guests guidance, such as ‘Recyclables OK,’ or ‘Please consider bringing your potluck dish in a washable container with a lid rather than covering it with plastic wrap.’
+    <br>2. Ask people to bring their own utensils and cups for the party, you can suggest them camping tray for example.
+    <br>3. Give your guests clear guidance on what to do with the various dishes, cups, utensils, recyclables and food waste. You’ll be pleasantly surprised by how many paper plate diehards just roll with it.
+    <br>4. Hide the trashcan! If they can’t find it, they’ll look for an alternative and use the bus bins and compost! With this sly eco trick, the amount of captured and compostable food waste increases dramatically. Worst case scenario, if they can’t figure out where to throw stuff away, they’ll ask, and you or someone else will redirect them.
+    <br>5. Build your stash of reusable party-ware over time! If you throw a lot of parties and you have the storage space, it’s worth investing in enough dishes, glasses and utensils for your parties. It’s completely ok to use and (re-use).<br>
+    Good luck with this challenges, if it’s too cold to throw a BBQ party, get the tip 5 ready during the week and you can consider your challenges as done",
    short_description: "Let’s be honest. It’s almost impossible to throw a totally zero waste BBQ or party. But hosting one that’s (nearly) zero waste is actually pretty easy. find a step by step guide in the description",
    intensity: 3,
    map: false,
@@ -211,7 +169,6 @@ challenge = Challenge.new(
  )
 challenge.category = Category.all.sample
 challenge.save
-
 
 challenge = Challenge.new(
    name: "No to straws",
@@ -229,16 +186,16 @@ challenge.save
 
 challenge = Challenge.new(
    name: "Save the water",
-   description: "little fact: Only 1% of all the earths water is actually drinkable. We're so used to turning on the faucet, we forget it isn't infinite. All of us taking small measures to help reduce water, adds up to big impact! Save water! I've compiled a list of my top 10 easiest ways to save water without even trying ! Turn off the faucet: Whether you're washing you're hands, face, or brushing your teeth. Turn off the faucet while its not in direct use.
-    1.  Keep it full: If you're doing a load of laundry or dishes, make sure the load is full! Using a dishwasher uses less water than hand washing. If you don't have a dishwasher, (like me) plug the sink. Fill it with a little water. Wash all of the dishes in the tub, and then rinse them.
-    2.  Use a bowl: When washing produce, do it in a bowl or a tub, so you don't have to keep the water running.
-    3.  Catch the ice cubes: Most of the time my dog gets to them first. But, if Nala isn't around I like to place them in my plants.
-    4.  Keep a bucket in the shower: We keep a bucket in the shower to catch water. We use it to water the house plants. Or I'll hand wash my delicates in the bucket and take them out to dry.
-    5.  Water in the morning: If you have a lawn, don't water it every day. And, when you do water it, make it count. Do it early in the morning when it's not windy. You'll have less evaporation occur.
-    6.  Mellow: We're big believers in yellow let it mellow.
-    7.  Break out the real plates: People often advocate for disposables; because, washing dishes wastes water. Which couldn't be more false. It takes 8 gallons of water to make one paper plate and 3.4 liters of water to make one half liter of water. Do you think it would take you 9 gallons of water to was a cup and a plate?
-    8.  Fix your leaks: Give your pipes a good tightening!
-    9.  Upgrade: Low flow toilets, low flow shower heads, gray water tanks, and changing up your landscape, there is so much you can do to make your home more efficient when it comes to water.
+   description: "little fact: Only 1% of all the earths water is actually drinkable. We're so used to turning on the faucet, we forget it isn't infinite. All of us taking small measures to help reduce water, adds up to big impact! Save water! I've compiled a list of my top 10 easiest ways to save water without even trying ! Turn off the faucet: Whether you're washing you're hands, face, or brushing your teeth. Turn off the faucet while its not in direct use.<br>
+    <br>1.  Keep it full: If you're doing a load of laundry or dishes, make sure the load is full! Using a dishwasher uses less water than hand washing. If you don't have a dishwasher, (like me) plug the sink. Fill it with a little water. Wash all of the dishes in the tub, and then rinse them.<br>
+    <br>2.  Use a bowl: When washing produce, do it in a bowl or a tub, so you don't have to keep the water running.<br>
+    <br>3.  Catch the ice cubes: Most of the time my dog gets to them first. But, if Nala isn't around I like to place them in my plants.<br>
+    <br>4.  Keep a bucket in the shower: We keep a bucket in the shower to catch water. We use it to water the house plants. Or I'll hand wash my delicates in the bucket and take them out to dry.<br>
+    <br>5.  Water in the morning: If you have a lawn, don't water it every day. And, when you do water it, make it count. Do it early in the morning when it's not windy. You'll have less evaporation occur.<br>
+    <br>6.  Mellow: We're big believers in yellow let it mellow.<br>
+    <br>7.  Break out the real plates: People often advocate for disposables; because, washing dishes wastes water. Which couldn't be more false. It takes 8 gallons of water to make one paper plate and 3.4 liters of water to make one half liter of water. Do you think it would take you 9 gallons of water to was a cup and a plate?<br>
+    <br>8.  Fix your leaks: Give your pipes a good tightening!<br>
+    <br>9.  Upgrade: Low flow toilets, low flow shower heads, gray water tanks, and changing up your landscape, there is so much you can do to make your home more efficient when it comes to water.<br>
     Good luck for this challenge !
     ",
    short_description: "Only 1% of all the earths water is actually drinkable. We're so used to turning on the faucet, we forget it isn't infinite. All of us taking small measures to help reduce water, adds up to big impact! Save water!",
@@ -326,61 +283,61 @@ challenge = Challenge.new(
 challenge.category = Category.all.sample
 challenge.save
 
-challenge = Challenge.new(
-   name: '',
-   description:'',
-   short_description: '',
-   intensity: 1,
-   map: false,
-   gender_specific: 0,
-   plastic: 500,
-   size: false,
-   video_link: ''
- )
-challenge.category = Category.all.sample
-challenge.save
+# challenge = Challenge.new(
+#    name: '',
+#    description:'',
+#    short_description: '',
+#    intensity: 1,
+#    map: false,
+#    gender_specific: 0,
+#    plastic: 500,
+#    size: false,
+#    video_link: ''
+#  )
+# challenge.category = Category.all.sample
+# challenge.save
 
-challenge = Challenge.new(
-   name: '',
-   description:'',
-   short_description: '',
-   intensity: 1,
-   map: false,
-   gender_specific: 0,
-   plastic: 500,
-   size: false,
-   video_link: ''
- )
-challenge.category = Category.all.sample
-challenge.save
+# challenge = Challenge.new(
+#    name: '',
+#    description:'',
+#    short_description: '',
+#    intensity: 1,
+#    map: false,
+#    gender_specific: 0,
+#    plastic: 500,
+#    size: false,
+#    video_link: ''
+#  )
+# challenge.category = Category.all.sample
+# challenge.save
 
-challenge = Challenge.new(
-   name: '',
-   description:'',
-   short_description: '',
-   intensity: 1,
-   map: false,
-   gender_specific: 0,
-   plastic: 500,
-   size: false,
-   video_link: ''
- )
-challenge.category = Category.all.sample
-challenge.save
+# challenge = Challenge.new(
+#    name: '',
+#    description:'',
+#    short_description: '',
+#    intensity: 1,
+#    map: false,
+#    gender_specific: 0,
+#    plastic: 500,
+#    size: false,
+#    video_link: ''
+#  )
+# challenge.category = Category.all.sample
+# challenge.save
 
-challenge = Challenge.new(
-   name: '',
-   description:'',
-   short_description: '',
-   intensity: 1,
-   map: false,
-   gender_specific: 0,
-   plastic: 500,
-   size: false,
-   video_link: ''
- )
-challenge.category = Category.all.sample
-challenge.save
+# challenge = Challenge.new(
+#    name: '',
+#    description:'',
+#    short_description: '',
+#    intensity: 1,
+#    map: false,
+#    gender_specific: 0,
+#    plastic: 500,
+#    size: false,
+#    video_link: ''
+#  )
+# challenge.category = Category.all.sample
+# challenge.save
 
 
 ##=================================================================##
