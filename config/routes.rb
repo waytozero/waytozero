@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :challenges, only: [:show, :update]
   get '/dashboard/', to: 'pages#dashboard'
+  get '/thanks/', to: 'pages#thanks'
   get '/journal/', to: 'pages#journal'
 
   resources :weekly_challenges, only: [:create, :update]
