@@ -435,3 +435,5 @@ if (window.jQuery) {
     };
   })(window.jQuery);
 }
+
+export { timeline }
