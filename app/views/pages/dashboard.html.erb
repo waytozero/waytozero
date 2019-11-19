@@ -66,9 +66,9 @@
                     <div class="notification-content">
                       <p><small style="font-size: 1rem;"><%= challenge.challenge.name  %></small></p>
                       <% if challenge.challenge.size == false %>
-                      <p><small style="color: #91a5b9">Experience: <%= "25 xp" %> | Plastic: <%= challenge.challenge.plastic  %> kg</small></p>
+                        <p><small style="color: #91a5b9">Experience: <%= "25 xp" %> | Plastic: <%= challenge.challenge.plastic  %> kg</small></p>
                       <% else %>
-                      <p><small style="color: #91a5b9">Experience: <%= "50 xp" %> | Plastic: <%= challenge.challenge.plastic  %> kg</small></p>
+                        <p><small style="color: #91a5b9">Experience: <%= "50 xp" %> | Plastic: <%= challenge.challenge.plastic  %> kg</small></p>
                       <% end %>
                       <p><%= challenge.challenge.short_description %></p>
                       <p> <%= link_to "See details", challenge_path(challenge.challenge) %></p>
@@ -85,7 +85,7 @@
               </div>
             <% end %>
           <% end %>
-          <%= link_to "The team", thanks_path %>
+          <%= link_to "Suggest a challenge", suggest_path %>
         </div>
       </div>
     </div>
@@ -154,6 +154,7 @@
       <% end %>
     </div>
   </div>
+  <%= link_to "The team", thanks_path %>
   <% @successes.each do |success| %>
     <p> <%= success.achievement.name %> </p>
     <%= cl_image_tag success.achievement.photo %>
