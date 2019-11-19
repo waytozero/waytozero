@@ -4,8 +4,8 @@ class WeeklyChallengesController < ApplicationController
     @weekly_challenge = WeeklyChallenge.new
     challenge = Challenge.find(params[:format])
     @weekly_challenge.challenge = challenge
-    # @weekly_challenge.week = ?
-    # @weekly_challenge.year = ?
+    @weekly_challenge.week = Date.today.cweek
+    @weekly_challenge.year = Time.now.year
     if params[:done] == "true"
       @weekly_challenge.status_challenge = true
       @user = current_user
@@ -14,7 +14,6 @@ class WeeklyChallengesController < ApplicationController
       @user.xp += xp
       @user.level += 1 while level_up?
       @user.save
-      # check with Antoine br to make sure it is ok
     end
 
     @weekly_challenge.user = current_user
@@ -28,6 +27,8 @@ class WeeklyChallengesController < ApplicationController
     @weekly_challenge = WeeklyChallenge.find(params[:id])
     @user = current_user
     @weekly_challenge.status_challenge = true
+    @weekly_challenge.week = Date.today.cweek
+    @weekly_challenge.year = Time.now.year
     @weekly_challenge.save
     @xp = 0
     @weekly_challenge.challenge.size == true ? @xp = 50 : @xp = 25
@@ -74,7 +75,7 @@ class WeeklyChallengesController < ApplicationController
   def achievement_number?
     size = WeeklyChallenge.where(user: @user, status_challenge: true).size
     case size
-    when 5, 10, 20, 30
+    when 1, 5, 10, 20, 30
       new_successnumber(size)
     end
   end
@@ -90,7 +91,7 @@ class WeeklyChallengesController < ApplicationController
   end
 
   def new_successnumber(number)
-    Success.create!(user: @user, achievement: AchievementNumber.find_by(number: number))
+    new_success = Success.create!(user: @user, achievement: AchievementNumber.find_by(number: number)) unless Success.find_by(user: @user, achievement: AchievementNumber.find_by(number: number))
   end
 
   def new_successcategory(category)

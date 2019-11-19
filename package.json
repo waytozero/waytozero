@@ -5,12 +5,12 @@
     "@rails/webpacker": "^4.2.0",
     "bootstrap": "^4.3.1",
     "countjs": "^1.2.0",
+    "countup.js": "^2.0.4",
     "jquery": "^3.4.1",
     "lodash": "^4.17.15",
     "popper.js": "^1.16.0"
   },
   "devDependencies": {
-    "countup.js": "^2.0.4",
     "webpack-dev-server": "^3.9.0"
   }
 }

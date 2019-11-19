@@ -6,6 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+##=================================================================##
+## Categories ##
+##=================================================================##
+
 Category.create!(name: 'Hygiene & healthcare', photo: 'https://res.cloudinary.com/dr3uy796x/image/upload/v1573823091/categories/cleaning_iz2fmz.svg')
 Category.create!(name: 'Kitchen', photo: 'https://res.cloudinary.com/dr3uy796x/image/upload/v1573823091/categories/kitchen_zigzli.svg')
 Category.create!(name: 'Home maintenance', photo: 'https://res.cloudinary.com/dr3uy796x/image/upload/v1573824264/categories/hammer_zsryt4.svg')
@@ -13,6 +17,28 @@ Category.create!(name: 'Leasure', photo: 'https://res.cloudinary.com/dr3uy796x/i
 Category.create!(name: 'Apparel', photo: 'https://res.cloudinary.com/dr3uy796x/image/upload/v1573823091/categories/fashion_n0hxhd.svg')
 Category.create!(name: 'Work', photo: 'https://res.cloudinary.com/dr3uy796x/image/upload/v1573823092/categories/suitcase_ijpqps.svg')
 Category.create!(name: 'Social life', photo: 'https://res.cloudinary.com/dr3uy796x/image/upload/v1574076592/categories/social_life_nofvqe.svg')
+
+##=================================================================##
+## Random challenges ##
+##=================================================================##
+
+50.times do
+  challenge = Challenge.new(
+  name: Faker::Lorem.sentence,
+  description: Faker::Lorem.paragraph(sentence_count: (5..10).to_a.sample),
+  intensity: [0, 1, 2].sample,
+  map: [true, false].sample,
+  gender_specific: [0, 1, 2].sample,
+  plastic: (10..50).to_a.sample,
+  size: false
+)
+challenge.category = Category.all.sample
+challenge.save
+end
+
+##=================================================================##
+## Random users ##
+##=================================================================##
 
 15.times do
   user = User.create!(
@@ -27,6 +53,17 @@ Category.create!(name: 'Social life', photo: 'https://res.cloudinary.com/dr3uy79
   )
 end
 
+##=================================================================##
+## Achievements ##
+##=================================================================##
+
+
+AchievementNumber.create!(
+  name: "You did 1 challenges! Congrats!!",
+  number: 1,
+  photo: "https://res.cloudinary.com/dr3uy796x/image/upload/v1574156562/badges_numbers/badgelevel1_e5c6nc.png"
+  )
+
 AchievementNumber.create!(
   name: "You did 1 challenge! Congrats!!",
   number: 1
@@ -34,22 +71,26 @@ AchievementNumber.create!(
 
 AchievementNumber.create!(
   name: "You did 5 challenges! Congrats!!",
-  number: 5
+  number: 5,
+  photo: "https://res.cloudinary.com/dr3uy796x/image/upload/v1574156562/badges_numbers/badgelevel5_iteh7w.png"
   )
 
 AchievementNumber.create!(
   name: "You did 10 challenges! Congrats!!",
-  number: 10
+  number: 10,
+  photo: "https://res.cloudinary.com/dr3uy796x/image/upload/v1574156562/badges_numbers/badgelevel10_x4wgeb.png"
   )
 
 AchievementNumber.create!(
   name: "You did 20 challenges! Congrats!!",
-  number: 20
+  number: 20,
+  photo: "https://res.cloudinary.com/dr3uy796x/image/upload/v1574156562/badges_numbers/badgelevel20_yocyq5.png"
   )
 
 AchievementNumber.create!(
   name: "You did 30 challenges! Congrats!!",
-  number: 30
+  number: 30,
+  photo: "https://res.cloudinary.com/dr3uy796x/image/upload/v1574156562/badges_numbers/badgelevel30_cg96z1.png"
   )
 
 Category.all.each do |category|
@@ -57,6 +98,26 @@ Category.all.each do |category|
     name: "You did all the challenges from the category #{category.name}. Congrats!!",
     category: category
   )
+end
+
+AchievementCategory.all.each do |achievementcat|
+  case achievementcat.category.name
+  when 'Hygiene & healthcare'
+    achievementcat.photo = 'https://res.cloudinary.com/dr3uy796x/image/upload/v1574077938/badges_categories/badge_hygiene_un4sr7.png'
+  when 'Kitchen'
+    achievementcat.photo = 'https://res.cloudinary.com/dr3uy796x/image/upload/v1574077938/badges_categories/badge_kitchen_wjzrja.png'
+  when 'Home maintenance'
+    achievementcat.photo = 'https://res.cloudinary.com/dr3uy796x/image/upload/v1574077938/badges_categories/badge_homemaintenance_vd0e7n.png'
+  when 'Leasure'
+    achievementcat.photo = 'https://res.cloudinary.com/dr3uy796x/image/upload/v1574077938/badges_categories/badge_leisure_e6v71a.png'
+  when 'Apparel'
+    achievementcat.photo = 'https://res.cloudinary.com/dr3uy796x/image/upload/v1574077938/badges_categories/badge_apparel_aeqvip.png'
+  when 'Work'
+    achievementcat.photo = 'https://res.cloudinary.com/dr3uy796x/image/upload/v1574077938/badges_categories/badge_work_zpvmmr.png'
+  when 'Social life'
+    achievementcat.photo = 'https://res.cloudinary.com/dr3uy796x/image/upload/v1574077938/badges_categories/badge_social_life_aq9eec.png'
+  end
+  achievementcat.save!
 end
 
 # 50.times do
@@ -87,6 +148,10 @@ end
 # challenge.save
 # end
 
+##=================================================================##
+## Paolo challenges ##
+##=================================================================##
+
 challenge = Challenge.new(
    name: "Body wash",
    description: "easy challenge = free XP for you! Go to a nearby shop and buy your first eco soap! You won’t be disappointed we promise you!",
@@ -95,8 +160,10 @@ challenge = Challenge.new(
    map: false,
    gender_specific: 0,
    plastic: 400,
-   size: false
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/QMAo9O40zp0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
  )
+
 challenge.category = Category.all.sample
 challenge.save
 
@@ -108,7 +175,8 @@ challenge = Challenge.new(
    map: false,
    gender_specific: 0,
    plastic: 200,
-   size: false
+   size: false,
+   video_link: "<iframe width='560' height='315' src='https://www.youtube.com/embed/E8S0Pz-KskE' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
  )
 challenge.category = Category.all.sample
 challenge.save
@@ -122,7 +190,8 @@ challenge = Challenge.new(
    map: false,
    gender_specific: 0,
    plastic: 100,
-   size: false
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/QyKnnioHtWw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
  )
 challenge.category = Category.all.sample
 challenge.save
@@ -142,7 +211,8 @@ challenge = Challenge.new(
    map: false,
    gender_specific:  0,
    plastic:  1000,
-   size: true
+   size: true,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/q8Pybboa3Lg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
  )
 challenge.category = Category.all.sample
 challenge.save
@@ -156,7 +226,8 @@ challenge = Challenge.new(
    map: false,
    gender_specific: 0,
    plastic: 70,
-   size: true
+   size: true,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/_CAim_uGjcI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
  )
 challenge.category = Category.all.sample
 challenge.save
@@ -180,7 +251,10 @@ challenge = Challenge.new(
    map: false,
    gender_specific: 0,
    plastic: 0,
-   size: true
+   size: true,
+   video_link: '
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5J3cw4biWWo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+'
    )
 challenge.category = Category.all.sample
 challenge.save
@@ -193,7 +267,8 @@ challenge = Challenge.new(
    map: false,
    gender_specific: 0,
    plastic: 0,
-   size: true
+   size: true,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/88daKoFHepc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
  )
 challenge.category = Category.all.sample
 challenge.save
@@ -207,7 +282,8 @@ challenge = Challenge.new(
    map: false,
    gender_specific: 0,
    plastic: 100,
-   size: true
+   size: true,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/3ClRZiwHptA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
    )
 challenge.category = Category.all.sample
 challenge.save
@@ -216,12 +292,13 @@ challenge = Challenge.new(
    name: "Bring your own mug",
    description: "STOP going to the coffee shop nearby and using a different cup every day. In today’s challenges you have to buy your own mug that you’ll use every day so choose it well it will become your new daily best friend.
    Challenge: go to your coffee shop and ask them to serve you your coffee in your mug and nowhere else, ",
-   short_description: "",
+   short_description: "STOP going to the coffee shop nearby and using a different cup every day, take your own",
    intensity: 2,
    map: false,
    gender_specific: 0,
    plastic: 300,
-   size: false
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/iQZmK9nRilk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
    )
 challenge.category = Category.all.sample
 challenge.save
@@ -234,7 +311,8 @@ challenge = Challenge.new(
    map: false,
    gender_specific: 0,
    plastic: 500,
-   size: false
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
  )
 challenge.category = Category.all.sample
 challenge.save
@@ -244,34 +322,152 @@ challenge = Challenge.new(
    description: "We all know what plastic Earbuds do to our oceans, it is time for you to go to the nearest pharmacy and buy your first and last stainless steel pick! ",
    short_description: "We all know what plastic Earbuds do to our oceans, it is time for you to go to the nearest pharmacy and buy your first and last stainless steel pick!",
    intensity: 1,
-   map: false ,
+   map: false,
    gender_specific: 0,
    plastic: 400,
-   size: false
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/bRIv3cLAO4I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
  )
 challenge.category = Category.all.sample
 challenge.save
 
+challenge = Challenge.new(
+   name: '',
+   description:'',
+   short_description: '',
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   size: false,
+   video_link: ''
+ )
+challenge.category = Category.all.sample
+challenge.save
+
+challenge = Challenge.new(
+   name: '',
+   description:'',
+   short_description: '',
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   size: false,
+   video_link: ''
+ )
+challenge.category = Category.all.sample
+challenge.save
+
+challenge = Challenge.new(
+   name: '',
+   description:'',
+   short_description: '',
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   size: false,
+   video_link: ''
+ )
+challenge.category = Category.all.sample
+challenge.save
+
+challenge = Challenge.new(
+   name: '',
+   description:'',
+   short_description: '',
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   size: false,
+   video_link: ''
+ )
+challenge.category = Category.all.sample
+challenge.save
+
+
+##=================================================================##
+## Journal of a primary user ##
+##=================================================================##
+
+primary_user = User.create!(
+    email: 'antoine.braconnier@hotmail.com',
+    username: 'Antoine',
+    password: '123456',
+    xp: 20,
+    level: 7,
+    gender: 2,
+    address: 'Brussels',
+    tree_count: 8
+)
+
+big_challenges = Challenge.where(size: true)
+small_challenges = Challenge.where(size: false)
+
+WeeklyChallenge.create!(
+  status_challenge: false,
+  challenge: big_challenges.sample,
+  user: primary_user,
+  week: Date.today.cweek,
+  year: 2019
+)
+
+2.times do WeeklyChallenge.create!(
+  status_challenge: false,
+  challenge: small_challenges.sample,
+  user: primary_user,
+  week: Date.today.cweek,
+  year: 2019
+)
+end
+
+15.times do WeeklyChallenge.create!(
+  status_challenge: true,
+  challenge: small_challenges.sample,
+  user: primary_user,
+  week: (35..46).to_a.sample,
+  year: 2019
+  )
+end
+
+7.times do WeeklyChallenge.create!(
+  status_challenge: true,
+  challenge: big_challenges.sample,
+  user: primary_user,
+  week: (35..46).to_a.sample,
+  year: 2019
+  )
+end
+
+
+5.times do Success.create!(
+  user: primary_user,
+  achievement: AchievementNumber.all.sample,
+  week: (35..46).to_a.sample,
+  year: 2019
+  )
+end
+
+5.times do Success.create!(
+  user: primary_user,
+  achievement: AchievementCategory.all.sample,
+  week: (35..46).to_a.sample,
+  year: 2019
+  )
+end
+
 # challenge = Challenge.new(
-
-#  )
-# challenge.category = Category.all.sample
-# challenge.save
-
-# challenge = Challenge.new(
-
-#  )
-# challenge.category = Category.all.sample
-# challenge.save
-
-# challenge = Challenge.new(
-
-#  )
-# challenge.category = Category.all.sample
-# challenge.save
-
-# challenge = Challenge.new(
-
+#    name: '',
+#    description:'',
+#    short_description: '',
+#    intensity: 1,
+#    map: false,
+#    gender_specific: 0,
+#    plastic: 500,
+#    size: false,
+#    video_link: ''
 #  )
 # challenge.category = Category.all.sample
 # challenge.save
