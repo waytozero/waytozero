@@ -152,8 +152,7 @@
             </div>
               <br>
               <p><%="#{category.name}"%></p>
-              <p><%= category.challenges.where(size: false).count %> small challenge(s) left</p>
-              <p><%= category.challenges.where(size: true).count %> big challenge(s) left</p>
+              <p><%= category.challenges.where(size: false).count %> challenge(s) left</p>
           </div>
         <% end %>
       <% end %>
