@@ -18,7 +18,7 @@ class PagesController < ApplicationController
   def journal
     @user = current_user
     @challenges = WeeklyChallenge.where(user: @user)
-    @success = Success.where
+    @successes = Success.where(user: @user)
   end
 
   private
