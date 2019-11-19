@@ -13,13 +13,14 @@
           </div>
           <div class="col-8">
             <div id="level_info">
-            <h2>Level: <%= @user.level %></h2>
+            <span>Level:</span>
+            <span id='level'><%= @user.level %></span>
               <div class="progress">
                 <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="<%= @user.xp %>" aria-valuemin="0" aria-valuemax="<%= @max_xp %>" style="width: <%= ((@user.xp.to_f / @max_xp.to_f)*100).to_i %>%">
                   <%= @user.xp %>/<%= @max_xp %> XP
                 </div>
               </div>
-              <p>Only <strong><%= @max_xp - @user.xp %> XP</strong> left before reaching the next level !</p>
+              <p>Only <strong id="xp-left"><%= @max_xp - @user.xp %> XP</strong> left before reaching the next level !</p>
               <div class="row">
                 <div class="col-6">
                   <h2 style="font-size: 1rem; text-align: justify;">Amount of plastic saved:</h2>
@@ -69,9 +70,9 @@
                   <div class="notification-content">
                     <p><small style="font-size: 1rem;"><%= challenge.challenge.name  %></small></p>
                     <% if challenge.challenge.size == false %>
-                    <p><small style="color: #91a5b9">Experience: <%= "25 xp" %></small></p>
+                    <p><small style="color: #91a5b9">Experience: <%= "25 xp" %> | Plastic: <%= challenge.challenge.plastic  %> kg</small></p>
                     <% else %>
-                    <p><small style="color: #91a5b9">Experience: <%= "50 xp" %></small></p>
+                    <p><small style="color: #91a5b9">Experience: <%= "50 xp" %> | Plastic: <%= challenge.challenge.plastic  %> kg</small></p>
                     <% end %>
                     <p><%= challenge.challenge.description %></p>
                     <p> <%= link_to "See details", challenge_path(challenge) %></p>
@@ -150,7 +151,6 @@
             <div class="row">
               <%= cl_image_tag category.photo, height: 60, width: 60, crop: :fill %>
             </div>
-            <br>
             <p><%="#{category.name}"%></p>
           </div>
         <% end %>

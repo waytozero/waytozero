@@ -28,6 +28,11 @@ Category.create!(name: 'Social life', photo: 'https://res.cloudinary.com/dr3uy79
 end
 
 AchievementNumber.create!(
+  name: "You did 1 challenge! Congrats!!",
+  number: 1
+  )
+
+AchievementNumber.create!(
   name: "You did 5 challenges! Congrats!!",
   number: 5
   )

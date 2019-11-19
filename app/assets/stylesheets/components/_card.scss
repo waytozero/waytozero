@@ -50,7 +50,7 @@
   transition: ease .3s;
 }
 
-.card-category a {
+.card-category p {
   color: white;
   margin-top: 1rem;
   font-weight: 600;
@@ -59,6 +59,6 @@
   font-style: normal;
 }
 
-.card-category:hover a {
+.card-category:hover p {
   font-weight: 900;
 }
