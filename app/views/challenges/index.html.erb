@@ -18,6 +18,7 @@
         <div class="card card-challenge-show">
           <p><%= small_challenge.name %></p>
           <p><%= small_challenge.short_description %></p>
+          <p><img src=<%="https://source.unsplash.com/200x200/?#{small_challenge.name}"%> alt=""></p>
           <p><%= link_to "See the full description", challenge_path(small_challenge), class: "btn button-index" %></p>
           <p><%= link_to "ADD to my weekly challenges", weekly_challenges_path(small_challenge), method: :post, class: "btn button-index" %></p>
           <p><%= link_to "Mark as already done", weekly_challenges_path(small_challenge, done: "true"), method: :post,  class: "btn button-index"%></p>
