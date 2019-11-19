@@ -10,5 +10,11 @@ class ChallengesController < ApplicationController
 
   def show
     @challenge = Challenge.find(params[:id])
+    if @challenge.partners.any?
+      @markers = []
+      @challenge.partners.each do |partner|
+        @markers << { lat: partner.latitude, lng: partner.longitude }
+      end
+    end
   end
 end

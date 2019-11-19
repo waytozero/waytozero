@@ -13,6 +13,15 @@
             <%= "There is no video yet for this challenge" %>
           <% end %>
           <br>
+            <% unless @markers.nil? %>
+            <div
+              id="map"
+              style="width: 50%;
+              height: 300px;"
+              data-markers="<%= @markers.to_json %>"
+              data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+            ></div>
+          <% end %>
             <p><%= link_to "Add to my weekly challenges", weekly_challenges_path(@challenge), method: :post, class: "btn button-show" %></p>
             <p><%= link_to "Mark as already done", weekly_challenges_path(@small_challenge, done: "true"), method: :post,  class: "btn button-show"%></p>
       </div>
