@@ -14,9 +14,10 @@
 }
 
 .badge-notif {
-  position: absolute;
   top: 0px; right: 0px;
   background-color: #4A4A4A;
+  margin: auto;
+  padding: auto;
 }
 
 .notification {
@@ -50,9 +51,17 @@
   transition: ease .3s;
 }
 
-.notification .center {
-  display: relative;
+.row-center {
+  display: flex;
+  justify-content: center;
   align-items: center;
+}
+
+.row-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .notification:hover .notification-actions {

@@ -66,9 +66,9 @@
               <% if challenge.challenge.size == false %>
               <div data-challenge-id="<%= challenge.challenge.id %>">
                 <div class="notification">
-                  <div class="row">
+                  <div class="row row-center">
                     <div class="col-8">
-                      <div class="notification-content">
+                      <div class="notification-content justify-content-center">
                         <p><small style="font-size: 1rem;"><%= challenge.challenge.name  %></small></p>
                         <p><small style="color: #91a5b9">Experience: <%= "25 xp" %> | Plastic: <%= challenge.challenge.plastic  %> kg</small></p>
                         <p><%= challenge.challenge.short_description %></p>
@@ -78,7 +78,7 @@
                     <div class="col-4">
                       <div class="notification-actions justify-content-center">
                           <% if challenge.status_challenge == false %>
-                            <%= button_to challenge, class: "btn mark-as-done-btn", disabled: false, method: :put, remote: true do %>
+                            <%= button_to challenge, class: "btn mark-as-done-btn center", disabled: false, method: :put, remote: true do %>
                               Mark as done
                             <% end %>
                           <% end %>
@@ -90,17 +90,23 @@
               <% else %>
               <div data-challenge-id="<%= challenge.challenge.id %>">
                 <div class="notification" id="big-challenge-notification">
-                  <div class="row">
+                  <div class="row row-between">
+                    <div>
+                      <div><p><small style="font-size: 1rem;"><%= challenge.challenge.name %></small></p></div>
+                    </div>
+                    <div>
+                      <div class="badge badge-primary badge-notif">Challenge of the Week</div>
+                    </div>
+                  </div>
+                  <div class="row row-center">
                     <div class="col-8">
                       <div class="notification-content justify-content-center">
-                        <p><small style="font-size: 1rem;"><%= challenge.challenge.name %></small></p>
                         <p><small style="color: #91a5b9">Experience: <%= "50 xp" %> | Plastic: <%= challenge.challenge.plastic  %> kg | Tree : 1</small></p>
                         <p><%= challenge.challenge.short_description %></p>
                         <p> <%= link_to "See details", challenge_path(challenge.challenge) %></p>
                       </div>
                     </div>
                     <div class="col-4">
-                    <span class="badge badge-primary badge-notif">Challenge of the Week</span>
                       <div class="notification-actions">
                           <% if challenge.status_challenge == false %>
                             <%= button_to challenge, class: "btn mark-as-done-btn center", disabled: false, method: :put, remote: true do %>
@@ -111,8 +117,8 @@
                     </div>
                   </div>
                   <div class="row">
-                    <div class="col-12">
-                      <a class="btn cta-btn" href="/users/sign_up">Join the movement !</a>
+                    <div class="col-12 row-center">
+                      <a class="btn cta-btn center" href="/users/sign_up">Join the movement !</a>
                     </div>
                   </div>
                 </div>
