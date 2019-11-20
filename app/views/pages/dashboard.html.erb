@@ -159,17 +159,21 @@
         </div>
       </div>
       <div class="card card-dashboard" style="margin-top:2rem;">
-        <h2>Successful Badges</h2>
-          <div class="slider prout" style="width: 100%" data-slick='{"slidesToShow": 3, "slidesToScroll": 1}'>
-            <% @successes.each do |success| %>
-            <div class="slider_container">
-              <div class="text-center">
-                <%= cl_image_tag success.achievement.photo, :class => "img_slider" %>
-                <p class="slider_text"><%= success.achievement.name %></p>
-              </div>
+        <h2>Success Badges</h2>
+          <% if @successes.any? %>
+            <div class="slider prout" style="width: 100%" data-slick='{"slidesToShow": 3, "slidesToScroll": 1}'>
+              <% @successes.each do |success| %>
+                <div class="slider_container">
+                  <div class="text-center">
+                    <%= cl_image_tag success.achievement.photo, :class => "img_slider" %>
+                    <p class="slider_text"><%= success.achievement.name %></p>
+                  </div>
+                </div>
+              <% end %>
             </div>
-            <% end %>
-        </div>
+          <% else %>
+            <p>No badges yet dude</p>
+          <% end %>
       </div>
     </div>
   </div>
