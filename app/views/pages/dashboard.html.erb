@@ -148,11 +148,10 @@
               <%= cl_image_tag category.photo, height: 60, width: 60, crop: :fill %>
             </div>
               <p><%="#{category.name}"%></p>
-              <p><%= category.challenges.where(size: false).count %> challenge(s) left</p>
-          </div>
-          <%= @weekly_challenges.select { |e|
+              <p><%= @weekly_challenges.select { |e|
             !e.status_challenge && e.challenge.category_id == category.id
-          }.count %>
+          }.count %> challenge(s) left</p>
+          </div>
         <% end %>
       <% end %>
     </div>
