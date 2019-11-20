@@ -7,7 +7,7 @@
           <% weeks.each do |week|%>
           <div class="timeline__item">
                 <div class="timeline__content">
-                  <p> Week number <%= week %> </p>
+                  <p style="font-weight: bold"> Week number <%= week %> </p>
                   <% if @challenges.where(week: week).any? %>
                     <h3><%= 'Challenges done' %></h3>
                     <% @challenges.where(week: week).each do |challenge| %>
@@ -17,7 +17,7 @@
                   <% if @successes.where(week: week).any? %>
                     <h3><%= 'Achievements done' %></h3>
                     <% @successes.where(week: week).each do |success| %>
-                      <p> <%= success.achievement.name %> </p>
+                      <div class="success-journal" style="text-align:center;"> <%= cl_image_tag success.achievement.photo, height: 100, width: 100, crop: :fill %> </div>
                     <% end %>
                   <% end %>
                 </div>
