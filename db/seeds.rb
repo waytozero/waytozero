@@ -420,6 +420,16 @@ deal.challenge = Challenge.find(1)
 deal.partner = partner
 deal.save
 
+partner = Partner.create!(
+  name: 'Stock',
+  address: 'Place Fernand Cocq 23, Bruxelles'
+  )
+
+deal = Deal.new
+deal.challenge = Challenge.find(1)
+deal.partner = partner
+deal.save
+
 # challenge = Challenge.new(
 #    name: '',
 #    description:'',
