@@ -161,6 +161,7 @@
 <div class="col-12">
   <div class="card card-dashboard" style="margin-top: 2rem; margin-bottom: 2rem;">
     <h2 class="mb-3">Categories</h2>
+    <p><%= @test %> challenges left</p>
     <ul class="list-inline tabs-underlined mb-3">
       <li>
         <a href="#" class="tab-underlined active">All the challenges</a>
@@ -186,7 +187,7 @@
               <%= cl_image_tag category.photo, height: 60, width: 60, crop: :fill %>
             </div>
               <p><%="#{category.name}"%></p>
-              <p><%= category.challenges.where(size: false).count %> challenge(s) left</p>
+              <%= @hash_all_challenges["#{category.name}"] - @hash_assigned_challenges["#{category.name}"]%> left
           </div>
         <% end %>
       <% end %>
