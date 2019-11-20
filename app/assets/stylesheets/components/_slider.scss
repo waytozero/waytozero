@@ -1,0 +1,46 @@
+.slider_container {
+  display: flex;
+  justify-content: center;
+}
+
+.slider_header {
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.slider_text {
+  font-size: 1rem;
+  font-family: "Montserrat", "Helvetica", "sans-serif";
+  font-weight: 600;
+  color: #01C07D;
+}
+
+.img_slider {
+  object-fit: cover;
+  width: 70%;
+  display: inline-flex!important;
+}
+
+.slider .slick-prev {
+  left:0;
+}
+.slider .slick-next {
+  right:0;
+}
+
+.slick-prev:before,
+.slick-next:before
+{
+    font-family: 'slick';
+    font-size: 20px;
+    line-height: 1;
+    opacity: .75;
+    color: gray!important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.prout {
+  width: 100%;
+  padding: 15px 15px;
+}
