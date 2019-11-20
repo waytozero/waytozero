@@ -1,6 +1,6 @@
 <div class="container">
   <div class="col-12">
-    <%= link_to "Go to all challenges categories", categories_path %>
+    <%= link_to "Back to dashboard", dashboard_path %>
     <div class="col-12">
       <div class="card card-challenge-show">
           <h1><%= @challenge.name %></h1>
@@ -14,6 +14,7 @@
           <% end %>
           <br>
             <% unless @markers.nil? %>
+            <h3>Our shop partners that will help you to realize the challenge</h3>
             <div
               id="map"
               style="width: 50%;

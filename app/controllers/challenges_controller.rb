@@ -13,7 +13,7 @@ class ChallengesController < ApplicationController
     if @challenge.partners.any?
       @markers = []
       @challenge.partners.each do |partner|
-        @markers << { lat: partner.latitude, lng: partner.longitude }
+        @markers << { lat: partner.latitude, lng: partner.longitude, infoWindow: render_to_string(partial: "info_window", locals: { partner: partner }) }
       end
     end
   end
