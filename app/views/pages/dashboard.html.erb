@@ -58,37 +58,34 @@
       <div class="card card-dashboard">
         <h2>Challenges</h2>
         <div class="challenges">
-          <% if @weekly_challenges.empty? %>
-            <p>prout</p>
-          <% else %>
-            <% @weekly_challenges.each do |challenge| %>
+          <% @weekly_challenges.each do |challenge| %>
             <% if challenge.status_challenge == false %>
-            <div data-challenge-id="<%= challenge.challenge.id %>">
-              <div class="notification">
-                <div class="col-8">
-                  <div class="notification-content">
-                    <p><small style="font-size: 1rem;"><%= challenge.challenge.name  %></small></p>
-                    <% if challenge.challenge.size == false %>
-                    <p><small style="color: #91a5b9">Experience: <%= "25 xp" %> | Plastic: <%= challenge.challenge.plastic  %> kg</small></p>
-                    <% else %>
-                    <p><small style="color: #91a5b9">Experience: <%= "50 xp" %> | Plastic: <%= challenge.challenge.plastic  %> kg</small></p>
-                    <% end %>
-                    <p><%= challenge.challenge.short_description %></p>
-                    <p> <%= link_to "See details", challenge_path(challenge.challenge) %></p>
-                  </div>
-                </div>
-                <div class="col-4">
-                  <div class="notification-actions justify-content-center">
-                      <% if challenge.status_challenge == false %>
-                        <%= button_to "Mark as done", challenge, class: "btn mark-as-done-btn", disabled: false, method: :put, remote: true %>
+              <div data-challenge-id="<%= challenge.challenge.id %>">
+                <div class="notification">
+                  <div class="col-8">
+                    <div class="notification-content">
+                      <p><small style="font-size: 1rem;"><%= challenge.challenge.name  %></small></p>
+                      <% if challenge.challenge.size == false %>
+                        <p><small style="color: #91a5b9">Experience: <%= "25 xp" %> | Plastic: <%= challenge.challenge.plastic  %> kg</small></p>
+                      <% else %>
+                        <p><small style="color: #91a5b9">Experience: <%= "50 xp" %> | Plastic: <%= challenge.challenge.plastic  %> kg</small></p>
                       <% end %>
+                      <p><%= challenge.challenge.short_description %></p>
+                      <p> <%= link_to "See details", challenge_path(challenge.challenge) %></p>
+                    </div>
                   </div>
-                </div>
+                    <div class="col-4">
+                      <div class="notification-actions justify-content-center">
+                          <% if challenge.status_challenge == false %>
+                            <%= button_to "Mark as done", challenge, class: "btn mark-as-done-btn", disabled: false, method: :put, remote: true %>
+                          <% end %>
+                      </div>
+                    </div>
+                  </div>
               </div>
-            </div>
-            <% end %>
             <% end %>
           <% end %>
+          <%= link_to "Suggest a challenge", suggest_path %>
         </div>
       </div>
     </div>
@@ -157,6 +154,7 @@
       <% end %>
     </div>
   </div>
+  <%= link_to "The team", thanks_path %>
   <% @successes.each do |success| %>
     <p> <%= success.achievement.name %> </p>
     <%= cl_image_tag success.achievement.photo %>
