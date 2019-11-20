@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2019_11_19_091512) do
+ActiveRecord::Schema.define(version: 2019_11_19_161817) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +54,24 @@ ActiveRecord::Schema.define(version: 2019_11_19_091512) do
     t.string "video_link"
     t.string "photo"
     t.index ["category_id"], name: "index_challenges_on_category_id"
+  end
+
+  create_table "deals", force: :cascade do |t|
+    t.bigint "challenge_id"
+    t.bigint "partner_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["challenge_id"], name: "index_deals_on_challenge_id"
+    t.index ["partner_id"], name: "index_deals_on_partner_id"
+  end
+
+  create_table "partners", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
   end
 
   create_table "successes", force: :cascade do |t|
@@ -101,6 +118,8 @@ ActiveRecord::Schema.define(version: 2019_11_19_091512) do
 
   add_foreign_key "achievement_categories", "categories"
   add_foreign_key "challenges", "categories"
+  add_foreign_key "deals", "challenges"
+  add_foreign_key "deals", "partners"
   add_foreign_key "successes", "users"
   add_foreign_key "weekly_challenges", "challenges"
   add_foreign_key "weekly_challenges", "users"
