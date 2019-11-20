@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css"/>
     <!-- Add the slick-theme.css if you want default styling -->
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css"/>
+
   </head>
   <body>
     <%= render 'shared/navbar' %>
@@ -20,5 +21,9 @@
     <p class="alert"><%= alert %></p>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl-csp.js'></script>
+    <script>
+    mapboxgl.workerUrl = "https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl-csp-worker.js";
+    </script>
   </body>
 </html>

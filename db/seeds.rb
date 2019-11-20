@@ -410,6 +410,26 @@ end
   )
 end
 
+partner = Partner.create!(
+  name: 'The Barn Bio Market',
+  address: 'Place Saint-Pierre 38, 1040 Etterbeek'
+  )
+
+deal = Deal.new
+deal.challenge = Challenge.find(1)
+deal.partner = partner
+deal.save
+
+partner = Partner.create!(
+  name: 'Stock',
+  address: 'Place Fernand Cocq 23, Bruxelles'
+  )
+
+deal = Deal.new
+deal.challenge = Challenge.find(1)
+deal.partner = partner
+deal.save
+
 # challenge = Challenge.new(
 #    name: '',
 #    description:'',

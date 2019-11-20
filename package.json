@@ -2,7 +2,7 @@
   "name": "waytozero",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "^4.2.0",
+    "@rails/webpacker": "3.5",
     "bootstrap": "^4.3.1",
     "countjs": "^1.2.0",
     "countup.js": "^2.0.4",
@@ -10,8 +10,10 @@
     "lodash": "^4.17.15",
     "popper.js": "^1.16.0",
     "slick-carousel": "^1.8.1"
+    "mapbox-gl": "^1.5.0",
+    "popper.js": "^1.16.0"
   },
   "devDependencies": {
-    "webpack-dev-server": "^3.9.0"
+    "webpack-dev-server": "2.11.2"
   }
 }

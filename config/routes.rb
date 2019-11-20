@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   resources :challenges, only: [:show, :update]
   get '/dashboard/', to: 'pages#dashboard'
+  get '/thanks/', to: 'pages#thanks'
   get '/journal/', to: 'pages#journal'
+  get '/suggest/', to: 'pages#suggest'
 
   resources :weekly_challenges, only: [:create, :update]
   devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations' } do
