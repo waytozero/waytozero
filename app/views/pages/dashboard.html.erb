@@ -150,6 +150,9 @@
               <p><%="#{category.name}"%></p>
               <p><%= category.challenges.where(size: false).count %> challenge(s) left</p>
           </div>
+          <%= @weekly_challenges.select { |e|
+            !e.status_challenge && e.challenge.category_id == category.id
+          }.count %>
         <% end %>
       <% end %>
     </div>

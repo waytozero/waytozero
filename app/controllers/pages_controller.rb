@@ -13,6 +13,7 @@ class PagesController < ApplicationController
     @total_plastic = plastic_counter
     @user_plastic = plastic_user
     @successes = Success.where(user: @user)
+    @challenges = @user.challenges
   end
 
   def journal
