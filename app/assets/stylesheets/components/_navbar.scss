@@ -20,6 +20,21 @@
   align-items: center;
 }
 
+.active-navbar-item {
+  border-bottom: 3px solid #00D68B;
+  color: #4a4a4a !important;
+}
+
+.navbar-item {
+  color: #4a4a4a;
+  opacity: .8;
+}
+
+.navbar-item:hover {
+  opacity: 1;
+  border-bottom: 0.5px solid #4a4a4a;
+}
+
 .register-btn {
     background-color: #00D68B;
     border-color: #00D68B;

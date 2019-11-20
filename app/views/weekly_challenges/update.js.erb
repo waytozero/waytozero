@@ -1,42 +1,51 @@
 // 1. acceder au niveau de l'elf !
-let formerLevelBox = document.querySelector("#level")
-let formerLevel = parseInt(formerLevelBox.innerText)
+var formerLevelBox = document.querySelector("#level")
+var formerLevel = parseInt(formerLevelBox.innerText)
+console.log({formerLevel})
 
 // Total point pour former level
-let xpFormerMax = +document.querySelector("#level_info .progress .progress-bar").attributes['aria-valuemax'].value
+var xpFormerMax = +document.querySelector("#level_info .progress .progress-bar").attributes['aria-valuemax'].value
 
 // total de points necessaire pour completer le current level
-let xpCurrentMax = parseInt('<%= @max_xp %>')
+var xpCurrentMax = parseInt('<%= @max_xp %>')
 
 //2. XP du challenge qui vient d'etre mark as done
-let xpChallenge = parseInt('<%= @xp %>')
+var xpChallenge = parseInt('<%= @xp %>')
 
 
-let xpCurrent = parseInt('<%= @user.xp %>')
-let levelCurrent = parseInt('<%= @user.level %>')
-let xpFormer = xpCurrent - xpChallenge
-
+var xpCurrent = parseInt('<%= @user.xp %>')
+var levelCurrent = parseInt('<%= @user.level %>')
+var xpFormer = xpCurrent - xpChallenge
+console.log({levelCurrent})
 
 var xpCurrentText = document.querySelector("#level_info .progress .progress-bar")
 xpCurrentText.innerText = `${xpCurrent}/${xpCurrentMax} XP`
 
-console.log({xpFormer}, {xpChallenge}, {xpFormerMax}, {xpCurrent})
-
 var proportion = parseInt((xpCurrent/xpCurrentMax)*100);
 
 var progressBar = document.querySelector("#level_info .progress .progress-bar");
-let leftPoints = parseInt('<%= @max_xp - @user.xp %>')
-let xpLeft = document.querySelector('#xp-left')
+var leftPoints = parseInt('<%= @max_xp - @user.xp %>')
+var xpLeft = document.querySelector('#xp-left')
 xpLeft.innerText = leftPoints
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+function congrats() {
+  var gif = document.createElement("IMG");
+  gif.setAttribute("src", "https://media.giphy.com/media/fo2dhRTmaULbStoFkX/giphy.gif");
+  //gif.setAttribute("width", "50");
+  gif.setAttribute("height", "45px");
+  document.querySelector("#level").appendChild(gif);
+}
+
 var animateProgressBar = async() => {
   await sleep(500)
   progressBar.classList.add('notransition');
   progressBar.style.width = '0%';
+  formerLevelBox.innerText = '<%= @user.level %>';
+  congrats();
   await sleep(200)
   progressBar.classList.remove('notransition');
   progressBar.style.width = `${proportion}%`;
@@ -46,37 +55,10 @@ var animateProgressBar = async() => {
 if ((xpFormer < 0)) {
 
   progressBar.style.width = '100%';
-  formerLevelBox.innerText = '<%= @user.level %>';
   progressBar.addEventListener('transitionend', animateProgressBar);
-  console.log({xpFormer}, {xpChallenge}, {xpFormerMax}, {xpCurrent})
-
 
 } else {
 
   progressBar.style.width =  `${proportion}%`;
-  console.log({xpFormer}, {xpChallenge}, {xpFormerMax}, {xpCurrent})
 
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//var xpLeft = (xpMax-xpCurrent)
-//document.querySelector("#level_info p strong").innerText = `${xpLeft}`

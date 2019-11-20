@@ -13,7 +13,7 @@
           </div>
           <div class="col-8">
             <div id="level_info">
-            <h2><span>Level:</span>
+            <h2 style="line-height: 2em;"><span>Level:</span>
             <span id='level'><%= @user.level %></span></h2>
               <div class="progress">
                 <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="<%= @user.xp %>" aria-valuemin="0" aria-valuemax="<%= @max_xp %>" style="width: <%= ((@user.xp.to_f / @max_xp.to_f)*100).to_i %>%">
@@ -55,37 +55,62 @@
 <div class="col-12">
   <div class="row">
     <div class="col-7">
-      <div class="card card-dashboard">
+      <div class="card card-dashboard" style="height:100%">
         <h2>Challenges</h2>
         <div class="challenges">
-          <% @weekly_challenges.each do |challenge| %>
+          <% if @weekly_challenges.empty? %>
+            <p>prout</p>
+          <% else %>
+            <% @weekly_challenges.each do |challenge| %>
             <% if challenge.status_challenge == false %>
+              <% if challenge.challenge.size == false %>
               <div data-challenge-id="<%= challenge.challenge.id %>">
                 <div class="notification">
                   <div class="col-8">
                     <div class="notification-content">
                       <p><small style="font-size: 1rem;"><%= challenge.challenge.name  %></small></p>
-                      <% if challenge.challenge.size == false %>
-                        <p><small style="color: #91a5b9">Experience: <%= "25 xp" %> | Plastic: <%= challenge.challenge.plastic  %> kg</small></p>
-                      <% else %>
-                        <p><small style="color: #91a5b9">Experience: <%= "50 xp" %> | Plastic: <%= challenge.challenge.plastic  %> kg</small></p>
-                      <% end %>
+                      <p><small style="color: #91a5b9">Experience: <%= "25 xp" %> | Plastic: <%= challenge.challenge.plastic  %> kg</small></p>
                       <p><%= challenge.challenge.short_description %></p>
                       <p> <%= link_to "See details", challenge_path(challenge.challenge) %></p>
                     </div>
                   </div>
-                    <div class="col-4">
-                      <div class="notification-actions justify-content-center">
-                          <% if challenge.status_challenge == false %>
-                            <%= button_to "Mark as done", challenge, class: "btn mark-as-done-btn", disabled: false, method: :put, remote: true %>
+                  <div class="col-4">
+                    <div class="notification-actions justify-content-center">
+                        <% if challenge.status_challenge == false %>
+                          <%= button_to challenge, class: "btn mark-as-done-btn", disabled: false, method: :put, remote: true do %>
+                            Mark as done
                           <% end %>
-                      </div>
+                        <% end %>
                     </div>
                   </div>
+                </div>
               </div>
+              <% else %>
+              <div data-challenge-id="<%= challenge.challenge.id %>">
+                <div class="notification">
+                  <div class="col-8">
+                    <div class="notification-content">
+                      <p><small style="font-size: 1rem;"><%= challenge.challenge.name  %></small></p>
+                      <p><small style="color: #91a5b9">Experience: <%= "50 xp" %> | TREE MOTHERFUCKER: <%= challenge.challenge.plastic  %> kg</small></p>
+                      <p><%= challenge.challenge.short_description %></p>
+                      <p> <%= link_to "See details", challenge_path(challenge.challenge) %></p>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="notification-actions justify-content-center">
+                        <% if challenge.status_challenge == false %>
+                          <%= button_to challenge, class: "btn mark-as-done-btn", disabled: false, method: :put, remote: true do %>
+                            Mark as done
+                          <% end %>
+                        <% end %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <% end %>
+            <% end %>
             <% end %>
           <% end %>
-          <%= link_to "Suggest a challenge", suggest_path %>
         </div>
       </div>
     </div>
@@ -115,6 +140,19 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div class="card card-dashboard" style="margin-top:2rem;">
+        <h2>Successful Badges</h2>
+          <div class="slider prout" style="width: 100%" data-slick='{"slidesToShow": 3, "slidesToScroll": 1}'>
+            <% @successes.each do |success| %>
+            <div class="slider_container">
+              <div class="text-center">
+                <%= cl_image_tag success.achievement.photo, :class => "img_slider" %>
+                <p class="slider_text"><%= success.achievement.name %></p>
+              </div>
+            </div>
+            <% end %>
         </div>
       </div>
     </div>
@@ -154,9 +192,4 @@
       <% end %>
     </div>
   </div>
-  <%= link_to "The team", thanks_path %>
-  <% @successes.each do |success| %>
-    <p> <%= success.achievement.name %> </p>
-    <%= cl_image_tag success.achievement.photo %>
-  <% end %>
 </div>

@@ -10,7 +10,7 @@
 ## Categories ##
 ##=================================================================##
 
-Category.create!(name: 'Hygiene & healthcare', photo: 'https://res.cloudinary.com/dr3uy796x/image/upload/v1573823091/categories/cleaning_iz2fmz.svg')
+Category.create!(name: 'Hygiene & Healthcare', photo: 'https://res.cloudinary.com/dr3uy796x/image/upload/v1573823091/categories/cleaning_iz2fmz.svg')
 Category.create!(name: 'Kitchen', photo: 'https://res.cloudinary.com/dr3uy796x/image/upload/v1573823091/categories/kitchen_zigzli.svg')
 Category.create!(name: 'Home maintenance', photo: 'https://res.cloudinary.com/dr3uy796x/image/upload/v1573824264/categories/hammer_zsryt4.svg')
 Category.create!(name: 'Leasure', photo: 'https://res.cloudinary.com/dr3uy796x/image/upload/v1574076656/categories/leisure_iymdoh.svg')
@@ -41,7 +41,7 @@ end
 ##=================================================================##
 
 AchievementNumber.create!(
-  name: "You did 1 challenges! Congrats!!",
+  name: "One Challenge",
   number: 1,
   photo: "https://res.cloudinary.com/dr3uy796x/image/upload/v1574156562/badges_numbers/badgelevel1_e5c6nc.png"
   )
@@ -52,39 +52,39 @@ AchievementNumber.create!(
   )
 
 AchievementNumber.create!(
-  name: "You did 5 challenges! Congrats!!",
+  name: "Five Challenges",
   number: 5,
   photo: "https://res.cloudinary.com/dr3uy796x/image/upload/v1574156562/badges_numbers/badgelevel5_iteh7w.png"
   )
 
 AchievementNumber.create!(
-  name: "You did 10 challenges! Congrats!!",
+  name: "Ten Challenges",
   number: 10,
   photo: "https://res.cloudinary.com/dr3uy796x/image/upload/v1574156562/badges_numbers/badgelevel10_x4wgeb.png"
   )
 
 AchievementNumber.create!(
-  name: "You did 20 challenges! Congrats!!",
+  name: "Twenty Challenges",
   number: 20,
   photo: "https://res.cloudinary.com/dr3uy796x/image/upload/v1574156562/badges_numbers/badgelevel20_yocyq5.png"
   )
 
 AchievementNumber.create!(
-  name: "You did 30 challenges! Congrats!!",
+  name: "Thirty Challenges",
   number: 30,
   photo: "https://res.cloudinary.com/dr3uy796x/image/upload/v1574156562/badges_numbers/badgelevel30_cg96z1.png"
   )
 
 Category.all.each do |category|
   AchievementCategory.create!(
-    name: "You did all the challenges from the category #{category.name}. Congrats!!",
+    name: "'#{category.name}' Challenges",
     category: category
   )
 end
 
 AchievementCategory.all.each do |achievementcat|
   case achievementcat.category.name
-  when 'Hygiene & healthcare'
+  when 'Hygiene & Healthcare'
     achievementcat.photo = 'https://res.cloudinary.com/dr3uy796x/image/upload/v1574077938/badges_categories/badge_hygiene_un4sr7.png'
   when 'Kitchen'
     achievementcat.photo = 'https://res.cloudinary.com/dr3uy796x/image/upload/v1574077938/badges_categories/badge_kitchen_wjzrja.png'
