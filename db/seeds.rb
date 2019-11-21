@@ -10,14 +10,13 @@
 ## Categories ##
 ##=================================================================##
 
-Category.create!(name: 'Hygiene & Healthcare', photo: 'https://res.cloudinary.com/dr3uy796x/image/upload/v1573823091/categories/cleaning_iz2fmz.svg')
-Category.create!(name: 'Kitchen', photo: 'https://res.cloudinary.com/dr3uy796x/image/upload/v1573823091/categories/kitchen_zigzli.svg')
-Category.create!(name: 'Home maintenance', photo: 'https://res.cloudinary.com/dr3uy796x/image/upload/v1573824264/categories/hammer_zsryt4.svg')
-Category.create!(name: 'Leasure', photo: 'https://res.cloudinary.com/dr3uy796x/image/upload/v1574076656/categories/leisure_iymdoh.svg')
-Category.create!(name: 'Apparel', photo: 'https://res.cloudinary.com/dr3uy796x/image/upload/v1573823091/categories/fashion_n0hxhd.svg')
-Category.create!(name: 'Work', photo: 'https://res.cloudinary.com/dr3uy796x/image/upload/v1573823092/categories/suitcase_ijpqps.svg')
-Category.create!(name: 'Social life', photo: 'https://res.cloudinary.com/dr3uy796x/image/upload/v1574076592/categories/social_life_nofvqe.svg')
-
+cathyg = Category.create!(name: 'Hygiene & Healthcare', photo: 'https://res.cloudinary.com/dr3uy796x/image/upload/v1573823091/categories/cleaning_iz2fmz.svg')
+catkit = Category.create!(name: 'Kitchen', photo: 'https://res.cloudinary.com/dr3uy796x/image/upload/v1573823091/categories/kitchen_zigzli.svg')
+electric = Category.create!(name: 'Home maintenance', photo: 'https://res.cloudinary.com/dr3uy796x/image/upload/v1573824264/categories/hammer_zsryt4.svg')
+leasur = Category.create!(name: 'Leasure', photo: 'https://res.cloudinary.com/dr3uy796x/image/upload/v1574076656/categories/leisure_iymdoh.svg')
+appare = Category.create!(name: 'Apparel', photo: 'https://res.cloudinary.com/dr3uy796x/image/upload/v1573823091/categories/fashion_n0hxhd.svg')
+work = Category.create!(name: 'Work', photo: 'https://res.cloudinary.com/dr3uy796x/image/upload/v1573823092/categories/suitcase_ijpqps.svg')
+soc = Category.create!(name: 'Social life', photo: 'https://res.cloudinary.com/dr3uy796x/image/upload/v1574076592/categories/social_life_nofvqe.svg')
 
 ##=================================================================##
 ## Random users ##
@@ -101,18 +100,23 @@ end
 ##=================================================================##
 ## Paolo challenges ##
 ##=================================================================##
+
+##=================================================================##
+##  ## Hygiene & Healthcare
+##=================================================================##
+
 challenge = Challenge.new(
    name: "Body wash",
    description: "easy challenge = free XP for you! Go to a nearby shop and buy your first eco soap! You won’t be disappointed we promise you!",
    short_description: "easy challenge = free XP for you! Go to a nearby shop and buy your first eco soap! You won’t be disappointed we promise you!",
    intensity: 1,
    map: false,
+   category: cathyg,
    gender_specific: 0,
    plastic: 400,
    size: false,
    video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/QMAo9O40zp0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
    )
-challenge.category = Category.all.sample
 challenge.save
 
 challenge = Challenge.new(
@@ -121,12 +125,26 @@ challenge = Challenge.new(
    short_description: "today, you are done with using plastic toothbrush, go to a nearby shop and finally buy your first bamboo toothbrush. Complete this task and you will feel that you made a big step. Be happy about it and enjoy this happiness.",
    intensity: 2,
    map: false,
+   category: cathyg,
    gender_specific: 0,
    plastic: 200,
    size: false,
    video_link: "<iframe width='560' height='315' src='https://www.youtube.com/embed/E8S0Pz-KskE' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
  )
-challenge.category = Category.all.sample
+challenge.save
+
+challenge = Challenge.new(
+   name: "No cotton earbuds",
+   description: "We all know what plastic Earbuds do to our oceans, it is time for you to go to the nearest pharmacy and buy your first and last stainless steel pick! ",
+   short_description: "We all know what plastic Earbuds do to our oceans, it is time for you to go to the nearest pharmacy and buy your first and last stainless steel pick!",
+   intensity: 1,
+   map: false,
+   category: cathyg,
+   gender_specific: 0,
+   plastic: 400,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/bRIv3cLAO4I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
 challenge.save
 
 challenge = Challenge.new(
@@ -136,34 +154,14 @@ challenge = Challenge.new(
    short_description: "Americans use 8 million tons of toilet paper a year. If every US house used just one roll of 100% post-consumer recycled TP a year, it would save 423,900 trees. It is your turn now!",
    intensity: 2,
    map: false,
+   category: cathyg,
    gender_specific: 0,
    plastic: 100,
    size: false,
    video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/QyKnnioHtWw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
  )
-challenge.category = Category.all.sample
 challenge.save
 
-challenge = Challenge.new(
-   name: "Zero waste BBQ",
-   description: "Let’s be honest. It’s almost impossible to throw a totally zero waste BBQ or party. But hosting one that’s (nearly) zero waste is actually pretty easy.
-    For this challenge, we will give you a few tips to make this change happen.<br>
-    <br>1. Set yourself up for success by letting people know that your goal is a zero waste party. Explain what that is and give some clear guidelines. Explicitly give your guests guidance, such as ‘Recyclables OK,’ or ‘Please consider bringing your potluck dish in a washable container with a lid rather than covering it with plastic wrap.’
-    <br>2. Ask people to bring their own utensils and cups for the party, you can suggest them camping tray for example.
-    <br>3. Give your guests clear guidance on what to do with the various dishes, cups, utensils, recyclables and food waste. You’ll be pleasantly surprised by how many paper plate diehards just roll with it.
-    <br>4. Hide the trashcan! If they can’t find it, they’ll look for an alternative and use the bus bins and compost! With this sly eco trick, the amount of captured and compostable food waste increases dramatically. Worst case scenario, if they can’t figure out where to throw stuff away, they’ll ask, and you or someone else will redirect them.
-    <br>5. Build your stash of reusable party-ware over time! If you throw a lot of parties and you have the storage space, it’s worth investing in enough dishes, glasses and utensils for your parties. It’s completely ok to use and (re-use).<br>
-    Good luck with this challenges, if it’s too cold to throw a BBQ party, get the tip 5 ready during the week and you can consider your challenges as done",
-   short_description: "Let’s be honest. It’s almost impossible to throw a totally zero waste BBQ or party. But hosting one that’s (nearly) zero waste is actually pretty easy. find a step by step guide in the description",
-   intensity: 3,
-   map: false,
-   gender_specific:  0,
-   plastic:  1000,
-   size: true,
-   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/q8Pybboa3Lg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
- )
-challenge.category = Category.all.sample
-challenge.save
 
 challenge = Challenge.new(
    name: "No to straws",
@@ -171,12 +169,12 @@ challenge = Challenge.new(
    short_description: "STRAW NO MORE ! It’s destroying our oceans, over 500 million straws are used every single day.. It's time to change this. ",
    intensity: 3,
    map: false,
+   category: cathyg,
    gender_specific: 0,
    plastic: 70,
    size: true,
    video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/_CAim_uGjcI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
  )
-challenge.category = Category.all.sample
 challenge.save
 
 challenge = Challenge.new(
@@ -198,26 +196,26 @@ challenge = Challenge.new(
    map: false,
    gender_specific: 0,
    plastic: 0,
-   size: true,
+   size: false,
+   category: cathyg,
    video_link: '
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5J3cw4biWWo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 '
    )
-challenge.category = Category.all.sample
 challenge.save
 
 challenge = Challenge.new(
-   name: "Walk and Bike week",
+   name: "Walk and Bike",
    description: "This challenge is simple to understand but might be hard to complete, this week challenge is simple, no car, no public transports only walk and  bike. We understand it is an hard challenge for most people, good luck with that, we trust you! ",
    short_description: "This challenge is simple to understand but might be hard to complete, this week challenge is simple, no car, no public transports only walk and  bike. We understand it is an hard challenge for most people, good luck with that, we trust you! ",
    intensity: 3,
    map: false,
    gender_specific: 0,
    plastic: 0,
-   size: true,
+   category: cathyg,
+   size: false,
    video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/88daKoFHepc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
  )
-challenge.category = Category.all.sample
 challenge.save
 
 challenge = Challenge.new(
@@ -232,7 +230,6 @@ challenge = Challenge.new(
    size: true,
    video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/3ClRZiwHptA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
    )
-challenge.category = Category.all.sample
 challenge.save
 
 challenge = Challenge.new(
@@ -247,7 +244,6 @@ challenge = Challenge.new(
    size: false,
    video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/iQZmK9nRilk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
    )
-challenge.category = Category.all.sample
 challenge.save
 
 challenge = Challenge.new(
@@ -261,79 +257,863 @@ challenge = Challenge.new(
    size: false,
    video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
  )
-challenge.category = Category.all.sample
 challenge.save
 
 challenge = Challenge.new(
-   name: "No cotton earbuds",
-   description: "We all know what plastic Earbuds do to our oceans, it is time for you to go to the nearest pharmacy and buy your first and last stainless steel pick! ",
-   short_description: "We all know what plastic Earbuds do to our oceans, it is time for you to go to the nearest pharmacy and buy your first and last stainless steel pick!",
+   name: "Zero waste BBQ",
+   description: "Let’s be honest. It’s almost impossible to throw a totally zero waste BBQ or party. But hosting one that’s (nearly) zero waste is actually pretty easy.
+    For this challenge, we will give you a few tips to make this change happen.<br>
+    <br>1. Set yourself up for success by letting people know that your goal is a zero waste party. Explain what that is and give some clear guidelines. Explicitly give your guests guidance, such as ‘Recyclables OK,’ or ‘Please consider bringing your potluck dish in a washable container with a lid rather than covering it with plastic wrap.’
+    <br>2. Ask people to bring their own utensils and cups for the party, you can suggest them camping tray for example.
+    <br>3. Give your guests clear guidance on what to do with the various dishes, cups, utensils, recyclables and food waste. You’ll be pleasantly surprised by how many paper plate diehards just roll with it.
+    <br>4. Hide the trashcan! If they can’t find it, they’ll look for an alternative and use the bus bins and compost! With this sly eco trick, the amount of captured and compostable food waste increases dramatically. Worst case scenario, if they can’t figure out where to throw stuff away, they’ll ask, and you or someone else will redirect them.
+    <br>5. Build your stash of reusable party-ware over time! If you throw a lot of parties and you have the storage space, it’s worth investing in enough dishes, glasses and utensils for your parties. It’s completely ok to use and (re-use).<br>
+    Good luck with this challenges, if it’s too cold to throw a BBQ party, get the tip 5 ready during the week and you can consider your challenges as done",
+   short_description: "Let’s be honest. It’s almost impossible to throw a totally zero waste BBQ or party. But hosting one that’s (nearly) zero waste is actually pretty easy. find a step by step guide in the description",
+   intensity: 3,
+   map: false,
+   gender_specific:  0,
+   plastic:  1000,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/q8Pybboa3Lg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+##=================================================================##
+## kitchen
+##=================================================================##
+
+challenge = Challenge.new(
+   name:"zero waste chicken",
+   description:"500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
    intensity: 1,
    map: false,
    gender_specific: 0,
-   plastic: 400,
+   plastic: 500,
+   category: catkit,
    size: false,
-   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/bRIv3cLAO4I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
  )
-challenge.category = Category.all.sample
 challenge.save
 
-# challenge = Challenge.new(
-#    name: '',
-#    description:'',
-#    short_description: '',
-#    intensity: 1,
-#    map: false,
-#    gender_specific: 0,
-#    plastic: 500,
-#    size: false,
-#    video_link: ''
-#  )
-# challenge.category = Category.all.sample
-# challenge.save
+challenge = Challenge.new(
+   name:"zero waste chicken",
+   description:"500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: catkit,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
 
-# challenge = Challenge.new(
-#    name: '',
-#    description:'',
-#    short_description: '',
-#    intensity: 1,
-#    map: false,
-#    gender_specific: 0,
-#    plastic: 500,
-#    size: false,
-#    video_link: ''
-#  )
-# challenge.category = Category.all.sample
-# challenge.save
+challenge = Challenge.new(
+   name:"zero waste chicken",
+   description:"500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: catkit,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
 
-# challenge = Challenge.new(
-#    name: '',
-#    description:'',
-#    short_description: '',
-#    intensity: 1,
-#    map: false,
-#    gender_specific: 0,
-#    plastic: 500,
-#    size: false,
-#    video_link: ''
-#  )
-# challenge.category = Category.all.sample
-# challenge.save
+challenge = Challenge.new(
+   name:"zero waste chicken",
+   description:"500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: catkit,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
 
-# challenge = Challenge.new(
-#    name: '',
-#    description:'',
-#    short_description: '',
-#    intensity: 1,
-#    map: false,
-#    gender_specific: 0,
-#    plastic: 500,
-#    size: false,
-#    video_link: ''
-#  )
-# challenge.category = Category.all.sample
-# challenge.save
+challenge = Challenge.new(
+   name:"zero waste chicken",
+   description:"500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: catkit,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
 
+challenge = Challenge.new(
+   name:"zero waste chicken",
+   description:"500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: catkit,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+challenge = Challenge.new(
+   name:"zero waste chicken",
+   description:"500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: catkit,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+challenge = Challenge.new(
+   name:"zero waste chicken",
+   description:"500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: catkit,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+##=================================================================##
+## home maintenance
+##=================================================================##
+
+challenge = Challenge.new(
+   name:"zero waste chicken",
+   description:"500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: electric,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+challenge = Challenge.new(
+   name:"zero waste chicken",
+   description:"500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: electric,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+challenge = Challenge.new(
+   name:"zero waste chicken",
+   description:"500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: electric,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+challenge = Challenge.new(
+   name:"zero waste chicken",
+   description:"500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: electric,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+challenge = Challenge.new(
+   name:"zero waste chicken",
+   description:"500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: electric,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+challenge = Challenge.new(
+   name:"zero waste chicken",
+   description:"500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: electric,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+challenge = Challenge.new(
+   name:"zero waste chicken",
+   description:"500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: electric,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+challenge = Challenge.new(
+   name:"zero waste chicken",
+   description:"500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: electric,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+challenge = Challenge.new(
+   name:"zero waste chicken",
+   description:"500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: electric,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+challenge = Challenge.new(
+   name:"zero waste chicken",
+   description:"500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: electric,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+##=================================================================##
+##  leasur
+##=================================================================##
+
+challenge = Challenge.new(
+   name:"zero waste activity ",
+   description:"leasure disposable stuff are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: leasur,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+challenge = Challenge.new(
+   name:"zero waste activity ",
+   description:"leasure disposable stuff are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: leasur,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+challenge = Challenge.new(
+   name:"zero waste activity ",
+   description:"leasure disposable stuff are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: leasur,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+challenge = Challenge.new(
+   name:"zero waste activity ",
+   description:"leasure disposable stuff are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: leasur,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+challenge = Challenge.new(
+   name:"zero waste activity ",
+   description:"leasure disposable stuff are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: leasur,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+challenge = Challenge.new(
+   name:"zero waste activity ",
+   description:"leasure disposable stuff are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: leasur,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+challenge = Challenge.new(
+   name:"zero waste activity ",
+   description:"leasure disposable stuff are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: leasur,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+challenge = Challenge.new(
+   name:"zero waste activity ",
+   description:"leasure disposable stuff are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: leasur,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+challenge = Challenge.new(
+   name:"zero waste activity ",
+   description:"leasure disposable stuff are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: leasur,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+challenge = Challenge.new(
+   name:"zero waste activity ",
+   description:"leasure disposable stuff are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: leasur,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+##=================================================================##
+## appare
+##=================================================================##
+
+challenge = Challenge.new(
+   name:"Plastic clothe",
+   description:"leasure disposable stuff are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: appare,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+challenge = Challenge.new(
+   name:"Plastic clothe",
+   description:"leasure disposable stuff are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: appare,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+challenge = Challenge.new(
+   name:"Plastic clothe",
+   description:"leasure disposable stuff are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: appare,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+challenge = Challenge.new(
+   name:"Plastic clothe",
+   description:"leasure disposable stuff are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: appare,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+challenge = Challenge.new(
+   name:"Plastic clothe",
+   description:"leasure disposable stuff are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: appare,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+challenge = Challenge.new(
+   name:"Plastic clothe",
+   description:"leasure disposable stuff are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: appare,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+challenge = Challenge.new(
+   name:"Plastic clothe",
+   description:"leasure disposable stuff are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: appare,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+challenge = Challenge.new(
+   name:"Plastic clothe",
+   description:"leasure disposable stuff are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: appare,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+challenge = Challenge.new(
+   name:"Plastic clothe",
+   description:"leasure disposable stuff are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: appare,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+challenge = Challenge.new(
+   name:"Plastic clothe",
+   description:"leasure disposable stuff are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: appare,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+challenge = Challenge.new(
+   name:"Plastic clothe",
+   description:"leasure disposable stuff are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: appare,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+challenge = Challenge.new(
+   name:"Plastic clothe",
+   description:"leasure disposable stuff are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: appare,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+##=================================================================##
+## work ##
+##=================================================================##
+
+challenge = Challenge.new(
+   name:"share our app with your workers",
+   description:"leasure disposable stuff are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: work,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+challenge = Challenge.new(
+   name:"share our app with your workers",
+   description:"leasure disposable stuff are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: work,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+challenge = Challenge.new(
+   name:"share our app with your workers",
+   description:"leasure disposable stuff are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: work,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+challenge = Challenge.new(
+   name:"share our app with your workers",
+   description:"leasure disposable stuff are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: work,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+challenge = Challenge.new(
+   name:"share our app with your workers",
+   description:"leasure disposable stuff are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: work,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+challenge = Challenge.new(
+   name:"share our app with your workers",
+   description:"leasure disposable stuff are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: work,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+challenge = Challenge.new(
+   name:"share our app with your workers",
+   description:"leasure disposable stuff are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: work,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+challenge = Challenge.new(
+   name:"share our app with your workers",
+   description:"leasure disposable stuff are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: work,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+challenge = Challenge.new(
+   name:"share our app with your workers",
+   description:"leasure disposable stuff are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: work,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+challenge = Challenge.new(
+   name:"share our app with your workers",
+   description:"leasure disposable stuff are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: work,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+##=================================================================##
+## soc ##
+##=================================================================##
+
+challenge = Challenge.new(
+   name:"go out with your straw and make joke about it",
+   description:"leasure disposable stuff are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: soc,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+challenge = Challenge.new(
+   name:"go out with your straw and make joke about it",
+   description:"leasure disposable stuff are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: soc,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+challenge = Challenge.new(
+   name:"go out with your straw and make joke about it",
+   description:"leasure disposable stuff are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: soc,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+challenge = Challenge.new(
+   name:"go out with your straw and make joke about it",
+   description:"leasure disposable stuff are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: soc,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+challenge = Challenge.new(
+   name:"go out with your straw and make joke about it",
+   description:"leasure disposable stuff are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: soc,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+challenge = Challenge.new(
+   name:"go out with your straw and make joke about it",
+   description:"leasure disposable stuff are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: soc,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+challenge = Challenge.new(
+   name:"go out with your straw and make joke about it",
+   description:"leasure disposable stuff are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: soc,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+challenge = Challenge.new(
+   name:"go out with your straw and make joke about it",
+   description:"leasure disposable stuff are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   plastic: 500,
+   category: soc,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
 
 ##=================================================================##
 ## Journal of a primary user ##
@@ -424,17 +1204,3 @@ deal = Deal.new
 deal.challenge = Challenge.find(1)
 deal.partner = partner
 deal.save
-
-# challenge = Challenge.new(
-#    name: '',
-#    description:'',
-#    short_description: '',
-#    intensity: 1,
-#    map: false,
-#    gender_specific: 0,
-#    plastic: 500,
-#    size: false,
-#    video_link: ''
-#  )
-# challenge.category = Category.all.sample
-# challenge.save
