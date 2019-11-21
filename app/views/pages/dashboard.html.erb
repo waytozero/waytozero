@@ -210,7 +210,7 @@
               <% elements = @user_challenges_not.select do |challenge|
                 challenge.challenge.category == category
               end %>
-              <p> <%= @small_challenges.where(category: category).size + elements.size %> </p>
+              <p> <%= @small_challenges_not.where(category: category).size + elements.size %> / <%= @small_challenges.where(category: category).size %></p>
           </div>
         <% end %>
       <% end %>

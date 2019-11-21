@@ -20,7 +20,7 @@ class PagesController < ApplicationController
     # This gets the number of challenges left for each category. #We have to add to this number the number of weekly challenges of the category the user has
     @small_challenges = Challenge.where(size: false)
     @user_challenges = WeeklyChallenge.where(user: @user)
-    @small_challenges = @small_challenges.where.not(weekly_challenges: @user_challenges)
+    @small_challenges_not = @small_challenges.where.not(weekly_challenges: @user_challenges)
     @user_challenges_not = @user_challenges.where(status_challenge: false)
     # @hash_all_challenges = {}
     # @hash_assigned_challenges = {}
