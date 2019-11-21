@@ -205,7 +205,7 @@ challenge = Challenge.new(
    map: false,
    category: cathyg,
    gender_specific: 0,
-   plastic: 400,
+   plastic: 1,
    size: false,
    video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/aicF2Dp7l1g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
    )
