@@ -20,7 +20,7 @@ Category.create!(name: 'Social life', photo: 'https://res.cloudinary.com/dr3uy79
 
 
 ##=================================================================##
-## Random users ##
+## Random users creating other trees for community ##
 ##=================================================================##
 
 15.times do
@@ -438,3 +438,27 @@ deal.save
 #  )
 # challenge.category = Category.all.sample
 # challenge.save
+
+
+##=================================================================##
+## Other users to have more plastic saved as a community ##
+##=================================================================##
+
+primary_user = User.create!(
+    email: 'user2@hotmail.com',
+    username: 'Alfred',
+    password: '123456',
+    xp: 20,
+    level: 30,
+    gender: 2,
+    address: 'Brussels',
+    tree_count: 30
+)
+15.times do WeeklyChallenge.create!(
+  status_challenge: true,
+  challenge: small_challenges.sample,
+  user: primary_user,
+  week: (35..46).to_a.sample,
+  year: 2019
+  )
+end
