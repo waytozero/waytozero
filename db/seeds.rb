@@ -442,7 +442,7 @@ primary_user = User.create!(
     tree_count: 30
 )
 
-challenge = Challenge.new(
+challenge_to_add = Challenge.new(
    name:"zero waste chicken",
    description:"500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
    short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
@@ -455,6 +455,15 @@ challenge = Challenge.new(
    video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
  )
 challenge.save
+
+15.times do WeeklyChallenge.create!(
+  status_challenge: true,
+  challenge: challenge_to_add,
+  user: primary_user,
+  week: (35..46).to_a.sample,
+  year: 2019
+  )
+end
 
 challenge = Challenge.new(
    name:"zero waste chicken",
