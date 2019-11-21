@@ -441,7 +441,7 @@ primary_user = User.create!(
     address: 'Brussels',
     tree_count: 30
 )
-=======
+
 challenge = Challenge.new(
    name:"zero waste chicken",
    description:"500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
