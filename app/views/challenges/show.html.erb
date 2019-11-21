@@ -1,32 +1,33 @@
-<div class="container">
-  <div class="col-12">
-    <%= link_to "Back to dashboard", dashboard_path %>
-    <div class="col-12">
-      <div class="card card-challenge-show">
-          <h1><%= @challenge.name %></h1>
-          <br>
-          <p><%= @challenge.description.html_safe %></p>
-          <p>Save up to <%= @challenge.plastic %> kg of plastic !!!</p>
-            <% if @challenge.video_link %>
-            <%= @challenge.video_link.html_safe %>
-          <% else %>
-            <%= "There is no video yet for this challenge" %>
-          <% end %>
-          <br>
-            <% unless @markers.nil? %>
-            <h3>Our shop partners that will help you to realize the challenge</h3>
-            <div
-              id="map"
-              style="width: 50%;
-              height: 300px;"
-              data-markers="<%= @markers.to_json %>"
-              data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-            ></div>
-          <% end %>
-            <p><%= link_to "Add to my weekly challenges", weekly_challenges_path(@challenge), method: :post, class: "btn button-show" %></p>
-            <p><%= link_to "Mark as already done", weekly_challenges_path(@small_challenge, done: "true"), method: :post,  class: "btn button-show"%></p>
-
-      </div>
+<div class="col-12">
+  <div class="d-flex">
+    <div class="card card-challenge-show col-7">
+        <h1><%= @challenge.name %></h1>
+        <h3>Save up to <%= @challenge.plastic %> kg of plastic !!!</h3>
+        <br>
+        <p><%= @challenge.description.html_safe %></p>
+    </div>
+    <div class="card card-challenge-show-map col-4">
+        <% if @challenge.video_link %>
+          <h3>The video to do it yourself</h3>
+          <%= @challenge.video_link.html_safe %>
+        <% else %>
+          <%= "There is no video yet for this challenge" %>
+        <% end %>
+        <br>
+        <% unless @markers.nil? %>
+          <h3>Our partner shops that will help you for the challenge</h3>
+          <div
+            id="map"
+            style="width: 100%;
+            height: 300px;"
+            data-markers="<%= @markers.to_json %>"
+            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+          ></div>
+        <% end %>
+        <br>
+        <p><%= link_to "Add to my weekly challenges", weekly_challenges_path(@challenge), method: :post, class: "btn button-show" %></p>
+        <p><%= link_to "Mark as already done", weekly_challenges_path(@small_challenge, done: "true"), method: :post,  class: "btn button-show"%></p>
+        <p><%= link_to "Back to dashboard", dashboard_path %></p>
     </div>
   </div>
 </div>

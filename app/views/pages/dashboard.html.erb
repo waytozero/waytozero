@@ -58,30 +58,30 @@
       <div class="card card-dashboard" style="height:100%">
         <h2>Challenges</h2>
         <div class="challenges">
-          <% if @weekly_challenges.empty? %>
-            <p>prout</p>
-          <% else %>
+          <% if @weekly_challenges.any? %>
             <% @weekly_challenges.each do |challenge| %>
-            <% if challenge.status_challenge == false %>
-              <% if challenge.challenge.size == false %>
-              <div data-challenge-id="<%= challenge.challenge.id %>">
-                <div class="notification">
-                  <div class="row row-center">
-                    <div class="col-8">
-                      <div class="notification-content justify-content-center">
-                        <p><small style="font-size: 1rem;"><%= challenge.challenge.name  %></small></p>
-                        <p><small style="color: #91a5b9">Experience: <%= "25 xp" %> | Plastic: <%= challenge.challenge.plastic  %> kg</small></p>
-                        <p><%= challenge.challenge.short_description %></p>
-                        <p> <%= link_to "See details", challenge_path(challenge.challenge) %></p>
-                      </div>
-                    </div>
-                    <div class="col-4">
-                      <div class="notification-actions justify-content-center">
-                          <% if challenge.status_challenge == false %>
-                            <%= button_to challenge, class: "btn mark-as-done-btn center", disabled: false, method: :put, remote: true do %>
-                              Mark as done
-                            <% end %>
-                          <% end %>
+              <% if challenge.status_challenge == false %>
+                <% if challenge.challenge.size == false %>
+                  <div data-challenge-id="<%= challenge.challenge.id %>">
+                    <div class="notification">
+                      <div class="row row-center">
+                        <div class="col-8">
+                          <div class="notification-content justify-content-center">
+                            <p><small style="font-size: 1rem;"><%= challenge.challenge.name  %></small></p>
+                            <p><small style="color: #91a5b9">Experience: <%= "25 xp" %> | Plastic: <%= challenge.challenge.plastic  %> kg</small></p>
+                            <p><%= challenge.challenge.short_description %></p>
+                            <p> <%= link_to "See details", challenge_path(challenge.challenge) %></p>
+                          </div>
+                        </div>
+                        <div class="col-4">
+                          <div class="notification-actions justify-content-center">
+                              <% if challenge.status_challenge == false %>
+                                <%= button_to challenge, class: "btn mark-as-done-btn center", disabled: false, method: :put, remote: true do %>
+                                  Mark as done
+                                <% end %>
+                              <% end %>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -132,8 +132,7 @@
               </div>
               <% end %>
             <% end %>
-            <% end %>
-          <% end %>
+          <%end %>
         </div>
       </div>
     </div>
@@ -166,17 +165,21 @@
         </div>
       </div>
       <div class="card card-dashboard badges-card" style="margin-top:2rem;">
-        <h2>Successful Badges</h2>
-          <div class="slider slides-width" style="width: 100%" data-slick='{"slidesToShow": 3, "slidesToScroll": 1}'>
-            <% @successes.each do |success| %>
-            <div class="slider_container">
-              <div class="text-center">
-                <%= cl_image_tag success.achievement.photo, :class => "img_slider" %>
-                <p class="slider_text"><%= success.achievement.name %></p>
-              </div>
+        <h2>Success Badges</h2>
+          <% if @successes.any? %>
+            <div class="slider prout" style="width: 100%" data-slick='{"slidesToShow": 3, "slidesToScroll": 1}'>
+              <% @successes.each do |success| %>
+                <div class="slider_container">
+                  <div class="text-center">
+                    <%= cl_image_tag success.achievement.photo, :class => "img_slider" %>
+                    <p class="slider_text"><%= success.achievement.name %></p>
+                  </div>
+                </div>
+              <% end %>
             </div>
-            <% end %>
-        </div>
+          <% else %>
+            <p>No badges yet dude</p>
+          <% end %>
       </div>
     </div>
   </div>
@@ -209,13 +212,10 @@
               <%= cl_image_tag category.photo, height: 60, width: 60, crop: :fill %>
             </div>
               <p><%="#{category.name}"%></p>
-              <% @result = @hash_all_challenges["#{category.name}"] - @hash_assigned_challenges["#{category.name}"]%>
-              <%= if @result < 0
-                    "0"
-                  else
-                    @result
-                  end
-              %> left
+              <% elements = @user_challenges_not.select do |challenge|
+                challenge.challenge.category == category
+              end %>
+              <p> <%= @small_challenges_not.where(category: category).size + elements.size %> / <%= @small_challenges.where(category: category).size %></p>
           </div>
         <% end %>
       <% end %>

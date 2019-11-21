@@ -22,9 +22,15 @@
 }
 
 .card-challenge-show {
+  margin: 25px;
+  padding: 20px;
+  flex: 0 0 auto;
+}
+
+.card-challenge-show-map {
   margin: 2rem 2rem;
   padding: 1rem 1rem 1rem 1rem;
-  min-height: 10rem;
+  flex: 0 0 auto;
 }
 
 .card-community-dashboard {
