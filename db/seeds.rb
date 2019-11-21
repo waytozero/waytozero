@@ -19,7 +19,7 @@ work = Category.create!(name: 'Work', photo: 'https://res.cloudinary.com/dr3uy79
 soc = Category.create!(name: 'Social life', photo: 'https://res.cloudinary.com/dr3uy796x/image/upload/v1574076592/categories/social_life_nofvqe.svg')
 
 ##=================================================================##
-## Random users ##
+## Random users creating other trees for community ##
 ##=================================================================##
 
 15.times do
@@ -427,6 +427,21 @@ challenge = Challenge.new(
  )
 challenge.save
 
+##=================================================================##
+## Other users to have more plastic saved as a community ##
+##=================================================================##
+
+primary_user = User.create!(
+    email: 'user2@hotmail.com',
+    username: 'Alfred',
+    password: '123456',
+    xp: 20,
+    level: 30,
+    gender: 2,
+    address: 'Brussels',
+    tree_count: 30
+)
+=======
 challenge = Challenge.new(
    name:"zero waste chicken",
    description:"500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
