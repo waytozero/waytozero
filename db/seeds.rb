@@ -1245,3 +1245,108 @@ challenge = Challenge.new(
    video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
  )
 challenge.save
+
+
+##=================================================================##
+## Journal of a primary user ##
+##=================================================================##
+
+primary_user = User.create!(
+    email: 'antoine.braconnier@hotmail.com',
+    username: 'Antoine',
+    password: '123456',
+    xp: 20,
+    level: 7,
+    gender: 2,
+    address: 'Brussels',
+    tree_count: 8
+)
+
+big_challenges = Challenge.where(size: true)
+small_challenges = Challenge.where(size: false)
+
+WeeklyChallenge.create!(
+  status_challenge: false,
+  challenge: big_challenges.sample,
+  user: primary_user,
+  week: Date.today.cweek,
+  year: 2019
+)
+
+2.times do WeeklyChallenge.create!(
+  status_challenge: false,
+  challenge: small_challenges.sample,
+  user: primary_user,
+  week: Date.today.cweek,
+  year: 2019
+)
+end
+
+15.times do WeeklyChallenge.create!(
+  status_challenge: true,
+  challenge: small_challenges.sample,
+  user: primary_user,
+  week: (35..46).to_a.sample,
+  year: 2019
+  )
+end
+
+7.times do WeeklyChallenge.create!(
+  status_challenge: true,
+  challenge: big_challenges.sample,
+  user: primary_user,
+  week: (35..46).to_a.sample,
+  year: 2019
+  )
+end
+
+
+5.times do Success.create!(
+  user: primary_user,
+  achievement: AchievementNumber.all.sample,
+  week: (35..46).to_a.sample,
+  year: 2019
+  )
+end
+
+5.times do Success.create!(
+  user: primary_user,
+  achievement: AchievementCategory.all.sample,
+  week: (35..46).to_a.sample,
+  year: 2019
+  )
+end
+
+partner = Partner.create!(
+  name: 'The Barn Bio Market',
+  address: 'Place Saint-Pierre 38, 1040 Etterbeek'
+  )
+
+deal = Deal.new
+deal.challenge = Challenge.find(1)
+deal.partner = partner
+deal.save
+
+partner = Partner.create!(
+  name: 'Stock',
+  address: 'Place Fernand Cocq 23, Bruxelles'
+  )
+
+deal = Deal.new
+deal.challenge = Challenge.find(1)
+deal.partner = partner
+deal.save
+
+50.times do
+  Challenge.create(
+  name: Faker::Lorem.sentence,
+  description: Faker::Lorem.paragraph,
+  short_description: "500 billion disposable cups are produced every year.",
+  intensity: 1,
+  map: false,
+  gender_specific: 0,
+  plastic: 500,
+  category: Category.all.sample,
+  size: false
+    )
+end
