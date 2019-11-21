@@ -57,6 +57,7 @@
     <div class="col-7">
       <div class="card card-dashboard" style="height:100%">
         <h2>Challenges</h2>
+        <%= link_to "Suggest a challenge", suggest_path %>
         <div class="challenges">
           <% if @weekly_challenges.any? %>
             <% @weekly_challenges.each do |challenge| %>
@@ -218,4 +219,5 @@
       <% end %>
     </div>
   </div>
+  <%= link_to "The team", thanks_path %>
 </div>
