@@ -1246,3 +1246,17 @@ deal = Deal.new
 deal.challenge = Challenge.find(1)
 deal.partner = partner
 deal.save
+
+50.times do
+  Challenge.create(
+  name: Faker::Lorem.sentence,
+  description: Faker::Lorem.paragraph,
+  short_description: "500 billion disposable cups are produced every year.",
+  intensity: 1,
+  map: false,
+  gender_specific: 0,
+  plastic: 500,
+  category: Category.all.sample,
+  size: false
+    )
+end
