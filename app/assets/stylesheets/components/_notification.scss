@@ -6,10 +6,10 @@
   background: white;
   padding: 0.8rem 1.5rem;
   border: 2px solid rgb(0, 214, 139);
-  background-position: left bottom;
+  background-position: right bottom;
   background-repeat: no-repeat;
   background-size: 20rem;
-  background-image: asset-url('big-challenge.png');
+  background-image: asset-url('tree.png');
   min-height: 15rem;
 }
 
@@ -18,6 +18,7 @@
   background-color: #4A4A4A;
   margin: auto;
   padding: auto;
+  font-size: 100%;
 }
 
 .notification {
