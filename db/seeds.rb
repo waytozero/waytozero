@@ -104,7 +104,7 @@ end
 ##  ## Hygiene & Healthcare
 ##=================================================================##
 
-challenge = Challenge.new(
+gera = Challenge.new(
    name: "Way to zero toothpaste",
    description: "<h2>The Best Ingredients to Use in DIY Toothpaste</h2>
     <br><strong>Coconut oil</strong>, which can help boost the microbiome in your gut (remember, the gut begins in the mouth!) and naturally prevent candida in the mouth. There is limited evidence that coconut oil might help reduce cavity-causing bacteria—either way, it can only help, so long as it’s not used as a replacement for flossing, brushing, and tongue scraping.
@@ -122,7 +122,7 @@ challenge = Challenge.new(
    size: true,
    video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/aicF2Dp7l1g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
    )
-challenge.save
+gera.save
 
 challenge = Challenge.new(
    name: "Body wash",
@@ -1179,22 +1179,29 @@ small_challenges = Challenge.where(size: false)
 
 WeeklyChallenge.create!(
   status_challenge: false,
-  challenge: big_challenges.sample,
+  challenge: gera,
   user: primary_user,
   week: Date.today.cweek,
   year: 2019
 )
 
-2.times do WeeklyChallenge.create!(
+WeeklyChallenge.create!(
   status_challenge: false,
   challenge: small_challenges.sample,
   user: primary_user,
   week: Date.today.cweek,
   year: 2019
 )
-end
 
-15.times do WeeklyChallenge.create!(
+WeeklyChallenge.create!(
+  status_challenge: false,
+  challenge: small_challenges.sample,
+  user: primary_user,
+  week: Date.today.cweek,
+  year: 2019
+)
+
+5.times do WeeklyChallenge.create!(
   status_challenge: true,
   challenge: small_challenges.sample,
   user: primary_user,
@@ -1213,7 +1220,7 @@ end
 end
 
 
-5.times do Success.create!(
+4.times do Success.create!(
   user: primary_user,
   achievement: AchievementNumber.all.sample,
   week: (35..46).to_a.sample,
@@ -1221,7 +1228,7 @@ end
   )
 end
 
-5.times do Success.create!(
+4.times do Success.create!(
   user: primary_user,
   achievement: AchievementCategory.all.sample,
   week: (35..46).to_a.sample,
