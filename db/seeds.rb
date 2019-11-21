@@ -36,96 +36,6 @@ soc = Category.create!(name: 'Social life', photo: 'https://res.cloudinary.com/d
 end
 
 ##=================================================================##
-## Journal of a primary user ##
-##=================================================================##
-
-primary_user = User.create!(
-    email: 'antoine.braconnier@hotmail.com',
-    username: 'Antoine',
-    password: '123456',
-    xp: 20,
-    level: 7,
-    gender: 2,
-    address: 'Brussels',
-    tree_count: 8
-)
-
-big_challenges = Challenge.where(size: true)
-small_challenges = Challenge.where(size: false)
-
-WeeklyChallenge.create!(
-  status_challenge: false,
-  challenge: big_challenges.sample,
-  user: primary_user,
-  week: Date.today.cweek,
-  year: 2019
-)
-
-2.times do WeeklyChallenge.create!(
-  status_challenge: false,
-  challenge: small_challenges.sample,
-  user: primary_user,
-  week: Date.today.cweek,
-  year: 2019
-)
-end
-
-15.times do WeeklyChallenge.create!(
-  status_challenge: true,
-  challenge: small_challenges.sample,
-  user: primary_user,
-  week: (35..46).to_a.sample,
-  year: 2019
-  )
-end
-
-7.times do WeeklyChallenge.create!(
-  status_challenge: true,
-  challenge: big_challenges.sample,
-  user: primary_user,
-  week: (35..46).to_a.sample,
-  year: 2019
-  )
-end
-
-
-5.times do Success.create!(
-  user: primary_user,
-  achievement: AchievementNumber.all.sample,
-  week: (35..46).to_a.sample,
-  year: 2019
-  )
-end
-
-5.times do Success.create!(
-  user: primary_user,
-  achievement: AchievementCategory.all.sample,
-  week: (35..46).to_a.sample,
-  year: 2019
-  )
-end
-
-partner = Partner.create!(
-  name: 'The Barn Bio Market',
-  address: 'Place Saint-Pierre 38, 1040 Etterbeek'
-  )
-
-deal = Deal.new
-deal.challenge = Challenge.find(1)
-deal.partner = partner
-deal.save
-
-partner = Partner.create!(
-  name: 'Stock',
-  address: 'Place Fernand Cocq 23, Bruxelles'
-  )
-
-deal = Deal.new
-deal.challenge = Challenge.find(1)
-deal.partner = partner
-deal.save
-
-##=================================================================##
 ## Achievements ##
 ##=================================================================##
 
@@ -187,26 +97,29 @@ AchievementCategory.all.each do |achievementcat|
 end
 
 ##=================================================================##
-## Paolo challenges
-## Hygiene & Healthcare
+## Paolo challenges ##
+##=================================================================##
+
+##=================================================================##
+##  ## Hygiene & Healthcare
 ##=================================================================##
 
 challenge = Challenge.new(
    name: "Way to zero toothpaste",
    description: "<h2>The Best Ingredients to Use in DIY Toothpaste</h2>
-    <br><strong>Coconut oil,</strong> which can help boost the microbiome in your gut (remember, the gut begins in the mouth!) and naturally prevent candida in the mouth. There is limited evidence that coconut oil might help reduce cavity-causing bacteria—either way, it can only help, so long as it’s not used as a replacement for flossing, brushing, and tongue scraping.
-    <br><br><strong>Trace minerals drops,</strong> especially if you drink reverse osmosis water, which removes bad stuff from the water but also removes the good stuff too. I use Liqumins Trace Mineral Drops, which were recommended to me by integrative physician Elson Haas.
+    <br><strong>Coconut oil</strong>, which can help boost the microbiome in your gut (remember, the gut begins in the mouth!) and naturally prevent candida in the mouth. There is limited evidence that coconut oil might help reduce cavity-causing bacteria—either way, it can only help, so long as it’s not used as a replacement for flossing, brushing, and tongue scraping.
+    <br><br><strong>Trace minerals drops</strong>, especially if you drink reverse osmosis water, which removes bad stuff from the water but also removes the good stuff too. I use Liqumins Trace Mineral Drops, which were recommended to me by integrative physician Elson Haas.
     <br><br><strong>Crushed cacao nibs</strong>. Believe it or not, the ideal DIY toothpaste would be a chocolate toothpaste, since compounds in cacao beans promote remineralization better than fluoride (and of course, much more safely). Depending on the grain size of the cacao nibs, it could be a safe abrasive to break up the biofilm — just like ground walnut shells are used to polish jewelry!
-    <br><br><strong>Bentonite clay,</strong> which is a natural polisher rich in minerals that isn’t too abrasive. It’s also alkaline, so it helps reduce acidity in the mouth. Don’t be afraid of putting “dirt” in your mouth—we’ve been brainwashed into thinking that we need to sterilize our mouths with mouthwashes that remove “99% of germs,” but vibrant dental health is actually about achieving a balanced ecosystem of bacteria in your mouth, which protects us from illness and promotes tooth remineralization. Clay is actually used to clean and polish exotic cars without damaging the finish.
+    <br><br><strong>Bentonite clay</strong>, which is a natural polisher rich in minerals that isn’t too abrasive. It’s also alkaline, so it helps reduce acidity in the mouth. Don’t be afraid of putting “dirt” in your mouth—we’ve been brainwashed into thinking that we need to sterilize our mouths with mouthwashes that remove “99% of germs,” but vibrant dental health is actually about achieving a balanced ecosystem of bacteria in your mouth, which protects us from illness and promotes tooth remineralization. Clay is actually used to clean and polish exotic cars without damaging the finish.
     <br><br><strong>Xylitol</strong> for its abilities to reduce cavity-causing bacteria in the mouth. Just don’t add too much since it’s a sweetener — too much can reprogram your taste buds to crave too much sweetness.
-    <br><br><strong>Baking soda,</strong> for its alkalinity. Our teeth and mouths are constantly under attack by acids thanks to the foods we eat. Neutralizing these acids with vegetables and water is essential to maintaining proper pH in the mouth to encourage the right bacteria as well as protect enamel from decay. Baking soda has a pH of 9 to 11 (alkaline), so it helps to neutralize acids while not being too abrasive to teeth.",
+    <br><br><strong>Baking soda</strong>, for its alkalinity. Our teeth and mouths are constantly under attack by acids thanks to the foods we eat. Neutralizing these acids with vegetables and water is essential to maintaining proper pH in the mouth to encourage the right bacteria as well as protect enamel from decay. Baking soda has a pH of 9 to 11 (alkaline), so it helps to neutralize acids while not being too abrasive to teeth.",
    short_description: "Way to zero in collaboration with ECO-BIO GERA, challenge you to make our own toothpaste at home with different ingredients. View her video to see details and a  explicative video.",
    intensity: 1,
    map: false,
    category: cathyg,
    gender_specific: 0,
-   plastic: 1,
-   size: false,
+   plastic: 400,
+   size: true,
    video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/aicF2Dp7l1g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
    )
 challenge.save
@@ -1245,7 +1158,6 @@ challenge = Challenge.new(
    video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
  )
 challenge.save
-
 
 ##=================================================================##
 ## Journal of a primary user ##
