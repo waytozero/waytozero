@@ -1,0 +1,56 @@
+#countholder .link{
+  margin-top: 40px;
+}
+
+#countholder a{
+  display: inline-block;
+  color: #fff;
+  font-size: 20px;
+  padding: 20px;
+  background: #265;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+#countholder a:hover{
+  background: #487;
+}
+
+#countholder{
+ color: #fff;
+ max-width: 100%;
+ display: inline-block;
+ font-weight: 100;
+ text-align: center;
+ padding: 0.2rem 1rem;
+ border-radius: 6px;
+ line-height: 1.6;
+}
+
+
+#countholder > div{
+ padding: 4px 10px;
+ border-radius: 5px;
+ background: #91a5b9;
+ display: inline-block;
+ font-size: 0.8rem;
+}
+
+#countholder div > span{
+ display: inline-block;
+ font-size: 1.2rem;
+}
+
+#countholder .smalltext{
+ padding-top: 5px;
+}
+
+.countdown_text {
+  font-size: 1rem;
+  font-family: "Montserrat", "Helvetica", "sans-serif";
+  font-weight: 600;
+  color: white;
+  background: #91a5b9;
+  border-radius: 5px;
+  padding: 0.25em 0.4em;
+}

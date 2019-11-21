@@ -95,7 +95,9 @@
                       <div><p><small style="font-size: 1rem;"><%= challenge.challenge.name %></small></p></div>
                     </div>
                     <div>
-                      <div class="badge badge-primary badge-notif">Challenge of the Week</div>
+                      <div class="row">
+                        <div class="badge badge-primary badge-notif">Challenge of the Week</div>
+                      </div>
                     </div>
                   </div>
                   <div class="row row-center">
@@ -109,16 +111,21 @@
                     <div class="col-4">
                       <div class="notification-actions">
                           <% if challenge.status_challenge == false %>
-                            <%= button_to challenge, class: "btn mark-as-done-btn center", disabled: false, method: :put, remote: true do %>
+                            <%= button_to challenge, class: "btn mark-as-done-btn center", id: "big-challenge", disabled: false, method: :put, remote: true do %>
                               Mark as done
                             <% end %>
                           <% end %>
                       </div>
                     </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-12 row-center">
-                      <a class="btn cta-btn center" href="/users/sign_up">Join the movement !</a>
+                    <div class="col-12">
+                      <div class="row row-center">
+                        <div id="countholder">
+                          <div><span class="days" id="days"></span><div class="smalltext">Days</div></div>
+                          <div><span class="hours" id="hours"></span><div class="smalltext">Hours</div></div>
+                          <div><span class="minutes" id="minutes"></span><div class="smalltext">Minutes</div></div>
+                          <div><span class="seconds" id="seconds"></span><div class="smalltext">Seconds</div></div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -158,9 +165,9 @@
           </div>
         </div>
       </div>
-      <div class="card card-dashboard" style="margin-top:2rem;">
+      <div class="card card-dashboard badges-card" style="margin-top:2rem;">
         <h2>Successful Badges</h2>
-          <div class="slider prout" style="width: 100%" data-slick='{"slidesToShow": 3, "slidesToScroll": 1}'>
+          <div class="slider slides-width" style="width: 100%" data-slick='{"slidesToShow": 3, "slidesToScroll": 1}'>
             <% @successes.each do |success| %>
             <div class="slider_container">
               <div class="text-center">
@@ -177,7 +184,6 @@
 <div class="col-12">
   <div class="card card-dashboard" style="margin-top: 2rem; margin-bottom: 2rem;">
     <h2 class="mb-3">Categories</h2>
-    <p><%= @test %> challenges left</p>
     <ul class="list-inline tabs-underlined mb-3">
       <li>
         <a href="#" class="tab-underlined active">All the challenges</a>

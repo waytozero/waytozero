@@ -30,6 +30,26 @@
   color: white;
 }
 
+#big-challenge {
+    background-color: #4a4a4a;
+    border-color: #4a4a4a;
+    width: 100%;
+    padding: 0.8rem;
+    color: white;
+    position: relative;
+    font-size: 1rem;
+    font-weight: 600;
+    display: inline-block;
+}
+#big-challenge.sent {
+  opacity: .7
+}
+#big-challenge:hover {
+  background-color: #2e2e2e;
+  border-color: #2e2e2e;
+  color: white;
+}
+
 .button-show {
   background-color: #00D68B;
   border-color: #00D68B;

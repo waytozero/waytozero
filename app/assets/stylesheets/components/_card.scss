@@ -14,6 +14,13 @@
   min-height: 10rem;
 }
 
+.badges-card {
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  background-size: 12rem;
+  background-image: asset-url('badges.png');
+}
+
 .card-challenge-show {
   margin: 2rem 2rem;
   padding: 1rem 1rem 1rem 1rem;
