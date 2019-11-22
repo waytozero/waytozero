@@ -1,32 +1,33 @@
 // 1. acceder au niveau de l'elf !
-var formerLevelBox = document.querySelector("#level")
-var formerLevel = parseInt(formerLevelBox.innerText)
-console.log({formerLevel})
+var formerLevelBox = document.querySelector("#level");
+var formerLevel = parseInt(formerLevelBox.innerText);
 
 // Total point pour former level
-var xpFormerMax = +document.querySelector("#level_info .progress .progress-bar").attributes['aria-valuemax'].value
+var xpFormerMax = +document.querySelector("#level_info .progress .progress-bar").attributes['aria-valuemax'].value;
 
 // total de points necessaire pour completer le current level
-var xpCurrentMax = parseInt('<%= @max_xp %>')
+var xpCurrentMax = parseInt('<%= @max_xp %>');
 
-//2. XP du challenge qui vient d'etre mark as done
-var xpChallenge = parseInt('<%= @xp %>')
+//2. XP, Plastic et Tree du challenge qui vient d'etre mark as done
+var xpChallenge = parseInt('<%= @xp %>');
+var plasticCurrent = document.querySelector("#plastic-user-counter");
+plasticCurrent.innerText = parseInt('<%= @user.plastic_count %>');
 
+var treeCurrent = document.querySelector("#tree-user-counter");
 
-var xpCurrent = parseInt('<%= @user.xp %>')
-var levelCurrent = parseInt('<%= @user.level %>')
-var xpFormer = xpCurrent - xpChallenge
-console.log({levelCurrent})
+var xpCurrent = parseInt('<%= @user.xp %>');
+var levelCurrent = parseInt('<%= @user.level %>');
+var xpFormer = xpCurrent - xpChallenge;
 
-var xpCurrentText = document.querySelector("#level_info .progress .progress-bar")
-xpCurrentText.innerText = `${xpCurrent}/${xpCurrentMax} XP`
+var xpCurrentText = document.querySelector("#level_info .progress .progress-bar");
+xpCurrentText.innerText = `${xpCurrent}/${xpCurrentMax} XP`;
 
 var proportion = parseInt((xpCurrent/xpCurrentMax)*100);
 
 var progressBar = document.querySelector("#level_info .progress .progress-bar");
-var leftPoints = parseInt('<%= @max_xp - @user.xp %>')
-var xpLeft = document.querySelector('#xp-left')
-xpLeft.innerText = leftPoints
+var leftPoints = parseInt('<%= @max_xp - @user.xp %>');
+var xpLeft = document.querySelector('#xp-left');
+xpLeft.innerText = leftPoints;
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -56,9 +57,9 @@ if ((xpFormer < 0)) {
 
   progressBar.style.width = '100%';
   progressBar.addEventListener('transitionend', animateProgressBar);
-
+  plasticCurrent = '<%= @user_plastic %>';
 } else {
 
   progressBar.style.width =  `${proportion}%`;
-
+  plasticCurrent = '<%= @user_plastic %>';
 };

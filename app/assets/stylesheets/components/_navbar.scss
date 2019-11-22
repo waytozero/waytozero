@@ -1,6 +1,11 @@
 .navbar-waytozero {
   justify-content: space-between;
   background: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 0.2rem 3rem;
 }
 
 .navbar-waytozero .navbar-collapse {
@@ -20,21 +25,6 @@
   align-items: center;
 }
 
-.active-navbar-item {
-  border-bottom: 3px solid #00D68B;
-  color: #4a4a4a !important;
-}
-
-.navbar-item {
-  color: #4a4a4a;
-  opacity: .8;
-}
-
-.navbar-item:hover {
-  opacity: 1;
-  border-bottom: 0.5px solid #4a4a4a;
-}
-
 .register-btn {
     background-color: #00D68B;
     border-color: #00D68B;
@@ -51,4 +41,45 @@
   background-color: #01c07d;
   border-color: #01c07d;
   color: white;
+}
+
+.navbar-nav li.navbar-item > :not(a) {
+  border-bottom: 3px solid #00D68B;
+  color: #4a4a4a !important;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.navbar-nav li.navbar-item a {
+  color: #4a4a4a;
+  opacity: .8;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  border-bottom: 3px solid transparent;
+  font-family: "Raleway", "Helvetica", "sans-serif";
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 0;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.navbar-nav li.navbar-item a:hover {
+  opacity: 1;
+  line-height: 1.5;
+  border-bottom: 3px solid #4a4a4a;
+  text-decoration: none;
+  margin-bottom: 1rem;
+}
+
+.body-margin {
+  margin-top: 100px;
 }
