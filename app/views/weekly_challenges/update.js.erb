@@ -9,11 +9,23 @@ var xpFormerMax = +document.querySelector("#level_info .progress .progress-bar")
 var xpCurrentMax = parseInt('<%= @max_xp %>');
 
 //2. XP, Plastic et Tree du challenge qui vient d'etre mark as done
+function formatNumber(num) {
+  return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+}
+
 var xpChallenge = parseInt('<%= @xp %>');
 var plasticCurrent = document.querySelector("#plastic-user-counter");
 plasticCurrent.innerText = parseInt('<%= @user.plastic_count %>');
 
 var treeCurrent = document.querySelector("#tree-user-counter");
+treeCurrent.innerText = parseInt('<%= @user.tree_count %>');
+
+//3. Total tree & plastic saved
+
+var plasticTotalCurrent = document.querySelector(".plastic-counter");
+var treeTotalCurrent = document.querySelector(".tree-counter");
+plasticTotalCurrent.innerText = formatNumber(parseInt('<%= @total_plastic %>'));
+treeTotalCurrent.innerText = formatNumber(parseInt('<%= @total_trees %>'));
 
 var xpCurrent = parseInt('<%= @user.xp %>');
 var levelCurrent = parseInt('<%= @user.level %>');

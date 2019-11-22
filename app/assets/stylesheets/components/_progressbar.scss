@@ -1,3 +1,17 @@
 .notransition {
   transition: none !important;
 }
+
+.progress-category {
+  display: -webkit-box;
+  display: flex;
+  height: .3rem;
+  overflow: hidden;
+  font-size: 0.75rem;
+  background-color: #b7b7b7;
+  border-radius: 10px;
+}
+
+.bg-category {
+  background-color: white;
+}
