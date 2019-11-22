@@ -119,7 +119,7 @@ gera = Challenge.new(
    category: cathyg,
    gender_specific: 0,
    plastic: 400,
-   size: true,
+   size: false,
    video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/aicF2Dp7l1g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
    )
 gera.save
@@ -216,7 +216,7 @@ challenge = Challenge.new(
    map: false,
    gender_specific: 0,
    plastic: 0,
-   size: false,
+   size: true,
    category: cathyg,
    video_link: '
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5J3cw4biWWo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -940,7 +940,7 @@ challenge = Challenge.new(
    gender_specific: 0,
    plastic: 500,
    category: work,
-   size: false,
+   size: true,
    video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
  )
 challenge.save
@@ -954,7 +954,7 @@ challenge = Challenge.new(
    gender_specific: 0,
    plastic: 500,
    category: work,
-   size: false,
+   size: true,
    video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
  )
 challenge.save
@@ -968,7 +968,7 @@ challenge = Challenge.new(
    gender_specific: 0,
    plastic: 500,
    category: work,
-   size: false,
+   size: true,
    video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
  )
 challenge.save
@@ -1179,7 +1179,7 @@ small_challenges = Challenge.where(size: false)
 
 WeeklyChallenge.create!(
   status_challenge: false,
-  challenge: gera,
+  challenge: big_challenges.sample,
   user: primary_user,
   week: Date.today.cweek,
   year: 2019
@@ -1187,7 +1187,7 @@ WeeklyChallenge.create!(
 
 WeeklyChallenge.create!(
   status_challenge: false,
-  challenge: small_challenges.sample,
+  challenge: gera,
   user: primary_user,
   week: Date.today.cweek,
   year: 2019
