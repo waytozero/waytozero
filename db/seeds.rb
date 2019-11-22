@@ -140,11 +140,12 @@ challengetoothbrush = Challenge.new(
    )
 challengetoothbrush.save
 
-challenge = Challenge.new(
-   name: "Body wash",
-   description: "easy challenge = free XP for you! Go to a nearby shop and buy your first eco soap! You won’t be disappointed we promise you!",
-   short_description: "easy challenge = free XP for you! Go to a nearby shop and buy your first eco soap! You won’t be disappointed we promise you!",
-   intensity: 1,
+
+toothbrush = Challenge.new(
+   name: "Bamboo toothbrush",
+   description: "today, you are done with using plastic toothbrush, go to a nearby shop and finally buy your first bamboo toothbrush. Complete this task and you will feel that you made a big step. Be happy about it and enjoy this happiness.",
+   short_description: "today, you are done with using plastic toothbrush, go to a nearby shop and finally buy your first bamboo toothbrush. Complete this task and you will feel that you made a big step. Be happy about it and enjoy this happiness.",
+   intensity: 2,
    map: false,
    category: cathyg,
    gender_specific: 0,
@@ -153,7 +154,8 @@ challenge = Challenge.new(
    video_link: "<iframe width='100%' height='315' src='https://www.youtube.com/embed/QMAo9O40zp0' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
    photo:"https://res.cloudinary.com/dr3uy796x/image/upload/v1574414562/challenges%20photo/body_wash_ewgmvm.jpg"
    )
-challenge.save
+toothbrush.save
+
 
 challenge = Challenge.new(
    name: "No cotton earbuds",
@@ -188,7 +190,7 @@ challenge = Challenge.new(
    )
 challenge.save
 
-challengestraws = Challenge.new(
+nostraws = Challenge.new(
    name: "No to straws",
    description: "STRAW NO MORE ! It’s destroying our oceans, over 500 million straws are used every single day.. thus, for this week you will have to go to a shop and buy your first metal or else straw, the challenge is to avoid completely the use of a plastic straw during the whole 7 days in every single place. Good luck with it and as a tip, never forget your straw, take it everywhere. ",
    short_description: "STRAW NO MORE ! It’s destroying our oceans, over 500 million straws are used every single day.. It's time to change this. ",
@@ -201,7 +203,8 @@ challengestraws = Challenge.new(
    video_link: "<iframe width='100%' height='315' src='https://www.youtube.com/embed/_CAim_uGjcI' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
    photo: "https://res.cloudinary.com/dr3uy796x/image/upload/v1574414563/challenges%20photo/no_to_straw_fjx0el.jpg"
    )
-challengestraws.save
+nostraws.save
+
 
 challenge = Challenge.new(
    name: "Save the water",
@@ -252,6 +255,7 @@ challenge = Challenge.new(
    intensity: 3,
    map: false,
    gender_specific: 0,
+   category: cathyg,
    plastic: 100,
    size: false,
    video_link: "<iframe width='100%' height='315' src='https://www.youtube.com/embed/3ClRZiwHptA' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
@@ -267,6 +271,7 @@ challenge = Challenge.new(
    intensity: 2,
    map: false,
    gender_specific: 0,
+   category: cathyg,
    plastic: 300,
    size: false,
    video_link: "<iframe width='100%' height='315' src='https://www.youtube.com/embed/iQZmK9nRilk' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
@@ -274,7 +279,22 @@ challenge = Challenge.new(
    )
 challenge.save
 
-challengebbq = Challenge.new(
+
+challenge = Challenge.new(
+   name:"Coffee cup",
+   description:"500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
+   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
+   intensity: 1,
+   map: false,
+   gender_specific: 0,
+   category: cathyg,
+   plastic: 500,
+   size: false,
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+ )
+challenge.save
+
+zerowaste = Challenge.new(
    name: "Zero waste BBQ",
    description: "Let’s be honest. It’s almost impossible to throw a totally zero waste BBQ or party. But hosting one that’s (nearly) zero waste is actually pretty easy.
     For this challenge, we will give you a few tips to make this change happen.<br>
@@ -287,13 +307,15 @@ challengebbq = Challenge.new(
    short_description: "Let’s be honest. It’s almost impossible to throw a totally zero waste BBQ or party. But hosting one that’s (nearly) zero waste is actually pretty easy. find a step by step guide in the description",
    intensity: 3,
    map: false,
-   gender_specific:  0,
-   plastic:  1000,
+   gender_specific: 0,
+   category: cathyg,
+   plastic: 1000,
    size: true,
    video_link: "<iframe width='100%' height='315' src='https://www.youtube.com/embed/q8Pybboa3Lg' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
    photo: "https://res.cloudinary.com/dr3uy796x/image/upload/v1574414564/challenges%20photo/zero_waste_bbq_bbyyzh.jpg"
    )
-challengebbq.save
+zerowaste.save!
+
 
 ##=================================================================##
 ## kitchen
@@ -1159,7 +1181,7 @@ primary_user = User.create!(
 
 WeeklyChallenge.create!(
   status_challenge: false,
-  challenge: challengebbq,
+  challenge: zerowaste,
   user: primary_user,
   week: Date.today.cweek,
   year: 2019
@@ -1169,7 +1191,7 @@ WeeklyChallenge.create!(
 
 WeeklyChallenge.create!(
   status_challenge: false,
-  challenge: challengetoothbrush,
+  challenge: toothbrush,
   user: primary_user,
   week: Date.today.cweek,
   year: 2019
@@ -1177,7 +1199,7 @@ WeeklyChallenge.create!(
 
 WeeklyChallenge.create!(
   status_challenge: false,
-  challenge: challengestraws,
+  challenge: nostraws,
   user: primary_user,
   week: Date.today.cweek,
   year: 2019
