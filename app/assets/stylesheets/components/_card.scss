@@ -87,36 +87,34 @@
 .card-challenge-index {
   margin-bottom: 8px;
   background: white;
-  padding: 8px 16px;
+  padding: 15px 25px;
   border: 1px solid rgb(235,235,235);
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
 .card-content {
   padding: 5 24px;
-  flex-grow: 1;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-grow: 2;
+  margin: 5px 10px;
 }
 
 .placeholder {
   background-color: grey;
   margin: 10px;
-  width: 75px;
+  min-width: 75px;
+  height: 75px;
 }
 
 
-.card-content p {
+.card-text p {
   margin: 0;
   line-height: 1.4;
   font-weight: bold;
   font-size: 20px;
 }
 
-.card-content p small{
+.card-text p small{
   color: #999999;
 }
 
@@ -129,5 +127,8 @@
 }
 
 .card-text {
-  flex-grow: 1;
+  flex-grow: 2;
+  padding: 0px 15px;
 }
+
+
