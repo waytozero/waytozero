@@ -210,7 +210,7 @@
         <%= link_to category_challenges_path(category) do %>
           <div class="card card-category">
             <div class="row">
-              <%= cl_image_tag category.photo, height: 100, width: 100, crop: :fill %>
+              <%= cl_image_tag category.photo, height: 50, width: 50, crop: :fill %>
             </div>
             <div class="row row-center mt-2" style="height: 50px;">
               <p style="position: relative"><%="#{category.name}"%></p>
