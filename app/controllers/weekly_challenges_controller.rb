@@ -32,6 +32,7 @@ class WeeklyChallengesController < ApplicationController
     @weekly_challenge.save
     @xp = 0
     @weekly_challenge.challenge.size == true ? @xp = 50 : @xp = 25
+    @user.tree_count += 1 if @weekly_challenge.challenge.size == true
     @user.xp += @xp
     @user.level += 1 while level_up?
     @user.save
