@@ -1,27 +1,25 @@
-<%= link_to "Go back to all challenges categories", categories_path %>
-
 <div class="container">
-  <div class="col-12">
-    <div class="col-6 mt-5 offset-3 card">
       <h2 class="to_change_h2" style="text-align: center"><%= @category.name %> related challenges</h2>
-    </div>
-  </div>
-</div>
-<div class="container">
-  <div class="col-6 mt-5 offset-3 card">
+  <div class="mt-5">
     <% if @small_challenges_displayed.empty? %>
-      <div class="card card-challenge-show">
+      <div class="card-challenge-index">
         <p><%= "Sorry there is no more small challenges in that category, but feel free to suggest us any challenges" %></p>
       </div>
     <% else %>
       <% @small_challenges_displayed.each do |small_challenge| %>
-        <div class="card card-challenge-show">
-          <h4><%= small_challenge.name %></h4>
-          <p><%= small_challenge.short_description %></p>
-<!--           <p><img src=<%="https://source.unsplash.com/200x200/?#{small_challenge.name}"%> alt=""></p> -->
-          <p><%= link_to "See full description", challenge_path(small_challenge) %></p>
-          <p><%= link_to "Add to challenges", weekly_challenges_path(small_challenge), method: :post, class: "btn button-index" %></p>
-          <p><%= link_to "Mark as done", weekly_challenges_path(small_challenge, done: "true"), method: :post,  class: "btn button-index"%></p>
+        <div class="card-challenge-index">
+          <div class="card-content">
+          <div class="placeholder"></div>
+          <div class="card-text">
+            <p><%= small_challenge.name %></p>
+            <p> <small> <%= small_challenge.short_description %> </small> </p>
+          </div>
+          </div>
+          <div class="card-actions">
+            <p><%= link_to "See full description", challenge_path(small_challenge) %></p>
+            <p><%= link_to "Add to challenges", weekly_challenges_path(small_challenge), method: :post, class: "btn button-index" %></p>
+            <p><%= link_to "Mark as done", weekly_challenges_path(small_challenge, done: "true"), method: :post,  class: "btn button-index"%></p>
+          </div>
         </div>
       <% end %>
     <% end %>
