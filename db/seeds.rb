@@ -138,7 +138,7 @@ challenge = Challenge.new(
    )
 challenge.save
 
-challenge = Challenge.new(
+toothbrush = Challenge.new(
    name: "Bamboo toothbrush",
    description: "today, you are done with using plastic toothbrush, go to a nearby shop and finally buy your first bamboo toothbrush. Complete this task and you will feel that you made a big step. Be happy about it and enjoy this happiness.",
    short_description: "today, you are done with using plastic toothbrush, go to a nearby shop and finally buy your first bamboo toothbrush. Complete this task and you will feel that you made a big step. Be happy about it and enjoy this happiness.",
@@ -150,7 +150,7 @@ challenge = Challenge.new(
    size: false,
    video_link: "<iframe width='560' height='315' src='https://www.youtube.com/embed/E8S0Pz-KskE' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
  )
-challenge.save
+toothbrush.save
 
 challenge = Challenge.new(
    name: "No cotton earbuds",
@@ -183,7 +183,7 @@ challenge = Challenge.new(
  )
 challenge.save
 
-challenge = Challenge.new(
+nostraws = Challenge.new(
    name: "No to straws",
    description: "STRAW NO MORE ! It’s destroying our oceans, over 500 million straws are used every single day.. thus, for this week you will have to go to a shop and buy your first metal or else straw, the challenge is to avoid completely the use of a plastic straw during the whole 7 days in every single place. Good luck with it and as a tip, never forget your straw, take it everywhere. ",
    short_description: "STRAW NO MORE ! It’s destroying our oceans, over 500 million straws are used every single day.. It's time to change this. ",
@@ -195,7 +195,7 @@ challenge = Challenge.new(
    size: false,
    video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/_CAim_uGjcI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
  )
-challenge.save
+nostraws.save
 
 challenge = Challenge.new(
    name: "Save the water",
@@ -246,6 +246,7 @@ challenge = Challenge.new(
    intensity: 3,
    map: false,
    gender_specific: 0,
+   category: cathyg,
    plastic: 100,
    size: false,
    video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/3ClRZiwHptA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
@@ -260,6 +261,7 @@ challenge = Challenge.new(
    intensity: 2,
    map: false,
    gender_specific: 0,
+   category: cathyg,
    plastic: 300,
    size: false,
    video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/iQZmK9nRilk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
@@ -273,13 +275,14 @@ challenge = Challenge.new(
    intensity: 1,
    map: false,
    gender_specific: 0,
+   category: cathyg,
    plastic: 500,
    size: false,
    video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
  )
 challenge.save
 
-challenge = Challenge.new(
+zerowaste = Challenge.new(
    name: "Zero waste BBQ",
    description: "Let’s be honest. It’s almost impossible to throw a totally zero waste BBQ or party. But hosting one that’s (nearly) zero waste is actually pretty easy.
     For this challenge, we will give you a few tips to make this change happen.<br>
@@ -292,12 +295,13 @@ challenge = Challenge.new(
    short_description: "Let’s be honest. It’s almost impossible to throw a totally zero waste BBQ or party. But hosting one that’s (nearly) zero waste is actually pretty easy. find a step by step guide in the description",
    intensity: 3,
    map: false,
-   gender_specific:  0,
-   plastic:  1000,
+   gender_specific: 0,
+   category: cathyg,
+   plastic: 1000,
    size: true,
    video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/q8Pybboa3Lg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
  )
-challenge.save
+zerowaste.save!
 
 ##=================================================================##
 ## kitchen
@@ -1179,7 +1183,7 @@ small_challenges = Challenge.where(size: false)
 
 WeeklyChallenge.create!(
   status_challenge: false,
-  challenge: big_challenges.sample,
+  challenge: zerowaste,
   user: primary_user,
   week: Date.today.cweek,
   year: 2019
@@ -1187,7 +1191,7 @@ WeeklyChallenge.create!(
 
 WeeklyChallenge.create!(
   status_challenge: false,
-  challenge: gera,
+  challenge: toothbrush,
   user: primary_user,
   week: Date.today.cweek,
   year: 2019
@@ -1195,7 +1199,7 @@ WeeklyChallenge.create!(
 
 WeeklyChallenge.create!(
   status_challenge: false,
-  challenge: small_challenges.sample,
+  challenge: nostraws,
   user: primary_user,
   week: Date.today.cweek,
   year: 2019
