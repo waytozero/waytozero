@@ -8,16 +8,16 @@
           <%= f.input :email, required: true, autofocus: true, placeholder: "email@email.com"%>
           <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), placeholder: "••••••" %>
           <%= f.input :password_confirmation, required: true, placeholder: "••••••" %>
-          <label class="radio_buttons optional">Gender</label>
+          <label class="radio_buttons optional mt-3">Gender</label>
           <div class="input form-check form-check-inline radio_buttons optional user_gender field_without_errors">
           <input type="hidden" name="user[gender]" value="">
           <label for="user_gender_1">
-          <input class="radio_buttons optional" type="radio" value="1" name="user[gender]" id="user_gender_1">Woman</label>
-          <label for="user_gender_2"><input class="radio_buttons optional" type="radio" value="2" name="user[gender]" id="user_gender_2">Man</label>
-          <label for="user_gender_0"><input class="radio_buttons optional" type="radio" value="0" checked="checked" name="user[gender]" id="user_gender_0">Other</label>
+          <input class="radio_buttons optional mr-3 ml-3" type="radio" value="1" name="user[gender]" id="user_gender_1">Woman</label>
+          <label for="user_gender_2"><input class="radio_buttons optional mr-3 ml-3" type="radio" value="2" name="user[gender]" id="user_gender_2">Man</label>
+          <label for="user_gender_0"><input class="radio_buttons optional mr-3 ml-3" type="radio" value="0" checked="checked" name="user[gender]" id="user_gender_0">Other</label>
           </div>
         </div>
-         <label class="question" for="question"><h3>What do you already own or do ?</h3></label>
+         <label class="question" for="question"><h2 style="font-size: 1.2rem" class="mt-5">What do you already own or do ?</h2></label>
         <div class="form-inputs">
           <div class="question-choices">
             <div class="question-choice">

@@ -217,11 +217,12 @@
             </div>
             <div class="row mt-3">
               <div class="progress-category" style="width: 100px; position: relative">
-                <div class="progress-bar bg-category" role="progressbar" style="width: ( (<% @small_challenges.where(category: category).size - ( @small_challenges_not.where(category: category).size + elements.size) %> / <% @small_challenges.where(category: category).size %> ) * 100 ) %" aria-valuenow="<% @small_challenges.where(category: category).size - ( @small_challenges_not.where(category: category).size + elements.size) %>" aria-valuemin="0" aria-valuemax="<% @small_challenges.where(category: category).size %>"></div>
+                <% total_challenges = @small_challenges.where(category: category).size == 0 ? 1 : @small_challenges.where(category: category).size %>
+                <% left_challenges = @small_challenges_not.where(category: category).size %>
+                <% done_challenges = total_challenges - left_challenges %>
+                <% width_challenges_bar = (done_challenges.to_f / total_challenges.to_f) * 100 %>
+                <div class="progress-bar bg-category" role="progressbar" style="width: <%= width_challenges_bar %>%" aria-valuenow=" <%= done_challenges %> " aria-valuemin="0" aria-valuemax=" <%= total_challenges %> "></div>
               </div>
-            </div>
-            <div class="row">
-              <p> <%= @small_challenges.where(category: category).size - ( @small_challenges_not.where(category: category).size + elements.size) %> / <% @small_challenges.where(category: category).size %></p>
             </div>
           </div>
         <% end %>
