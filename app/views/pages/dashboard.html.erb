@@ -29,7 +29,7 @@
                       <%= image_tag("plastic.svg", :style => 'max-height: 2rem') %>
                     </div>
                     <div class="col-9">
-                      <h3 style="font-size: 1.75rem; text-align: right;"><%= @user_plastic %>kg</h3>
+                      <h3 style="font-size: 1.75rem; text-align: right;"><span id="plastic-user-counter"><%= @user_plastic %></span>kg</h3>
                     </div>
                   </div>
                 </div>
@@ -40,7 +40,7 @@
                       <%= image_tag("trees.svg", :style => 'max-height: 2rem') %>
                     </div>
                     <div class="col-9">
-                      <h3 style="font-size: 1.75rem; text-align: right;"><%= @user.tree_count %> trees</h3>
+                      <h3 style="font-size: 1.75rem; text-align: right;"><span id="tree-user-counter"><%= @user.tree_count %></span> trees</h3>
                     </div>
                   </div>
                 </div>
@@ -204,16 +204,25 @@
     </ul>
     <div class="row mt-3 cards-category">
       <% @categories.each do |category| %>
+        <% elements = @user_challenges_not.select do |challenge| %>
+          <% challenge.challenge.category == category %>
+        <% end %>
         <%= link_to category_challenges_path(category) do %>
           <div class="card card-category">
             <div class="row">
-              <%= cl_image_tag category.photo, height: 60, width: 60, crop: :fill %>
+              <%= cl_image_tag category.photo, height: 50, width: 50, crop: :fill %>
             </div>
-              <p><%="#{category.name}"%></p>
-              <% elements = @user_challenges_not.select do |challenge|
-                challenge.challenge.category == category
-              end %>
-              <p> <%= @small_challenges_not.where(category: category).size + elements.size %> / <%= @small_challenges.where(category: category).size %></p>
+            <div class="row row-center mt-2" style="height: 50px;">
+              <p style="position: relative"><%="#{category.name}"%></p>
+            </div>
+            <div class="row mt-3">
+              <div class="progress-category" style="width: 100px; position: relative">
+                <div class="progress-bar bg-category" role="progressbar" style="width: ( (<% @small_challenges.where(category: category).size - ( @small_challenges_not.where(category: category).size + elements.size) %> / <% @small_challenges.where(category: category).size %> ) * 100 ) %" aria-valuenow="<% @small_challenges.where(category: category).size - ( @small_challenges_not.where(category: category).size + elements.size) %>" aria-valuemin="0" aria-valuemax="<% @small_challenges.where(category: category).size %>"></div>
+              </div>
+            </div>
+            <div class="row">
+              <p> <%= @small_challenges.where(category: category).size - ( @small_challenges_not.where(category: category).size + elements.size) %> / <% @small_challenges.where(category: category).size %></p>
+            </div>
           </div>
         <% end %>
       <% end %>

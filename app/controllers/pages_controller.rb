@@ -1,9 +1,6 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home]
 
-  def home
-  end
-
   def dashboard
     @user = current_user
     @weekly_challenges = @user.weekly_challenges
@@ -11,7 +8,7 @@ class PagesController < ApplicationController
     @total_trees = tree_counter
     @max_xp = xp_counter
     @total_plastic = plastic_counter
-    @user_plastic = plastic_user
+    @user_plastic = @user.plastic_count
     @successes = Success.where(user: @user)
     # @all_challenges = Challenge.all
     # @challenges = @user.challenges
@@ -83,13 +80,4 @@ class PagesController < ApplicationController
     plastic_count
   end
 
-  def plastic_user
-    challenges_user = WeeklyChallenge.where(user: @user).where(status_challenge: true)
-    plastic_count = 0
-    challenges_user.each do |challenge|
-      challenge_found = challenge.challenge
-      plastic_count += challenge_found.plastic
-    end
-    plastic_count
-  end
 end
