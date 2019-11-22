@@ -125,7 +125,7 @@ gera = Challenge.new(
    )
 gera.save
 
-challenge = Challenge.new(
+challengetoothbrush = Challenge.new(
    name: "Bamboo toothbrush",
    description: "today, you are done with using plastic toothbrush, go to a nearby shop and finally buy your first bamboo toothbrush. Complete this task and you will feel that you made a big step. Be happy about it and enjoy this happiness.",
    short_description: "today, you are done with using plastic toothbrush, go to a nearby shop and finally buy your first bamboo toothbrush. Complete this task and you will feel that you made a big step. Be happy about it and enjoy this happiness.",
@@ -138,7 +138,7 @@ challenge = Challenge.new(
    video_link: "<iframe width='100%' height='315' src='https://www.youtube.com/embed/E8S0Pz-KskE' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
    photo:"https://res.cloudinary.com/dr3uy796x/image/upload/v1574414563/challenges%20photo/bamboo_toothbrush_wtgndx.jpg"
    )
-challenge.save
+challengetoothbrush.save
 
 challenge = Challenge.new(
    name: "Body wash",
@@ -188,7 +188,7 @@ challenge = Challenge.new(
    )
 challenge.save
 
-challenge = Challenge.new(
+challengestraws = Challenge.new(
    name: "No to straws",
    description: "STRAW NO MORE ! It’s destroying our oceans, over 500 million straws are used every single day.. thus, for this week you will have to go to a shop and buy your first metal or else straw, the challenge is to avoid completely the use of a plastic straw during the whole 7 days in every single place. Good luck with it and as a tip, never forget your straw, take it everywhere. ",
    short_description: "STRAW NO MORE ! It’s destroying our oceans, over 500 million straws are used every single day.. It's time to change this. ",
@@ -201,7 +201,7 @@ challenge = Challenge.new(
    video_link: "<iframe width='100%' height='315' src='https://www.youtube.com/embed/_CAim_uGjcI' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
    photo: "https://res.cloudinary.com/dr3uy796x/image/upload/v1574414563/challenges%20photo/no_to_straw_fjx0el.jpg"
    )
-challenge.save
+challengestraws.save
 
 challenge = Challenge.new(
    name: "Save the water",
@@ -274,7 +274,7 @@ challenge = Challenge.new(
    )
 challenge.save
 
-challenge = Challenge.new(
+challengebbq = Challenge.new(
    name: "Zero waste BBQ",
    description: "Let’s be honest. It’s almost impossible to throw a totally zero waste BBQ or party. But hosting one that’s (nearly) zero waste is actually pretty easy.
     For this challenge, we will give you a few tips to make this change happen.<br>
@@ -293,7 +293,7 @@ challenge = Challenge.new(
    video_link: "<iframe width='100%' height='315' src='https://www.youtube.com/embed/q8Pybboa3Lg' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
    photo: "https://res.cloudinary.com/dr3uy796x/image/upload/v1574414564/challenges%20photo/zero_waste_bbq_bbyyzh.jpg"
    )
-challenge.save
+challengebbq.save
 
 ##=================================================================##
 ## kitchen
@@ -1155,32 +1155,38 @@ primary_user = User.create!(
     tree_count: 8
 )
 
+## big challenge for primary user
+
+WeeklyChallenge.create!(
+  status_challenge: false,
+  challenge: challengebbq,
+  user: primary_user,
+  week: Date.today.cweek,
+  year: 2019
+)
+
+## 2 small challenges for primary user
+
+WeeklyChallenge.create!(
+  status_challenge: false,
+  challenge: challengetoothbrush,
+  user: primary_user,
+  week: Date.today.cweek,
+  year: 2019
+)
+
+WeeklyChallenge.create!(
+  status_challenge: false,
+  challenge: challengestraws,
+  user: primary_user,
+  week: Date.today.cweek,
+  year: 2019
+)
+
+## fake challenges for journal
+
 big_challenges = Challenge.where(size: true)
 small_challenges = Challenge.where(size: false)
-
-WeeklyChallenge.create!(
-  status_challenge: false,
-  challenge: big_challenges.sample,
-  user: primary_user,
-  week: Date.today.cweek,
-  year: 2019
-)
-
-WeeklyChallenge.create!(
-  status_challenge: false,
-  challenge: gera,
-  user: primary_user,
-  week: Date.today.cweek,
-  year: 2019
-)
-
-WeeklyChallenge.create!(
-  status_challenge: false,
-  challenge: small_challenges.sample,
-  user: primary_user,
-  week: Date.today.cweek,
-  year: 2019
-)
 
 5.times do WeeklyChallenge.create!(
   status_challenge: true,
@@ -1237,6 +1243,9 @@ deal.challenge = Challenge.find(1)
 deal.partner = partner
 deal.save
 
+
+## creating fake challenges everywhere excet hygiene cat
+
 50.times do
   Challenge.create(
   name: Faker::Lorem.sentence,
@@ -1246,7 +1255,7 @@ deal.save
   map: false,
   gender_specific: 0,
   plastic: 500,
-  category: Category.all.sample,
+  category: [catkit, electric, leasur, appare, work, soc].sample,
   size: false
-    )
+  )
 end
