@@ -29,7 +29,7 @@
                       <%= image_tag("plastic.svg", :style => 'max-height: 2rem') %>
                     </div>
                     <div class="col-9">
-                      <h3 style="font-size: 1.75rem; text-align: right;"><%= @user_plastic %>kg</h3>
+                      <h3 style="font-size: 1.75rem; text-align: right;"><span id="plastic-user-counter"><%= @user_plastic %></span>kg</h3>
                     </div>
                   </div>
                 </div>
@@ -40,7 +40,7 @@
                       <%= image_tag("trees.svg", :style => 'max-height: 2rem') %>
                     </div>
                     <div class="col-9">
-                      <h3 style="font-size: 1.75rem; text-align: right;"><%= @user.tree_count %> trees</h3>
+                      <h3 style="font-size: 1.75rem; text-align: right;"><span id="tree-user-counter"><%= @user.tree_count %></span> trees</h3>
                     </div>
                   </div>
                 </div>
