@@ -3,6 +3,7 @@
     <div class="card card-challenge-show col-7">
         <h1><%= @challenge.name %></h1>
         <h3>Save up to <%= @challenge.plastic %> kg of plastic !!!</h3>
+        <%= cl_image_tag @challenge.photo %>
         <br>
         <p><%= @challenge.description.html_safe %></p>
     </div>
