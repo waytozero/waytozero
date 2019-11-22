@@ -120,7 +120,8 @@ gera = Challenge.new(
    gender_specific: 0,
    plastic: 400,
    size: false,
-   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/aicF2Dp7l1g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/aicF2Dp7l1g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+   photo: "https://res.cloudinary.com/dr3uy796x/image/upload/v1574414694/challenges%20photo/toothpaste_ws8z5j.jpg"
    )
 gera.save
 
@@ -134,7 +135,8 @@ challenge = Challenge.new(
    gender_specific: 0,
    plastic: 400,
    size: false,
-   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/QMAo9O40zp0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/QMAo9O40zp0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+   photo:"https://res.cloudinary.com/dr3uy796x/image/upload/v1574414562/challenges%20photo/body_wash_ewgmvm.jpg"
    )
 challenge.save
 
@@ -148,8 +150,9 @@ challenge = Challenge.new(
    gender_specific: 0,
    plastic: 200,
    size: false,
-   video_link: "<iframe width='560' height='315' src='https://www.youtube.com/embed/E8S0Pz-KskE' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>"
- )
+   video_link: "<iframe width='560' height='315' src='https://www.youtube.com/embed/E8S0Pz-KskE' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
+   photo:"https://res.cloudinary.com/dr3uy796x/image/upload/v1574414563/challenges%20photo/bamboo_toothbrush_wtgndx.jpg"
+   )
 challenge.save
 
 challenge = Challenge.new(
@@ -164,8 +167,9 @@ challenge = Challenge.new(
    gender_specific: 0,
    plastic: 400,
    size: false,
-   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/bRIv3cLAO4I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
- )
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/bRIv3cLAO4I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+   photo: "https://res.cloudinary.com/dr3uy796x/image/upload/v1574414562/challenges%20photo/No_cotton_earbuds_fowp9u.jpg"
+   )
 challenge.save
 
 challenge = Challenge.new(
@@ -179,8 +183,9 @@ challenge = Challenge.new(
    gender_specific: 0,
    plastic: 100,
    size: false,
-   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/QyKnnioHtWw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
- )
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/QyKnnioHtWw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+   photo: "https://res.cloudinary.com/dr3uy796x/image/upload/v1574414563/challenges%20photo/Toilet_paper_sxdfe5.jpg"
+   )
 challenge.save
 
 challenge = Challenge.new(
@@ -193,8 +198,9 @@ challenge = Challenge.new(
    gender_specific: 0,
    plastic: 70,
    size: false,
-   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/_CAim_uGjcI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
- )
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/_CAim_uGjcI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+   photo: "https://res.cloudinary.com/dr3uy796x/image/upload/v1574414563/challenges%20photo/no_to_straw_fjx0el.jpg"
+   )
 challenge.save
 
 challenge = Challenge.new(
@@ -220,7 +226,8 @@ challenge = Challenge.new(
    category: cathyg,
    video_link: '
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5J3cw4biWWo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-'
+',
+   photo: "https://res.cloudinary.com/dr3uy796x/image/upload/v1574414566/challenges%20photo/save_the_water_rwm8lc.jpg"
    )
 challenge.save
 
@@ -234,8 +241,9 @@ challenge = Challenge.new(
    plastic: 0,
    category: cathyg,
    size: false,
-   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/88daKoFHepc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
- )
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/88daKoFHepc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+   photo:"https://res.cloudinary.com/dr3uy796x/image/upload/v1574414565/challenges%20photo/walk_bike_vu23up.jpg"
+   )
 challenge.save
 
 challenge = Challenge.new(
@@ -248,7 +256,8 @@ challenge = Challenge.new(
    gender_specific: 0,
    plastic: 100,
    size: false,
-   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/3ClRZiwHptA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/3ClRZiwHptA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+   photo: "https://res.cloudinary.com/dr3uy796x/image/upload/v1574414564/challenges%20photo/famers_market_ijof1f.jpg"
    )
 challenge.save
 
@@ -262,21 +271,9 @@ challenge = Challenge.new(
    gender_specific: 0,
    plastic: 300,
    size: false,
-   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/iQZmK9nRilk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/iQZmK9nRilk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+   photo: "https://res.cloudinary.com/dr3uy796x/image/upload/v1574414563/challenges%20photo/bring_you_own_mug_a77rvf.jpg"
    )
-challenge.save
-
-challenge = Challenge.new(
-   name:"Coffee cup",
-   description:"500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
-   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
-   intensity: 1,
-   map: false,
-   gender_specific: 0,
-   plastic: 500,
-   size: false,
-   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
- )
 challenge.save
 
 challenge = Challenge.new(
@@ -295,8 +292,9 @@ challenge = Challenge.new(
    gender_specific:  0,
    plastic:  1000,
    size: true,
-   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/q8Pybboa3Lg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
- )
+   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/q8Pybboa3Lg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+   photo: "https://res.cloudinary.com/dr3uy796x/image/upload/v1574414564/challenges%20photo/zero_waste_bbq_bbyyzh.jpg"
+   )
 challenge.save
 
 ##=================================================================##
