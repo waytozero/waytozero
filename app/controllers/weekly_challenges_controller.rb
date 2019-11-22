@@ -1,5 +1,6 @@
 class WeeklyChallengesController < ApplicationController
 
+
   def create
     @weekly_challenge = WeeklyChallenge.new
     challenge = Challenge.find(params[:format])
@@ -24,6 +25,7 @@ class WeeklyChallengesController < ApplicationController
   end
 
   def update
+
     @weekly_challenge = WeeklyChallenge.find(params[:id])
     @user = current_user
     @weekly_challenge.status_challenge = true
@@ -36,6 +38,9 @@ class WeeklyChallengesController < ApplicationController
     @user.xp += @xp
     @user.level += 1 while level_up?
     @user.save
+    @total_trees = tree_counter
+    @total_plastic = plastic_counter
+    @user_plastic = @user.plastic_count
     achievement_number?
     achievement_category?
     @max_xp = xp_counter
@@ -43,6 +48,21 @@ class WeeklyChallengesController < ApplicationController
   end
 
   private
+
+  def tree_counter
+    @users = User.all
+    @users.sum('tree_count')
+  end
+
+  def plastic_counter
+    challenges_done = WeeklyChallenge.all.where(status_challenge: true)
+    plastic_count = 0
+    challenges_done.each do |challenge|
+      challenge_found = challenge.challenge
+      plastic_count += challenge_found.plastic
+    end
+    plastic_count
+  end
 
   def weekly_challenges_params
     params.require(:weekly_challenge).permit(:status_challenge, :week, :year)
