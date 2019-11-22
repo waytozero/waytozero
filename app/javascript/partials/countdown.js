@@ -57,8 +57,9 @@ const timer = () => {
      tick ; //initial count display
   }
 
-  document.getElementById("days").addEventListener("load", getSeconds());
-
+if (document.getElementById("days")) {
+document.getElementById("days").addEventListener("load", getSeconds());
+};
 }
 
 export { timer }

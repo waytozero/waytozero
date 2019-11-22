@@ -80,3 +80,54 @@
   margin-top: 0;
   margin-bottom: 0;
 }
+
+
+
+.card-challenge-index {
+  margin-bottom: 8px;
+  background: white;
+  padding: 15px 25px;
+  border: 1px solid rgb(235,235,235);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-content {
+  padding: 5 24px;
+  margin: 5px 10px;
+}
+
+.placeholder {
+  background-color: grey;
+  margin: 10px;
+  min-width: 75px;
+  height: 75px;
+}
+
+
+.card-text p {
+  margin: 0;
+  line-height: 1.4;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.card-text p small{
+  color: #999999;
+}
+
+.card-actions {
+  text-align: center;
+}
+
+.card-actions a {
+  font-size: 15px;
+}
+
+.card-text {
+  flex-grow: 2;
+  padding: 0px 15px;
+}
+
+
