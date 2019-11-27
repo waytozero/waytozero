@@ -1,22 +1,26 @@
 <div class="col-12">
+  <p><%= link_to "Back to the category", category_challenges_path(@challenge.category) %></p>
   <div class="d-flex">
-    <div class="card card-challenge-show col-7">
+    <div class="col-7">
+      <div class="card card-challenge-show">
         <h1><%= @challenge.name %></h1>
-        <h3>Save up to <%= @challenge.plastic %> kg of plastic !!!</h3>
-        <%= cl_image_tag @challenge.photo %>
+        <h2>Save up to <%= @challenge.plastic %> kg of plastic !</h2>
+        <%= cl_image_tag @challenge.photo, crop: :cover %>
         <br>
         <p><%= @challenge.description.html_safe %></p>
+      </div>
     </div>
-    <div class="card card-challenge-show-map col-4">
+    <div class="col-5">
+      <div class="card card-challenge-show-map">
         <% if @challenge.video_link %>
-          <h3>The video to do it yourself</h3>
+          <h2>How to achieve it on your own</h2>
           <%= @challenge.video_link.html_safe %>
         <% else %>
           <%= "There is no video yet for this challenge" %>
         <% end %>
         <br>
         <% unless @markers.nil? %>
-          <h3>Our partner shops that will help you for the challenge</h3>
+          <h2>How to achieve it with a little help from our partners</h2>
           <div
             id="map"
             style="width: 100%;
@@ -26,9 +30,10 @@
           ></div>
         <% end %>
         <br>
-        <p><%= link_to "Add to my weekly challenges", weekly_challenges_path(@challenge), method: :post, class: "btn button-show" %></p>
-        <p><%= link_to "Mark as already done", weekly_challenges_path(@small_challenge, done: "true"), method: :post,  class: "btn button-show"%></p>
+        <p><%= link_to "Add to my weekly challenges", weekly_challenges_path(@challenge), method: :post, class: "btn mark-as-done-btn" %></p>
+        <p><%= link_to "Mark as already done", weekly_challenges_path(@small_challenge, done: "true"), method: :post,  class: "btn mark-as-done-btn"%></p>
         <p><%= link_to "Back to dashboard", dashboard_path %></p>
+      </div>
     </div>
   </div>
 </div>
