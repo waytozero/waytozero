@@ -16,7 +16,7 @@ import initSlick from "plugins/init_slick";
 import { timer } from "../partials/countdown";
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { initMapbox } from '../plugins/init_mapbox';
-
+import { emailForm } from '../partials/emailForm.js';
 
 eventForm();
 timeline(document.querySelectorAll('.timeline'), {
