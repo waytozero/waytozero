@@ -1,10 +1,11 @@
 .bg--gradient {
   margin: 0;
   width: 100%;
-  height: 90vh;
+  height: 52vw;
   background: linear-gradient(-45deg, #e1ff9d, #a0fcb9);
   background-size: 400% 400%;
   animation: gradientBG 10s ease infinite;
+  border: 1px solid black;
 }
 
 @keyframes gradientBG {
@@ -29,14 +30,16 @@
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  min-height: calc(85vh - 10px);
   z-index: 4;
   overflow: hidden;
+    border: 1px solid black;
+
 }
 
 .hero--full {
   width: 100%;
-  height: 90vh;
+  border: 1px solid black;
+
 }
 
 .hero--bg--img {
@@ -44,25 +47,30 @@
   background-repeat: no-repeat;
   background-size: 55%;
   background-image: asset-url('welcome2.png');
+    border: 1px solid black;
+
 }
 
 .hero__curve {
   width: 100%;
-  position: absolute;
-  bottom: -1px;
-  z-index: -1;
   fill: #F4F4F4;
+    border: 1px solid black;
+
 }
 
 .hero__wrapper {
   text-align: left;
+    border: 1px solid black;
+
 }
 
 .hero__text {
   margin: 30px 30px;
-  height: 60vh;
+  height: 33vw;
   display: flex;
   flex-direction: column;
+    border: 1px solid black;
+
 }
 
 .hero__subtext {
@@ -70,20 +78,26 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+    border: 1px solid black;
+
 }
 
 .hero__title {
   color:#4a4a4a;
-  font-size: 4.3em;
+  font-size: 4.5vw;
   font-weight: 600;
   padding : 10px 0;
+    border: 1px solid black;
+
 }
 
 .hero__p {
   display: flex;
   flex-direction: row;
-  font-size: 1.4em;
+  font-size: 2vw;
   width: 60%;
+    border: 1px solid black;
+
 }
 
 .underlined {
@@ -94,6 +108,8 @@
   border-bottom-color: #00D68B;
   border-bottom-width: 6px;
   border-bottom-style: solid;
+    border: 1px solid black;
+
 }
 
 .underlined:hover,
@@ -104,6 +120,8 @@
   background-size: auto 8px;
   background-repeat: repeat-x;
   padding-bottom: 6px;
+    border: 1px solid black;
+
 }
 .underlined:hover,
 .underlined:focus {
@@ -116,6 +134,8 @@
   width: 17.5%;
   -webkit-animation: mover 1s infinite alternate;
   animation: mover 1s infinite alternate;
+    border: 1px solid black;
+
 }
 
 @-webkit-keyframes mover {
