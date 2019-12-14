@@ -1,7 +1,7 @@
 .bg--gradient {
   margin: 0;
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   background: linear-gradient(-45deg, #e1ff9d, #a0fcb9);
   background-size: 400% 400%;
   animation: gradientBG 10s ease infinite;
@@ -29,28 +29,28 @@
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  min-height: calc(100vh - 10px);
+  min-height: calc(85vh - 10px);
   z-index: 4;
   overflow: hidden;
 }
 
 .hero--full {
   width: 100%;
-  height: 100vh;
+  height: 90vh;
 }
 
 .hero--bg--img {
   background-position: right bottom;
   background-repeat: no-repeat;
   background-size: 55%;
-  background-image: asset-url('welcome.png');
+  background-image: asset-url('welcome2.png');
 }
 
 .hero__curve {
   width: 100%;
   position: absolute;
   bottom: -1px;
-  z-index: 0;
+  z-index: -1;
   fill: #F4F4F4;
 }
 
@@ -60,10 +60,16 @@
 
 .hero__text {
   margin: 30px 30px;
-  padding: auto 30px;
-  height: 80vh;
+  height: 60vh;
   display: flex;
   flex-direction: column;
+}
+
+.hero__subtext {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .hero__title {
@@ -71,7 +77,6 @@
   font-size: 4.3em;
   font-weight: 600;
   padding : 10px 0;
-  margin-top: 15px;
 }
 
 .hero__p {
@@ -79,8 +84,6 @@
   flex-direction: row;
   font-size: 1.4em;
   width: 60%;
-  margin-bottom : 20px;
-  margin-top: 30px;
 }
 
 .underlined {
@@ -105,4 +108,21 @@
 .underlined:hover,
 .underlined:focus {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-svg' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 5'%3E%3Cstyle type='text/css'%3E.st0{animation:shift .4s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%2300D68B' stroke-width='3' class='st0' d='M0 4c5 0 5-3 10-3s5 3 10 3 5-3 10-3 5 3 10 3'/%3E%3C/svg%3E");
+}
+
+.hero__text>.hero__subtext>img {
+  display: flex;
+  margin-right: 12.5%;
+  width: 17.5%;
+  -webkit-animation: mover 1s infinite alternate;
+  animation: mover 1s infinite alternate;
+}
+
+@-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-40px); }
+}
+@keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-40px); }
 }

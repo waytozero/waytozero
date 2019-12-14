@@ -3,15 +3,18 @@
     <div class="hero__wrapper">
       <div class="hero__text">
         <h1 class="hero__title">The very first app that brings you on the <span class="underlined">Way to Zero</span> waste.</h1>
-        <p class="hero__p">Way To Zero aims to become an application that limits the restrictive aspect of the zero-waste lifestyle by challenging its users in a fun and engaging way.</p>
+        <div class="hero__subtext">
+          <p class="hero__p">Because we believe in the power of habits, Way To Zero aims to encourage everyone to adopt a zero-waste lifestyle at their own speed through fun and motivating challenges.</p>
+          <%= image_tag("waste.png") %>
+        </div>
         <div class="mail-form-container">
           <div class="mail-form">
-            <form id="singular-form">
+            <form id="singular-form" action="https://waytozero.us4.list-manage.com/subscribe/post?u=82e07f35094db3ac030eaec10&amp;id=f4c26eaa14" method="POST">
 
               <button class="shown" type="button" id="trigger">Make this project a reality !</button>
 
               <div id="input-container">
-                  <input type="text" placeholder="Enter your best email address, please">
+                  <input type="email" value="" name="EMAIL" placeholder="Enter your best email address, please" required>
                   <button type="button">Show your interest</button>
               </div>
 
@@ -30,9 +33,25 @@
     </div>
   </div>
 </div>
+<div class="concepts">
+  <div class="concept">
+    <%= image_tag("superwoman.png", :class=>'concept-icon') %>
+    <p>Take on ecological challenges</p>
+  </div>
+  <div class="separator"></div>
+  <div class="concept">
+    <%= image_tag("fatherhood.png", :class=>'concept-icon') %>
+    <p>Change your lifestyle step by step</p>
+  </div>
+  <div class="separator"></div>
+  <div class="concept">
+    <%= image_tag("excalibur.png", :class=>'concept-icon') %>
+    <p>Give the best of yourself</p>
+  </div>
+</div>
 <div class="bg--white">
   <div class="hero__wrapper">
-    <div class="home__text__container">
+    <div class="home__text__container" style="margin-top:50px">
       <h2 class="home__h2">Concept</h2>
         <ul>
           <li>
@@ -59,7 +78,7 @@
             <button class="shown" type="button" id="trigger">Make this project a reality !</button>
 
             <div id="input-container">
-                <input type="text" placeholder="Enter your best email address, please">
+                <input type="email" value="" name="EMAIL" placeholder="Enter your best email address, please" required>
                 <button type="button">Show your interest</button>
             </div>
 
