@@ -279,21 +279,6 @@ challenge = Challenge.new(
    )
 challenge.save
 
-
-challenge = Challenge.new(
-   name:"Coffee cup",
-   description:"500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. If you're sitting in the coffee shop ask for a mug to stay. Or take your own mug and ask the shop to fill it! ",
-   short_description: "500 billion disposable cups are produced every year. Most of them can't be recycled because they're lined with plastic. Let's make a -1 on this count today!",
-   intensity: 1,
-   map: false,
-   gender_specific: 0,
-   category: cathyg,
-   plastic: 500,
-   size: false,
-   video_link: '<iframe width="560" height="315" src="https://www.youtube.com/embed/kMX7aQpIwl4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
- )
-challenge.save
-
 zerowaste = Challenge.new(
    name: "Zero waste BBQ",
    description: "Let’s be honest. It’s almost impossible to throw a totally zero waste BBQ or party. But hosting one that’s (nearly) zero waste is actually pretty easy.

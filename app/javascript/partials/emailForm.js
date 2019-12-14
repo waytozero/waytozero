@@ -13,7 +13,7 @@ sf.submitDelay = 1500;
 sf.clickHandler = (e) => {
     switch (e.target) {
         case sf.trigger:
-            sf.container.style.width = '37rem'
+            sf.container.style.width = '50vw'
             e.target.classList.remove('shown');
             sf.input.classList.add('shown');
             sf.submitButton.classList.add('shown');
