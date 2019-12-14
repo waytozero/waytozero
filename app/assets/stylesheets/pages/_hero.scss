@@ -1,0 +1,128 @@
+.bg--gradient {
+  margin: 0;
+  width: 100%;
+  height: 90vh;
+  background: linear-gradient(-45deg, #e1ff9d, #a0fcb9);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.hero {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: center;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  min-height: calc(85vh - 10px);
+  z-index: 4;
+  overflow: hidden;
+}
+
+.hero--full {
+  width: 100%;
+  height: 90vh;
+}
+
+.hero--bg--img {
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  background-size: 55%;
+  background-image: asset-url('welcome2.png');
+}
+
+.hero__curve {
+  width: 100%;
+  position: absolute;
+  bottom: -1px;
+  z-index: -1;
+  fill: #F4F4F4;
+}
+
+.hero__wrapper {
+  text-align: left;
+}
+
+.hero__text {
+  margin: 30px 30px;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero__subtext {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero__title {
+  color:#4a4a4a;
+  font-size: 4.3em;
+  font-weight: 600;
+  padding : 10px 0;
+}
+
+.hero__p {
+  display: flex;
+  flex-direction: row;
+  font-size: 1.4em;
+  width: 60%;
+}
+
+.underlined {
+  color: inherit;
+  font-weight: 900;
+  text-decoration: none;
+  color: #000;
+  border-bottom-color: #00D68B;
+  border-bottom-width: 6px;
+  border-bottom-style: solid;
+}
+
+.underlined:hover,
+.underlined:focus {
+  border-bottom: none;
+  border-top-width: 5px;
+  background-position: 0 calc(100% - 2.5px);
+  background-size: auto 8px;
+  background-repeat: repeat-x;
+  padding-bottom: 6px;
+}
+.underlined:hover,
+.underlined:focus {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-svg' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 5'%3E%3Cstyle type='text/css'%3E.st0{animation:shift .4s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%2300D68B' stroke-width='3' class='st0' d='M0 4c5 0 5-3 10-3s5 3 10 3 5-3 10-3 5 3 10 3'/%3E%3C/svg%3E");
+}
+
+.hero__text>.hero__subtext>img {
+  display: flex;
+  margin-right: 12.5%;
+  width: 17.5%;
+  -webkit-animation: mover 1s infinite alternate;
+  animation: mover 1s infinite alternate;
+}
+
+@-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-40px); }
+}
+@keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-40px); }
+}

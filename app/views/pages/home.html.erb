@@ -1,109 +1,98 @@
-<div class="banner-home-page">
-  <div class="row" style="text-align:left; display: initial;">
-    <h1 style="font-size: 5rem; margin-top: 4rem; margin-left: 2rem;">Let's have an impact together for a <u>brighter</u> future.</h1>
-  </div>
-  <div class="container">
-    <div class="row col-6">
-      <div class="card-1-home">
-        <h2 style="margin-top: -4rem; margin-left: -2rem;">Stop scrolling and start acting, <br> Earth won't wait.</h2>
-      </div>
-    </div>
-    <div class="row col-7">
-      <div class="card-1-home">
-        <p style="color: white; margin-top: -7rem; margin-left: -2rem;">We bring you Way To Zero, a zero waste app that will help you build zero waste habits through challenges.</p>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="container">
-  <div class="row col-7" style="text-align:center; display: inline-block;">
-  <%= link_to "Join the movement !", new_user_registration_path, class: "btn cta-btn", style: "margin-top: -4.5rem; margin-bottom: 5rem" %>
-  </div>
-</div>
-<div class="col-12">
-  <div class="row">
-    <div class="col-8">
-      <div class="img-card-2">
-      <img src="https://images.unsplash.com/photo-1528323273322-d81458248d40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2601&q=80">
-      </div>
-    </div>
-    <div class="col-4">
-      <div class="card2-home">
-      <h2>Our mission.</h2>
-      <p id="p-txt">“Zero Waste is a goal that is ethical, economical, efficient and visionary, to guide people in changing their lifestyles and practices to emulate sustainable natural cycles, where all discarded materials are designed to become resources for others to use.
-      Zero Waste means designing and managing products and processes to systematically avoid and eliminate the volume and toxicity of waste and materials, conserve and recover all resources, and not burn or bury them.
-      Implementing Zero Waste will eliminate all discharges to land, water or air that are a threat to planetary, human, animal or plant health.”</p>
-    </div>
-  </div>
-</div>
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-12">
-      <div class="row justify-content-center">
-        <h1 id="h2-banner" class="mt-5 mb-5">Achievements so far</h1>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-4" id="dotted-border">
-          <p id="count" style="color: #00D68B">1,981</p>
-          <p id="count-txt">trees planted</p>
+<div class="bg--gradient">
+  <div class="hero hero--full hero--bg--img">
+    <div class="hero__wrapper">
+      <div class="hero__text">
+        <h1 class="hero__title">The very first app that brings you on the <span class="underlined">Way to Zero</span> waste.</h1>
+        <div class="hero__subtext">
+          <p class="hero__p">Because we believe in the power of habits, Way To Zero aims to encourage everyone to adopt a zero-waste lifestyle at their own speed through fun and motivating challenges.</p>
+          <%= image_tag("waste.png") %>
         </div>
-        <div class="col-4" id="dotted-border">
-          <p id="count" style="color: #00D68B">+2,420</p>
-          <p id="count-txt">users</p>
-        </div>
-        <div class="col-4" id="dotted-border">
-          <p id="count" style="color: #00D68B">+10,273</p>
-          <p id="count-txt">kg of plastic saved</p>
+        <div class="mail-form-container">
+          <div class="mail-form">
+            <form id="singular-form" action="https://waytozero.us4.list-manage.com/subscribe/post?u=82e07f35094db3ac030eaec10&amp;id=f4c26eaa14" method="POST">
+
+              <button class="shown" type="button" id="trigger">Make this project a reality !</button>
+
+              <div id="input-container">
+                  <input type="email" value="" name="EMAIL" placeholder="Enter your best email address, please" required>
+                  <button type="button">Show your interest</button>
+              </div>
+
+              <div id="success">Thank you!</div>
+
+            </form>
+          </div>
+          <div id="email-warner">
+              <p></p>
+          </div>
         </div>
       </div>
+      <svg class="hero__curve" viewBox="0 0 1620 228" xmlns="http://www.w3.org/2000/svg">
+          <path d="m1619.44517.35433528c-399.39777 223.02017072-694.714626 278.49386172-885.950558 166.42107172-181.341926-106.2744605-391.865473-161.74815116-631.57064-166.42107177h-101.923972v227.64566477h1620v-227.64566477h-.5547z"></path>
+      </svg>
     </div>
   </div>
 </div>
-<div class="col-12">
-  <div class="row">
-    <div class="col-5">
-      <div class="card3-home">
-        <h2>About us.</h2>
-        <br>
-        <p id="p-txt"><strong>Antoine Braconnier</strong>, Is a primary school teacher and a passionate Zero Waste leader. He has more than 2 years experience in the waste field and is a leading name of the zero waste movement.</p>
-        <p id="p-txt"><strong>Antoine Lequeux</strong>, Works as an architect and volunteers as President of Zero Waste Romania and board member of the Green Council at le Wagon.</p>
-        <p id="p-txt"><strong>Louis Grommen</strong>, Director at Zero Waste Jupiler and is the owner of Way to zero, a social enterprise active in the field of circular economy. He studied chemical engineering and resource management.</p>
-        <p id="p-txt"><strong>Paolo de Fauconval</strong>, A dedicated and motivated legend doing his work in this fantastic team, Way to Zero is not a simple app for him BUT a life style and a purpose.</p>
-      </div>
-    </div>
-    <div class="col-7">
-      <div class="img-card-3">
-        <%= image_tag("TEAMIMAGE.jpg", :style => "max-height: 25rem") %>
-      </div>
-    </div>
+<div class="concepts">
+  <div class="concept">
+    <%= image_tag("superwoman.png", :class=>'concept-icon') %>
+    <p>Take on ecological challenges</p>
+  </div>
+  <div class="separator"></div>
+  <div class="concept">
+    <%= image_tag("fatherhood.png", :class=>'concept-icon') %>
+    <p>Change your lifestyle step by step</p>
+  </div>
+  <div class="separator"></div>
+  <div class="concept">
+    <%= image_tag("excalibur.png", :class=>'concept-icon') %>
+    <p>Give the best of yourself</p>
   </div>
 </div>
-<footer class="page-footer">
-<h2>Follow us</h1>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 py-5">
-        <div class="mb-6 flex-center">
-          <a class="fb-ic" href="https://i.pinimg.com/564x/97/f1/39/97f139bf914d0dba02c5e49176d8b967.jpg" target="_blank">
-            <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-          </a>
-          <a class="tw-ic" href="https://i.pinimg.com/564x/97/f1/39/97f139bf914d0dba02c5e49176d8b967.jpg">
-            <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-          </a>
-          <a class="gplus-ic" href="https://i.pinimg.com/564x/97/f1/39/97f139bf914d0dba02c5e49176d8b967.jpg">
-            <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-          </a>
-          <a class="li-ic" href="https://i.pinimg.com/564x/97/f1/39/97f139bf914d0dba02c5e49176d8b967.jpg">
-            <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-          </a>
-          <a class="ins-ic" href="https://i.pinimg.com/564x/97/f1/39/97f139bf914d0dba02c5e49176d8b967.jpg">
-            <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-          </a>
-          <a class="pin-ic" href="https://i.pinimg.com/564x/97/f1/39/97f139bf914d0dba02c5e49176d8b967.jpg">
-            <i class="fab fa-pinterest fa-lg white-text fa-2x"> </i>
-          </a>
+<div class="bg--white">
+  <div class="hero__wrapper">
+    <div class="home__text__container" style="margin-top:50px">
+      <h2 class="home__h2">Concept</h2>
+        <ul>
+          <li>
+            <h3 class="home__h3">Become a driver of change</h3>
+            <p>Don't be paralyzed anymore by the magnitude of the problem that humanity is facing at the moment. Make positive contributions to the planet through Way To Zero and become a better person in a better world !</p>
+          </li>
+          <li>
+            <h3 class="home__h3">Receive zero-waste challenges to overcome</h3>
+            <p>Way To Zero suggests new challenges every week. Do you want to do more than the weekly ones? You can obviously increase the number of challenges to be addressed from a wide range of options and categories related to everyone's life.</p>
+          </li>
+          <li>
+            <h3 class="home__h3">Take up the ecological challenge step by step</h3>
+            <p>It is perfectly normal not to know where to start. With a kind and non-judgmental approach, Way To Zero guarantees to support each of its users step by step, regardless of whether they are beginners or advanced in zero waste.</p>
+          </li>
+          <li>
+            <h3 class="home__h3">Motivate you through gamification mechanisms</h3>
+            <p>Overcome challenges at your own pace with progressive levels of difficulty. Move into action and see your efforts immediately rewarded: gain experience, collect badges and keep an eye on how much plastic you've saved !</p>
+          </li>
+        </ul>
+      <div class="mail-form-container">
+        <div class="mail-form">
+          <form id="singular-form">
+
+            <button class="shown" type="button" id="trigger">Make this project a reality !</button>
+
+            <div id="input-container">
+                <input type="email" value="" name="EMAIL" placeholder="Enter your best email address, please" required>
+                <button type="button">Show your interest</button>
+            </div>
+
+            <div id="success">Thank you!</div>
+
+          </form>
+        </div>
+        <div id="email-warner">
+            <p></p>
         </div>
       </div>
     </div>
+    <div class="home__text__container" style="background-color: #F4F4F4">
+      <h2 class="home__h2">Mission</h2>
+    </div>
   </div>
-</footer>
+</div>
