@@ -1,12 +1,12 @@
-const sf = {};
+var sf = {};
 
 sf.container = document.querySelector('.mail-form');
-sf.form = document.querySelector('.mail-form > #singular-form');
-sf.trigger = document.querySelector('.mail-form > #singular-form > button#trigger');
-sf.input = document.querySelector('.mail-form>#singular-form>#input-container>input');
-sf.emailWarner = document.getElementById('email-warner');
-sf.submitButton = document.querySelector('.mail-form > #singular-form > #input-container > button');
-sf.successMessage = document.querySelector('.mail-form > #singular-form > #success');
+sf.form = document.querySelector('.mail-form > .singular-form');
+sf.trigger = document.querySelector('.mail-form > .singular-form > button.trigger');
+sf.input = document.querySelector('.mail-form>.singular-form>.input-container>input');
+sf.emailWarner = document.querySelector('.mail-form-container > .email-warner');
+sf.submitButton = document.querySelector('.mail-form > .singular-form > .input-container > button');
+sf.successMessage = document.querySelector('.mail-form > .singular-form > .success');
 
 sf.submitDelay = 1500;
 
@@ -45,4 +45,8 @@ sf.submitForm = () => {
 }
 
 sf.input.addEventListener('keypress', (e) => sf.handleInputKeypress(e));
-document.addEventListener('click', (e) => sf.clickHandler(e));
+
+document.querySelectorAll("button.trigger").forEach((button) => {
+  button.addEventListener("click", (e) => sf.clickHandler(e)
+    );
+});
