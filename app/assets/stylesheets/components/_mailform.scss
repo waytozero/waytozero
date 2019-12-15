@@ -22,14 +22,14 @@
     z-index: 1;
 }
 
-.mail-form>#singular-form {
+.mail-form>.singular-form {
     position: relative;
     width: 100%;
     height: 3rem;
     background-color: #00D68B;
 }
 
-.mail-form>#singular-form button {
+.mail-form>.singular-form button {
     width: 3rem;
     padding: 0;
     border: none;
@@ -43,7 +43,7 @@
   font-size: 1.3vw;
 }
 
-.mail-form>#singular-form>button#trigger {
+.mail-form>.singular-form>button.trigger {
     padding: 0;
     width: 100%;
     color: #F4F4F4;
@@ -51,11 +51,11 @@
     z-index: 3;
 }
 
-.mail-form>#singular-form>#input-container {
+.mail-form>.singular-form>.input-container {
     z-index: 2;
 }
 
-.mail-form>#singular-form>#input-container>input {
+.mail-form>.singular-form>.input-container>input {
     display: inline-block;
     height: 3rem;
     width: 100%;
@@ -69,7 +69,7 @@
     transition: all .4s ease .4s;
 }
 
-.mail-form>#singular-form>#input-container>button {
+.mail-form>.singular-form>.input-container>button {
     position: absolute;
     top: 10%;
     right: .8%;
@@ -82,7 +82,7 @@
     transition: all .4s ease .4s;
 }
 
-.mail-form>#singular-form>#success {
+.mail-form>.singular-form>.success {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -91,7 +91,7 @@
     z-index: 1;
 }
 
-#email-warner {
+.email-warner {
   display: flex;
   justify-content: center;
   width: 100%;
@@ -100,9 +100,9 @@
   font-size: 1vw;
 }
 
-.mail-form>#singular-form>button#trigger,
-.mail-form>#singular-form>#input-container,
-.mail-form>#singular-form>#success {
+.mail-form>.singular-form>button.trigger,
+.mail-form>.singular-form>.input-container,
+.mail-form>.singular-form>.success {
     position: absolute;
     top: 0;
     right: 0;
@@ -112,7 +112,7 @@
     opacity: 0;
 }
 
-.mail-form>#singular-form>button#trigger {
+.mail-form>.singular-form>button.trigger {
     transition: all .4s ease;
     display: flex;
     justify-content: center;
@@ -122,29 +122,29 @@
     font-size: 1.5vw;
 }
 
-.mail-form>#singular-form>#input-container {
+.mail-form>.singular-form>.input-container {
     transform: scale(1);
     opacity: 1;
     transition: all .4s ease .4s;
 }
 
-.mail-form>#singular-form>#success {
+.mail-form>.singular-form>.success {
     transition: all .2s ease .4s;
 }
 
-.mail-form>#singular-form>button#trigger.shown,
-.mail-form>#singular-form>#input-container.shown,
-.mail-form>#singular-form>#success.shown,
-.mail-form>#singular-form>#input-container>button.shown,
-.mail-form>#singular-form>#input-container>input.shown {
+.mail-form>.singular-form>button.trigger.shown,
+.mail-form>.singular-form>.input-container.shown,
+.mail-form>.singular-form>.success.shown,
+.mail-form>.singular-form>.input-container>button.shown,
+.mail-form>.singular-form>.input-container>input.shown {
     transform: scale(1);
     opacity: 1;
 }
 
-.mail-form>#singular-form>button#trigger.shown:hover,
-.mail-form>#singular-form>#input-container.shown:hover,
-.mail-form>#singular-form>#success.shown:hover,
-.mail-form>#singular-form>#input-container>button.shown:hover {
+.mail-form>.singular-form>button.trigger.shown:hover,
+.mail-form>.singular-form>.input-container.shown:hover,
+.mail-form>.singular-form>.success.shown:hover,
+.mail-form>.singular-form>.input-container>button.shown:hover {
     background-color: #01c07d;
     transition: 0.2s;
 }

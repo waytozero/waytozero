@@ -154,3 +154,22 @@
   bottom: 18%;
   z-index: 10;
 }
+.home__phone__container {
+  display: flex;
+  flex-direction: row;
+}
+
+.bullet_point {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.phone {
+  display: flex;
+  flex-direction: column;
+  width:20vw;
+  justify-content: center;
+  align-items: center;
+}
