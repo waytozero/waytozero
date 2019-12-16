@@ -133,6 +133,16 @@
     100% { transform: translateY(-40px); }
 }
 
+@media (max-width: 1000px) {
+  .home__phone__container {
+    display: block;
+  }
+
+  .phone {
+    margin: auto;
+  }
+}
+
 @media (max-width: 768px) and (min-width: 640px) {
   .concepts {
      margin-top: 38px;
@@ -167,7 +177,7 @@
     z-index: 50;
   }
 
-  .mail-form > #singular-form > button#trigger.shown {
+  .mail-form > .singular-form > button.trigger.shown, .mail-form > .singular-form > .input-container.shown, .mail-form > .singular-form > .success.shown, .mail-form > .singular-form > .input-container > button.shown, .mail-form > .singular-form > .input-container > input.shown {
     font-size: 15px;
   }
 
@@ -193,5 +203,9 @@
 
   .hero {
     overflow: visible
+  }
+
+  .stop-scrolling {
+    width: 135%;
   }
   }
