@@ -21,7 +21,6 @@
 
 .bg--white {
   width: 100%;
-  height: 100vh;
   background-color: #F4F4F4;
 }
 
@@ -61,9 +60,9 @@
   }
 }
 
-.bg--white>.hero__wrapper>.home__text__container>ul {
+.bg--white>.hero__wrapper>.home__text__container>.home__text__sub__container>.home__text__item>ul {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   flex-wrap: wrap;
   list-style: none;
@@ -72,11 +71,19 @@
   @include clearfix;
 }
 
-.bg--white>.hero__wrapper>.home__text__container>ul>li {
+.bg--white>.hero__wrapper>.home__text__container>.home__text__sub__container>.home__text__item>ul>li {
   flex-grow: 1;
-  width: 450px;
   margin: 1em;
 }
+
+.home__text__container>.home__text__sub__container>.home__text__item>.mail-form-container{
+  width:100%;
+}
+
+.home__text__container>.home__text__sub__container>.home__text__item>.mail-form-container>.mail-form{
+  width:55%;
+}
+
 
 .home__text__container {
   margin: 5px 30px;
@@ -84,12 +91,18 @@
   flex-direction: column;
 }
 
-.home__text__container>.mail-form-container{
-  width:100%;
+.home__text__sub__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.home__text__container>.mail-form-container>.mail-form{
-  width:35%;
+.home__text__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .concepts {
@@ -153,50 +166,4 @@
   left: 10%;
   bottom: 18%;
   z-index: 10;
-}
-.home__phone__container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-.home__bullet__CTA__container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 1.5em 0 0 1.5em;
-}
-
-.bullet_point {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.phone {
-  display: flex;
-  flex-direction: column;
-  width:30vw;
-  padding: 1.5em 1.5em;
-  justify-content: center;
-  align-items: center;
-}
-
-.bullet_point>ul {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  list-style: none;
-  margin: 1.5em 0 0;
-  padding: 0;
-  @include clearfix;
-}
-
-.bullet_point>ul>li {
-  flex-grow: 1;
-  width: 450px;
-  margin: 1em;
 }
