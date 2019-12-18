@@ -7,13 +7,18 @@ sf.input = document.querySelector('.mail-form>.singular-form>.input-container>in
 sf.emailWarner = document.querySelector('.mail-form-container > .email-warner');
 sf.submitButton = document.querySelector('.mail-form > .singular-form > .input-container > button');
 sf.successMessage = document.querySelector('.mail-form > .singular-form > .success');
+var screen = window.matchMedia("(max-width: 575.98px)");
 
 sf.submitDelay = 1500;
 
 sf.clickHandler = (e) => {
     switch (e.target) {
         case sf.trigger:
-            sf.container.style.width = '50vw'
+          if (screen.matches) {
+          sf.container.style.width = '100%';
+            } else {
+          sf.container.style.width = '50vw';
+          }
             e.target.classList.remove('shown');
             sf.input.classList.add('shown');
             sf.submitButton.classList.add('shown');
@@ -45,7 +50,4 @@ sf.submitForm = () => {
 }
 
 sf.input.addEventListener('keypress', (e) => sf.handleInputKeypress(e));
-
-document.querySelectorAll('button.trigger.shown').forEach(button => {
-  button.addEventListener('click', e => sf.clickHandler(e));
-})
+document.addEventListener('click', (e) => sf.clickHandler(e));
