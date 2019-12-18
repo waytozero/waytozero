@@ -37,7 +37,7 @@
 }
 
 .hero--bg--img {
-  background-position: right bottom;
+  background-position: bottom 1px right 3px;
   background-repeat: no-repeat;
   background-size: 55%;
   background-image: asset-url('welcome2.png');
@@ -81,6 +81,7 @@
   display: flex;
   flex-direction: column;
   width: 60%;
+  text-align: justify;
 }
 
 .hero__p>p {
@@ -113,6 +114,7 @@
 
 .hero__text>.hero__subtext>img {
   display: flex;
+  margin-top: -3%;
   margin-right: 12.5%;
   width: 17.5%;
   -webkit-animation: mover 1s infinite alternate;
@@ -131,15 +133,16 @@
 // Extra small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) {
   .bg--gradient{
-    height: 80vw;
+    height: 55vh;
   }
 
   .hero {
-    height: 100%;
+    height: 55vh;
   }
 
   .hero__curve {
-    height: 60%;
+    height: inherit;
+    bottom: -1px;
   }
 
   .hero__title {
@@ -159,16 +162,23 @@
 
   .hero__subtext {
     padding-top: 1.5%;
+    flex-wrap: wrap;
+    justify-content: flex-end;
   }
 
   .hero__text > .hero__subtext > img {
-    margin-right: 8%;
-    margin-top: -15%;
+    margin-right: 7%;
+    margin-top: 7%;
+    z-index: 10;
   }
 
   .hero__p {
-    text-align: justify;
     padding-top: 10px;
+    width: 100%;
+  }
+
+  .hero__p > p {
+    font-size: 3.5vw;
   }
 
   .mail-form {
@@ -177,7 +187,26 @@
   }
 
   .mail-form > .singular-form > button.trigger {
+    font-size: 5vw;
+  }
+
+  .mail-form > .singular-form > .input-container > input {
     font-size: 3vw;
+  }
+
+  .mail-form > .singular-form > .input-container > button {
+    font-size: 3vw;
+  }
+
+  .home__text__container > .home__text__sub__container > .home__text__item > .mail-form-container > .mail-form {
+    width: 100%;
+  }
+
+  .email-warner {
+    justify-content: left;
+    font-size: 1.6vw;
+    margin-top: 1%;
+    margin-left: 1%;
   }
 }
 

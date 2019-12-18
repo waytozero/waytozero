@@ -94,16 +94,8 @@
 .home__text__sub__container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-content: center;
-}
-
-.home__text__sub__container>.wrap{
-  flex-wrap: wrap;
-}
-
-.home__text__sub__container>.wrapreverse{
-  flex-wrap: wrap-reverse;
 }
 
 .home__text__item {
@@ -115,7 +107,7 @@
 
 .home__img__item {
   display: flex;
-  width: 30%;
+  width: 25%;
 }
 
 .concepts {
