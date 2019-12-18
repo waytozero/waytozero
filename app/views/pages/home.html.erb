@@ -4,27 +4,29 @@
       <div class="hero__text">
         <h1 class="hero__title">The very first app that brings you on the <span class="underlined">Way to Zero</span> waste.</h1>
         <div class="hero__subtext">
-          <p class="hero__p">Because we believe in the power of habits, Way To Zero aims to encourage everyone to adopt a zero-waste lifestyle at their own speed through fun and motivating challenges.</p>
-          <%= image_tag("waste.png") %>
-        </div>
-        <div class="mail-form-container">
-          <div class="mail-form">
-            <form class="singular-form" action="https://waytozero.us4.list-manage.com/subscribe/post?u=82e07f35094db3ac030eaec10&amp;id=f4c26eaa14" method="POST">
+          <div class="hero__p">
+            <p>Because we believe in the power of habits, Way To Zero aims to encourage everyone to adopt a zero-waste lifestyle at their own speed through fun and motivating challenges.</p>
+            <div class="mail-form-container">
+              <div class="mail-form">
+                <form class="singular-form" action="https://waytozero.us4.list-manage.com/subscribe/post?u=82e07f35094db3ac030eaec10&amp;id=f4c26eaa14" method="POST">
 
-              <button class="shown trigger" id="button1" type="button">Make this project a reality !</button>
+                  <button class="shown trigger" type="button">Make this project a reality !</button>
 
-              <div class="input-container">
-                  <input type="email" class="placeholder "value="" name="EMAIL" placeholder="Enter your best email address, please" required>
-                  <button type="button"class="email-button">Show your interest</button>
+                  <div class="input-container">
+                      <input type="email" class="placeholder "value="" name="EMAIL" placeholder="Enter your best email address, please" required>
+                      <button type="button"class="email-button">Show your interest</button>
+                  </div>
+
+                  <div class="success">Thank you!</div>
+
+                </form>
               </div>
-
-              <div class="success">Thank you!</div>
-
-            </form>
+              <div class="email-warner">
+                  <p></p>
+              </div>
+            </div>
           </div>
-          <div class="email-warner">
-              <p></p>
-          </div>
+          <%= image_tag("waste.png") %>
         </div>
       </div>
       <svg class="hero__curve" viewBox="0 0 1620 228" xmlns="http://www.w3.org/2000/svg">
@@ -53,7 +55,7 @@
   <div class="hero__wrapper">
     <div class="home__text__container" style="margin-top:50px">
       <h2 class="home__h2">Concept</h2>
-      <div class="home__text__sub__container">
+      <div class="home__text__sub__container" id="container1">
         <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
           <lottie-player
               src="https://assets5.lottiefiles.com/packages/lf20_h9fcK1.json"  background="transparent"  style="width: 100%" speed="1" loop  autoplay >
@@ -77,7 +79,7 @@
             <div class="mail-form">
               <form class="singular-form">
 
-                <button class="shown trigger" id="button2" type="button">Make this project a reality !</button>
+                <button class="shown trigger" type="button">Make this project a reality !</button>
 
                 <div class="input-container">
                     <input type="email" value="" name="EMAIL" placeholder="Enter your best email address, please" required>
@@ -99,7 +101,7 @@
   <div class="hero__wrapper">
     <div class="home__text__container">
       <h2 class="home__h2">Mission</h2>
-      <div class="home__text__sub__container">
+      <div class="home__text__sub__container" id="container2">
         <div class="home__text__item">
           <ul>
             <li>
@@ -119,7 +121,7 @@
             <div class="mail-form">
               <form class="singular-form">
 
-                <button class="shown trigger" id="button3" type="button">Stop scrolling, start acting !</button>
+                <button class="shown trigger" type="button">Stop scrolling, start acting !</button>
 
                 <div class="input-container">
                     <input type="email" value="" name="EMAIL" placeholder="Enter your best email address, please" required>
@@ -135,9 +137,7 @@
             </div>
           </div>
         </div>
-        <div class="home__img__item">
-        <%=image_tag("PhoneWayToZero.png", :style =>'width:27vw')  %>
-        </div>
+        <%=image_tag("PhoneWayToZero.png", :class=>"home__img__item")  %>
       </div>
     </div>
   </div>

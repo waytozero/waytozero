@@ -95,7 +95,15 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-content: center;
+}
+
+.home__text__sub__container>.wrap{
+  flex-wrap: wrap;
+}
+
+.home__text__sub__container>.wrapreverse{
+  flex-wrap: wrap-reverse;
 }
 
 .home__text__item {
@@ -103,6 +111,11 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+}
+
+.home__img__item {
+  display: flex;
+  width: 30%;
 }
 
 .concepts {
@@ -167,3 +180,56 @@
   bottom: 18%;
   z-index: 10;
 }
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+  .concepts {
+     margin-top: 10px;
+  }
+  .separator {
+    display: none;
+  }
+  .concepts .concept .concept-icon {
+    max-height: 120px;
+  }
+
+  .concepts > .concept > p {
+    font-size: 15px;
+  }
+
+  .concept {
+    width: 50px;
+  }
+
+  #container1 {
+    flex-wrap: wrap;
+  }
+
+  #container2 {
+    flex-wrap: wrap-reverse;
+  }
+
+  .home__h3 {
+    line-height: 1.2;
+  }
+
+  .home__text__item > ul > li > p {
+    text-align: justify;
+  }
+
+  .home__img__item {
+    width: 25vh;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { }

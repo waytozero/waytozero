@@ -46,6 +46,6 @@ sf.submitForm = () => {
 
 sf.input.addEventListener('keypress', (e) => sf.handleInputKeypress(e));
 
-document.querySelectorAll('button.trigger.shown').forEach(item => {
-  item.addEventListener('click', e => sf.clickHandler(e));
+document.querySelectorAll('button.trigger.shown').forEach(button => {
+  button.addEventListener('click', e => sf.clickHandler(e));
 })
