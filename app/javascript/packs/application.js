@@ -26,7 +26,7 @@ timeline(document.querySelectorAll('.timeline'), {
 });
 
 initSlick();
-initMapbox();
+// initMapbox();
 count('.plastic-counter');
 count('.tree-counter');
 
