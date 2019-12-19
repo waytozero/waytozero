@@ -106,8 +106,14 @@
 }
 
 .home__img__item {
-  display: flex;
-  width: 25%;
+  width: auto;
+  height: 90vh;
+  align-self: center;
+}
+
+.home__svg__item {
+  width: 100%;
+  align-self: center;
 }
 
 .concepts {
@@ -210,12 +216,34 @@
   }
 
   .home__img__item {
-    width: 25vh;
+    width: 100%;
+    height: 100%;
+
   }
 }
 
 // Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) { }
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .separator {
+    display: none;
+  }
+
+  .home__img__item {
+    width: auto;
+    height: 100vh;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 5px;
+  }
+
+  .home__svg__item {
+    width: auto;
+    height: 100vh;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 5px;
+  }
+}
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) { }
