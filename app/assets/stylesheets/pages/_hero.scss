@@ -194,10 +194,13 @@
 
   .mail-form > .singular-form > .input-container > input {
     font-size: 3.5vw;
+    font-weight: 600;
   }
 
   .mail-form > .singular-form > .input-container > button {
-    font-size: 3.5vw;
+    font-size: 3vw;
+    font-weight: 600;
+    width: 35%;
   }
 
   .home__text__container > .home__text__sub__container > .home__text__item > .mail-form-container > .mail-form {
@@ -257,7 +260,24 @@
 }
 
 // Medium devices (tablets, 768px and up)
-@media (min-width: 768px) { }
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .bg--gradient {
+      height: 110vh;
+    }
+
+    .hero {
+      height: 110vh;
+    }
+
+    .hero__text>.hero__subtext>img {
+    margin-top: -20%;
+    margin-right: 12.5%;
+    }
+
+    .mail-form > .singular-form > button.trigger {
+    font-size: 2.4vw;
+  }
+}
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) { }
