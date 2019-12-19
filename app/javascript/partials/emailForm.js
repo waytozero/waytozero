@@ -22,7 +22,11 @@ sf.clickHandler = (e) => {
             e.target.classList.remove('shown');
             sf.input.classList.add('shown');
             sf.submitButton.classList.add('shown');
-            sf.emailWarner.innerHTML = "Your email address is required to take into consideration the importance of the demand for this project.<br>We will never use it for commercial purposes.";
+            if (screen.matches) {
+              sf.emailWarner.innerHTML = "Your email address is required to take into consideration the importance of the demand for this project. We will never use it for commercial purposes.";
+                } else {
+              sf.emailWarner.innerHTML = "Your email address is required to take into consideration the importance of the demand for this project.<br>We will never use it for commercial purposes.";
+              }
             sf.input.focus();
             break;
         case sf.submitButton:
