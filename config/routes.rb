@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+
+  ##============================================================##
+  ## Locale (all the other routes should be nested in that scope in order to have language first in url)
+  ##============================================================##
+  scope "(:locale)", locale: /#{I18n.available_locales.join("|")}/  do
+
+  root  "pages#home"
+
   resources :challenges, only: [:show, :update]
   get '/dashboard/', to: 'pages#dashboard'
   get '/thanks/', to: 'pages#thanks'
@@ -15,6 +23,7 @@ Rails.application.routes.draw do
     resources :achievement_number, only: [:index]
   end
   root to: 'pages#home'
-
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  end
 end
