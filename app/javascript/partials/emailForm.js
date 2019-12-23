@@ -1,5 +1,6 @@
 var sf = {};
 
+const buttons = document.querySelectorAll('.trigger')
 sf.container = document.querySelector('.mail-form');
 sf.form = document.querySelector('.mail-form > .singular-form');
 sf.trigger = document.querySelector('.mail-form > .singular-form > button.trigger');
@@ -7,7 +8,7 @@ sf.input = document.querySelector('.mail-form>.singular-form>.input-container>in
 sf.emailWarner = document.querySelector('.mail-form-container > .email-warner');
 sf.submitButton = document.querySelector('.mail-form > .singular-form > .input-container > button');
 sf.successMessage = document.querySelector('.mail-form > .singular-form > .success');
-var screen = window.matchMedia("(max-width: 575.98px)");
+var screen = window.matchMedia('(max-width: 575.98px)');
 
 sf.submitDelay = 1500;
 
@@ -53,5 +54,6 @@ sf.submitForm = () => {
     let submission = setTimeout(() => sf.form.submit(), sf.submitDelay);
 }
 
-sf.input.addEventListener('keypress', (e) => sf.handleInputKeypress(e));
-document.addEventListener('click', (e) => sf.clickHandler(e));
+sf.container.addEventListener('click', (e) => sf.clickHandler(e));
+const callback = (event) => { event.currentTarget, sf.clickHandler(event) };
+buttons.forEach(btn => btn.addEventListener('click', callback)
