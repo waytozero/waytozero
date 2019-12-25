@@ -59,8 +59,8 @@ sf.submitForm = () => {
     let submission = setTimeout(() => sf.form.submit(), sf.submitDelay);
 }
 
-
 mailForms.forEach(mailForm => {
   const i = Array.prototype.indexOf.call(mailForms, mailForm) + 1;
   mailForm.addEventListener('click', (e) => sf.clickHandler(e, i));
 });
+
