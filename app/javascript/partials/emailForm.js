@@ -1,6 +1,6 @@
 var sf = {};
 
-const buttons = document.querySelectorAll('.trigger')
+const buttons = document.querySelectorAll('.trigger');
 sf.container = document.querySelector('.mail-form');
 sf.form = document.querySelector('.mail-form > .singular-form');
 sf.trigger = document.querySelector('.mail-form > .singular-form > button.trigger');
@@ -55,5 +55,5 @@ sf.submitForm = () => {
 }
 
 sf.container.addEventListener('click', (e) => sf.clickHandler(e));
-const callback = (event) => { event.currentTarget, sf.clickHandler(event) };
-buttons.forEach(btn => btn.addEventListener('click', callback)
+// const callback = (event) => { event.currentTarget, sf.clickHandler(event) };
+// buttons.forEach(btn => btn.addEventListener('click', callback)
