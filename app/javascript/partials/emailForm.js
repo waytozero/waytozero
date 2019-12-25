@@ -1,18 +1,23 @@
 var sf = {};
 
-const buttons = document.querySelectorAll('.trigger');
-sf.container = document.querySelector('.mail-form');
-sf.form = document.querySelector('.mail-form > .singular-form');
-sf.trigger = document.querySelector('.mail-form > .singular-form > button.trigger');
-sf.input = document.querySelector('.mail-form>.singular-form>.input-container>input');
-sf.emailWarner = document.querySelector('.mail-form-container > .email-warner');
-sf.submitButton = document.querySelector('.mail-form > .singular-form > .input-container > button');
-sf.successMessage = document.querySelector('.mail-form > .singular-form > .success');
+const mailForms = document.querySelectorAll('.mail-form');
+
+const createSf = (i) => {
+  sf.container = document.querySelector('.sfcontainer' + i);
+  sf.form = document.querySelector('.sfform' + i);
+  sf.trigger = document.querySelector('.sftrigger' + i);
+  sf.input = document.querySelector('.sfinput' + i);
+  sf.emailWarner = document.querySelector('.sfemailwarner' + i);
+  sf.submitButton = document.querySelector('.sfsubmit' + i);
+  sf.successMessage = document.querySelector('.sfsuccess' + i);
+};
+
 var screen = window.matchMedia('(max-width: 575.98px)');
 
 sf.submitDelay = 1500;
 
-sf.clickHandler = (e) => {
+sf.clickHandler = (e, i) => {
+  createSf(i);
     switch (e.target) {
         case sf.trigger:
           if (screen.matches) {
@@ -54,6 +59,8 @@ sf.submitForm = () => {
     let submission = setTimeout(() => sf.form.submit(), sf.submitDelay);
 }
 
-sf.container.addEventListener('click', (e) => sf.clickHandler(e));
-// const callback = (event) => { event.currentTarget, sf.clickHandler(event) };
-// buttons.forEach(btn => btn.addEventListener('click', callback)
+mailForms.forEach(mailForm => {
+  const i = Array.prototype.indexOf.call(mailForms, mailForm) + 1;
+  mailForm.addEventListener('click', (e) => sf.clickHandler(e, i));
+});
+
