@@ -1,6 +1,6 @@
 var sf = {};
 
-const buttons = document.querySelectorAll('.trigger');
+const mailForms = document.querySelectorAll('.mail-form');
 
 const createSf = (i) => {
   sf.container = document.querySelector('.sfcontainer' + i);
@@ -60,7 +60,7 @@ sf.submitForm = () => {
 }
 
 
-buttons.forEach(btn => {
-  const i = Array.prototype.indexOf.call(buttons, btn) + 1;
-  btn.addEventListener('click', (e) => sf.clickHandler(e, i))
+mailForms.forEach(mailForm => {
+  const i = Array.prototype.indexOf.call(mailForms, mailForm) + 1;
+  mailForm.addEventListener('click', (e) => sf.clickHandler(e, i));
 });
