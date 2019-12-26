@@ -57,6 +57,6 @@ en:
     transition_to_action: "Facilitating action"
     transition_to_action_description: "The crucial step is to take action. And it must be supported in each stage. We have to start somewhere, it is better to have a lot of imperfect people in their waste management than a few people who manage their waste perfectly."
   locales:
-    en: "English"
-    fr: "Français"
-    nl:  "Nederlands"
+    en: "🇬🇧 English"
+    fr: "🇫🇷 Français"
+    nl:  "🇳🇱 Nederlands"

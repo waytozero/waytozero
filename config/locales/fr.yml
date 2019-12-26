@@ -26,6 +26,6 @@ fr:
     transition_to_action: "Faciliter le passage à l'action"
     transition_to_action_description: "L'étape cruciale est de passer à l'action. Et elle doit être soutenue à chaque étape. Il faut commencer quelque part, il vaut mieux avoir beaucoup de personnes imparfaites dans leur gestion des déchets que quelques personnes qui gèrent parfaitement leurs déchets."
   locales:
-    en: "English"
-    fr: "Français"
-    nl: "Nederlands"
+    en: "🇬🇧 English"
+    fr: "🇫🇷 Français"
+    nl:  "🇳🇱 Nederlands"
