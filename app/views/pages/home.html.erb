@@ -7,20 +7,6 @@
           <div class="hero__p">
             <p><%= t('home.company_mission') %></p>
             <div class="mail-form-container">
-<<<<<<< HEAD
-                <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <%= t("locales.#{I18n.locale}") %>
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <% [:fr, :en, :nl].each do |locale| %>
-                    <%= link_to t("locales.#{locale}"), root_path(:locale => locale), :class => "dropdown-item"  %>
-                    <% end %>
-                  </div>
-                </div>
-=======
-              <%= t('app.hello') %>
->>>>>>> 942e49b6dee8f4727700b902c4a5d4585696b15e
               <div class="mail-form sfcontainer1">
                 <form class="singular-form sfform1" action="https://waytozero.us4.list-manage.com/subscribe/post?u=82e07f35094db3ac030eaec10&amp;id=f4c26eaa14" method="POST">
 
@@ -48,6 +34,11 @@
 </div>
 <div class="concepts">
   <div class="concept">
+    <%= image_tag("gamification.png", :class=>'concept-icon') %>
+    <p><%= t('home.gamer') %></p>
+  </div>
+  <div class="separator"></div>
+  <div class="concept">
     <%= image_tag("superwoman.png", :class=>'concept-icon') %>
     <p><%= t('home.take_on') %></p>
   </div>
@@ -55,11 +46,6 @@
   <div class="concept">
     <%= image_tag("fatherhood.png", :class=>'concept-icon') %>
     <p><%= t('home.change_lifestyle') %></p>
-  </div>
-  <div class="separator"></div>
-  <div class="concept">
-    <%= image_tag("excalibur.png", :class=>'concept-icon') %>
-    <p><%= t('home.give_best') %></p>
   </div>
 </div>
 <div class="bg--white">
@@ -124,7 +110,7 @@
               <p><%= t('home.motivation_source_description') %></p>
             </li>
             <li>
-              <h3 class="home__h3"></h3>
+              <h3 class="home__h3"><%= t('home.saving_time') %></h3>
               <p><%= t('home.saving_time_description') %></p>
             </li>
           </ul>
