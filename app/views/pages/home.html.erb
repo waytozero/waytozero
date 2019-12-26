@@ -21,14 +21,14 @@
               <div class="mail-form sfcontainer1">
                 <form class="singular-form sfform1" action="https://waytozero.us4.list-manage.com/subscribe/post?u=82e07f35094db3ac030eaec10&amp;id=f4c26eaa14" method="POST">
 
-                  <button class="shown trigger sftrigger1" type="button">Make this project a reality !</button>
+                  <button class="shown trigger sftrigger1" type="button"><%= t('home.make_project_reality') %></button>
 
                   <div class="input-container">
                       <input type="email" class="placeholder sfinput1"value="" name="EMAIL" placeholder="Enter your best email address" required>
-                      <button type="button"class="email-button sfsubmit1">Show your interest</button>
+                      <button type="button"class="email-button sfsubmit1"><%= t('home.show_interest') %></button>
                   </div>
 
-                  <div class="success sfsuccess1">Thank you!</div>
+                  <div class="success sfsuccess1"><%= t('home.thank_you') %></div>
 
                 </form>
               </div>
@@ -49,23 +49,23 @@
 <div class="concepts">
   <div class="concept">
     <%= image_tag("superwoman.png", :class=>'concept-icon') %>
-    <p>Take on ecological challenges</p>
+    <p><%= t('home.take_on') %></p>
   </div>
   <div class="separator"></div>
   <div class="concept">
     <%= image_tag("fatherhood.png", :class=>'concept-icon') %>
-    <p>Change your lifestyle step by step</p>
+    <p><%= t('home.change_lifestyle') %></p>
   </div>
   <div class="separator"></div>
   <div class="concept">
     <%= image_tag("excalibur.png", :class=>'concept-icon') %>
-    <p>Give the best of yourself</p>
+    <p><%= t('home.give_best') %></p>
   </div>
 </div>
 <div class="bg--white">
   <div class="hero__wrapper">
     <div class="home__text__container" style="margin-top:50px">
-      <h2 class="home__h2">Concept</h2>
+      <h2 class="home__h2"><%= t('home.concept') %></h2>
       <div class="home__text__sub__container" id="container1">
         <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
           <lottie-player
@@ -74,30 +74,30 @@
         <div class="home__text__item">
           <ul>
             <li>
-              <h3 class="home__h3">Become a driver of change</h3>
-              <p>Don't be paralyzed anymore by the magnitude of the problem that humanity is facing at the moment. Make positive contributions to the planet through Way To Zero and become a better person in a better world !</p>
+              <h3 class="home__h3"><%= t('home.become_driver') %></h3>
+              <p><%= t('home.become_driver_description') %></p>
             </li>
             <li>
-              <h3 class="home__h3">Improve your waste management</h3>
-              <p>It is perfectly normal not to know where to start. With a kind and non-judgmental approach, Way To Zero guarantees to support each of its users step by step, regardless of whether they are beginners or advanced in zero waste.</p>
+              <h3 class="home__h3"><%= t('home.improve_waste_mgt') %></h3>
+              <p><%= t('home.improve_waste_mgt_description') %></p>
             </li>
             <li>
-              <h3 class="home__h3">Motivate you through gamification</h3>
-              <p>Overcome challenges at your own pace with progressive levels of difficulty. Move into action and see your efforts immediately rewarded: gain experience, collect badges and keep an eye on how much plastic you've saved !</p>
+              <h3 class="home__h3"><%= t('home.motivate_gamification') %></h3>
+              <p><%= t('home.motivate_gamification_description') %></p>
             </li>
           </ul>
           <div class="mail-form-container">
             <div class="mail-form sfcontainer2" id="button2">
               <form class="singular-form sfform2" action="https://waytozero.us4.list-manage.com/subscribe/post?u=82e07f35094db3ac030eaec10&amp;id=f4c26eaa14" method="POST">
 
-                <button class="shown trigger sftrigger2" type="button">Make this project a reality !</button>
+                <button class="shown trigger sftrigger2" type="button"><%= t('home.make_project_reality') %></button>
 
                 <div class="input-container">
                     <input type="email" class="placeholder sfinput2" value="" name="EMAIL" placeholder="Enter your best email address" required>
-                    <button type="button" class="sfsubmit2">Show your interest</button>
+                    <button type="button" class="sfsubmit2"><%= t('home.show_interest') %></button>
                 </div>
 
-                <div class="success sfsuccess2">Thank you!</div>
+                <div class="success sfsuccess2"><%= t('home.thank_you') %></div>
 
               </form>
             </div>
@@ -111,35 +111,35 @@
   </div>
   <div class="hero__wrapper">
     <div class="home__text__container">
-      <h2 class="home__h2">Mission</h2>
+      <h2 class="home__h2"><%= t('home.mission') %></h2>
       <div class="home__text__sub__container" id="container2">
         <div class="home__text__item">
           <ul>
             <li>
-              <h3 class="home__h3">Making the transition to action easier</h3>
-              <p>The crucial step is to take action. And it must be supported in each stage. We have to start somewhere, it is better to have a lot of imperfect people in their waste management than a few people who manage their waste perfectly.</p>
+              <h3 class="home__h3"><%= t('home.transition_to_action') %></h3>
+              <p><%= t('home.transition_to_action_description') %></p>
             </li>
             <li>
-              <h3 class="home__h3">Being a motivation source</h3>
-              <p>It is important to motivate everyone in their journey towards zero waste. We want to highlight the community, track the real impact of each individual and all Way To Zero users. In addition, we are confident that technology and gamification can provide a lot of motivation for the ecological challenge.</p>
+              <h3 class="home__h3"><%= t('home.motivation_source') %></h3>
+              <p><%= t('home.motivation_source_description') %></p>
             </li>
             <li>
-              <h3 class="home__h3">Saving time</h3>
-              <p>By offering structured and centralized information as well as by giving adapted and tailor-made challenges according to each person's situation, we aim to save everyone time in their transition to zero waste.</p>
+              <h3 class="home__h3"></h3>
+              <p><%= t('home.saving_time_description') %></p>
             </li>
           </ul>
           <div class="mail-form-container">
             <div class="mail-form sfcontainer3" id="button3">
               <form class="singular-form sfform3" action="https://waytozero.us4.list-manage.com/subscribe/post?u=82e07f35094db3ac030eaec10&amp;id=f4c26eaa14" method="POST">
 
-                <button class="shown trigger sftrigger3" type="button">Stop scrolling, start acting !</button>
+                <button class="shown trigger sftrigger3" type="button"><%= t('home.stop_scrolling') %></button>
 
                 <div class="input-container">
                     <input type="email" value="" class="placeholder sfinput3"name="EMAIL" placeholder="Enter your best email address" required>
-                    <button type="button" class="trigger sfsubmit3">Show your interest</button>
+                    <button type="button" class="trigger sfsubmit3"><%= t('home.show_interest') %></button>
                 </div>
 
-                <div class="success sfsuccess3">Thank you!</div>
+                <div class="success sfsuccess3"><%= t('home.thank_you') %></div>
 
               </form>
             </div>

@@ -36,3 +36,27 @@ en:
     nl:  "Nederlands"
   app:
     hello: "Hello world"
+  home:
+    take_on: "Take on ecological challenges"
+    change_lifestyle: "Change your lifestyle step by step"
+    give_best: "Give the best of yourself"
+    concept: "Concept"
+    become_driver: "Become a driver of change"
+    become_driver_description: "Don't be paralyzed anymore by the magnitude of the problem that humanity is facing at the moment. Make positive contributions to the planet through Way To Zero and become a better person in a better world !"
+    improve_waste_mgt: "Improve your waste management"
+    improve_waste_mgt_description: "It is perfectly normal not to know where to start. With a kind and non-judgmental approach, Way To Zero guarantees to support each of its users step by step, regardless of whether they are beginners or advanced in zero waste."
+    motivate_gamification: "Motivate you through gamification"
+    motivate_gamification_description: "Overcome challenges at your own pace with progressive levels of difficulty. Move into action and see your efforts immediately rewarded: gain experience, collect badges and keep an eye on how much plastic you've saved !"
+    make_project_reality: "Make this project a reality !"
+    show_interest: "Show your interest"
+    thank_you: "Thank you!"
+    mission: "Mission"
+    transition_to_action: "Making the transition to action easier"
+    transition_to_action_description: "The crucial step is to take action. And it must be supported in each stage. We have to start somewhere, it is better to have a lot of imperfect people in their waste management than a few people who manage their waste perfectly."
+    motivation_source: "Being a motivation source"
+    motivation_source_description: "It is important to motivate everyone in their journey towards zero waste. We want to highlight the community, track the real impact of each individual and all Way To Zero users. In addition, we are confident that technology and gamification can provide a lot of motivation for the ecological challenge."
+    saving_time: "Saving time"
+    saving_time_description: "By offering structured and centralized information as well as by giving adapted and tailor-made challenges according to each person's situation, we aim to save everyone time in their transition to zero waste."
+    stop_scrolling: "Stop scrolling, start acting !"
+
+

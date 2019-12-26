@@ -40,7 +40,9 @@ class ApplicationController < ActionController::Base
   ##============================================================##
   ## On veut forcer la présence de la langue dans les urls
   ## pour faciliter la lecture dans google Analytics tout en
-  ## gardant les paramètres déjà présent dans les urls
+  ## gardant les paramètres déjà présent dans les urls avec le redirect
+  ## mais avant on ajoute la locale par-défaut comme la langue du navigateur
+  ## si l'utilisateur n'a pas spécifié de params avec la langue
   ##============================================================##
   def set_locale
     if params[:locale].present?
