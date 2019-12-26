@@ -114,7 +114,7 @@
 
 .hero__text>.hero__subtext>img {
   display: flex;
-  margin-top: -3%;
+  margin-top: -10%;
   margin-right: 12.5%;
   width: 17.5%;
   -webkit-animation: mover 1s infinite alternate;
@@ -123,11 +123,11 @@
 
 @-webkit-keyframes mover {
     0% { transform: translateY(0); }
-    100% { transform: translateY(-30px); }
+    100% { transform: translateY(-20px); }
 }
 @keyframes mover {
     0% { transform: translateY(0); }
-    100% { transform: translateY(-30px); }
+    100% { transform: translateY(-20px); }
 }
 
 // Extra small devices (portrait phones, less than 576px)
