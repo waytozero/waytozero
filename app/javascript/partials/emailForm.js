@@ -8,6 +8,7 @@ const createSf = (i) => {
   sf.trigger = document.querySelector('.sftrigger' + i);
   sf.input = document.querySelector('.sfinput' + i);
   sf.emailWarner = document.querySelector('.sfemailwarner' + i);
+  sf.emailWarnersmall = document.querySelector('.sfemailwarnersmall' + i);
   sf.submitButton = document.querySelector('.sfsubmit' + i);
   sf.successMessage = document.querySelector('.sfsuccess' + i);
 };
@@ -28,11 +29,7 @@ sf.clickHandler = (e, i) => {
             e.target.classList.remove('shown');
             sf.input.classList.add('shown');
             sf.submitButton.classList.add('shown');
-            if (screen.matches) {
-              sf.emailWarner.classList.remove('d-none');
-                } else {
-              sf.emailWarner.classList.remove('d-none');
-              }
+            sf.emailWarner.classList.remove('d-none');
             sf.input.focus();
             break;
         case sf.submitButton:
