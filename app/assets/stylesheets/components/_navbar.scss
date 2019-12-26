@@ -82,3 +82,19 @@
 .body-margin {
   margin-top: 0px;
 }
+
+
+@media (max-width: 575.98px) {
+
+  .navbar-waytozero {
+    padding: 0.2rem 1rem;
+  }
+
+  .navbar-waytozero .navbar-brand img {
+    height: 2rem;
+  }
+
+  .navbar-header {
+    font-size: 1.5rem;
+  }
+}
