@@ -8,6 +8,16 @@
             <p>Because we believe in the power of habits, Way To Zero aims to encourage everyone to adopt a zero-waste lifestyle at their own speed through fun and motivating challenges.</p>
             <div class="mail-form-container">
               <%= t('app.hello') %>
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <%= t("locales.#{I18n.locale}") %>
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <% [:fr, :en, :nl].each do |locale| %>
+                    <%= link_to t("locales.#{locale}"), root_path(:locale => locale), :class => "dropdown-item"  %>
+                    <% end %>
+                  </div>
+                </div>
               <div class="mail-form sfcontainer1">
                 <form class="singular-form sfform1" action="https://waytozero.us4.list-manage.com/subscribe/post?u=82e07f35094db3ac030eaec10&amp;id=f4c26eaa14" method="POST">
 

@@ -1,3 +1,7 @@
 nl:
+  locales:
+    fr: "Français"
+    en: "English"
+    nl:  "Nederlands"
   app:
     hello: "Halo iedereen"
