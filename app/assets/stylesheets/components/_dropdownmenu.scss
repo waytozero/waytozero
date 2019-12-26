@@ -1,0 +1,20 @@
+.dropdown-selector {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-btn {
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  padding: 8px 16px;
+  min-width: 120px;
+  color: #4A4A4A;
+  text-align: left;
+  font-size: 15px;
+  background-color: transparent;
+  border: 1px solid;
+  border-color: #4A4A4A;
+  border-radius: 5px;
+}
