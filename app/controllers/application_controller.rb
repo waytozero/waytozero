@@ -30,7 +30,7 @@ class ApplicationController < ActionController::Base
   end
 
   ##============================================================##
-  ## On définie par défault la locale dans toutes les ulrs
+  ## On définit par défault la locale dans toutes les ulrs
   ## générées par l'application.
   ##============================================================##
   def default_url_options(options = {})
@@ -46,7 +46,14 @@ class ApplicationController < ActionController::Base
     if params[:locale].present?
       I18n.locale = params[:locale]
     else
+      I18n.default_locale = extract_locale_from_accept_language_header
       redirect_to url_for(params.merge(:locale => I18n.default_locale).permit!), :status => 301
     end
+  end
+
+  private
+
+  def extract_locale_from_accept_language_header
+    request.env['HTTP_ACCEPT_LANGUAGE'].scan(/^[a-z]{2}/).first
   end
 end
