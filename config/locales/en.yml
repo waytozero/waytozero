@@ -31,8 +31,8 @@
 
 en:
   locales:
-    fr: "Français"
-    en: "English"
-    nl:  "Nederlands"
+    en: "🇬🇧 English"
+    fr: "🇫🇷 Français"
+    nl:  "🇳🇱 Nederlands"
   app:
     hello: "Hello world"
