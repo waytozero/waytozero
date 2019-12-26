@@ -34,8 +34,6 @@ en:
     fr: "Français"
     en: "English"
     nl:  "Nederlands"
-  app:
-    hello: "Hello world"
   home:
     take_on: "Take on ecological challenges"
     change_lifestyle: "Change your lifestyle step by step"
@@ -58,5 +56,10 @@ en:
     saving_time: "Saving time"
     saving_time_description: "By offering structured and centralized information as well as by giving adapted and tailor-made challenges according to each person's situation, we aim to save everyone time in their transition to zero waste."
     stop_scrolling: "Stop scrolling, start acting !"
+    company_mission: "Because we believe in the power of habits, Way To Zero aims to encourage everyone to adopt a zero-waste lifestyle at their own speed through fun and motivating challenges."
+    main_title_part1: "The very first app that brings you on the "
+    main_title_part2: "Way to Zero"
+    main_title_part3: " waste."
+
 
 

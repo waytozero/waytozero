@@ -2,12 +2,11 @@
   <div class="hero hero--full hero--bg--img">
     <div class="hero__wrapper">
       <div class="hero__text">
-        <h1 class="hero__title">The very first app that brings you on the <span class="underlined">Way to Zero</span> waste.</h1>
+        <h1 class="hero__title"><%= t('home.main_title_part1') %><span class="underlined"><%= t('home.main_title_part2') %></span><%= t('home.main_title_part3') %></h1>
         <div class="hero__subtext">
           <div class="hero__p">
-            <p>Because we believe in the power of habits, Way To Zero aims to encourage everyone to adopt a zero-waste lifestyle at their own speed through fun and motivating challenges.</p>
+            <p><%= t('home.company_mission') %></p>
             <div class="mail-form-container">
-              <%= t('app.hello') %>
                 <div class="dropdown">
                   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <%= t("locales.#{I18n.locale}") %>
@@ -22,14 +21,11 @@
                 <form class="singular-form sfform1" action="https://waytozero.us4.list-manage.com/subscribe/post?u=82e07f35094db3ac030eaec10&amp;id=f4c26eaa14" method="POST">
 
                   <button class="shown trigger sftrigger1" type="button"><%= t('home.make_project_reality') %></button>
-
                   <div class="input-container">
                       <input type="email" class="placeholder sfinput1"value="" name="EMAIL" placeholder="Enter your best email address" required>
                       <button type="button"class="email-button sfsubmit1"><%= t('home.show_interest') %></button>
                   </div>
-
                   <div class="success sfsuccess1"><%= t('home.thank_you') %></div>
-
                 </form>
               </div>
               <div class="email-warner sfemailwarner1">
