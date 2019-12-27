@@ -138,6 +138,7 @@
 
   .hero--bg--img {
     background-image: asset-url('welcome.png');
+    background-size: 65%;
   }
 
   .hero {
@@ -156,7 +157,7 @@
   }
 
   .hero__text {
-    margin: 35px 30px;
+    margin: 15px 30px;
   }
 
   .underlined {
@@ -247,13 +248,48 @@
     }
 
     .hero__text>.hero__subtext>img {
-    margin-top: -20%;
+    margin-top: -10%;
     margin-right: 12.5%;
     }
+
+    .hero__curve {
+    height: inherit;
+    bottom: -1px;
+  }
 }
 
 // Large devices (desktops, 992px and up)
-@media (min-width: 992px) { }
+@media (min-width: 992px) {
+    .bg--gradient {
+      height: 90vh;
+    }
+
+    .hero {
+      height: 90vh;
+    }
+
+    .hero__title {
+      font-size: 4.5vw;
+    }
+
+    .hero__p>p {
+      font-size: 2vw;
+    }
+
+    .hero__text {
+      margin: 30px 30px;
+    }
+
+    .hero__text>.hero__subtext>img {
+      margin-top: -5%;
+      margin-right: 12.5%;
+    }
+
+    .hero__curve {
+      height: inherit;
+      bottom: -1px;
+  }
+}
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) { }
