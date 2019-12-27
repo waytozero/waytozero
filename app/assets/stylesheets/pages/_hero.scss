@@ -136,6 +136,10 @@
     height: 75vh;
   }
 
+  .home__text__container>.home__text__sub__container>.home__text__item>.mail-form-container>.mail-form{
+  width:100%;
+}
+
   .hero--bg--img {
     background-image: asset-url('welcome.png');
     background-size: 65%;
