@@ -93,7 +93,7 @@
 .email-warner {
   display: flex;
   justify-content: center;
-  width: 100%;
+  width: 50vw;
   margin-top: -.8%;
   opacity: .7;
   font-size: 1vw;
@@ -148,3 +148,77 @@
     background-color: #01c07d;
     transition: 0.2s;
 }
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+  .mail-form {
+    width: 100%;
+    margin: 0px 0px;
+  }
+
+  .mail-form > .singular-form > button.trigger {
+    font-size: 5vw;
+  }
+
+  .mail-form > .singular-form > .input-container > input {
+    font-size: 3.5vw;
+    font-weight: 600;
+  }
+
+  .mail-form > .singular-form > .input-container > button {
+    font-size: 3vw;
+    font-weight: 600;
+    width: 35%;
+  }
+
+  .home__text__container > .home__text__sub__container > .home__text__item > .mail-form-container > .mail-form {
+    width: 100%;
+  }
+
+  .email-warner {
+    justify-content: left;
+    margin-top: 1%;
+    margin-left: 1%;
+    width: 100%;
+  }
+
+  .email-warner > p {
+    font-size: 3vw;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .mail-form > .singular-form > button.trigger {
+    font-size: 2.4vw;
+  }
+
+  .mail-form > .singular-form > .input-container > input {
+    font-size: 1.5vw;
+  }
+
+  .mail-form > .singular-form > .input-container > button {
+    font-size: 1.5vw;
+  }
+
+  .home__text__container > .home__text__sub__container > .home__text__item > .mail-form-container > .mail-form {
+    width: 100%;
+  }
+
+  .email-warner {
+    font-size: 1vw;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .mail-form > .singular-form > button.trigger {
+    font-size: 2.4vw;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { }

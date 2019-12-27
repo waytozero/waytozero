@@ -151,12 +151,12 @@
 
   .hero__title {
     padding: 0;
-    font-size: 6.5vw;
+    font-size: 6.1vw;
     text-align: justify;
   }
 
   .hero__text {
-    margin: 30px 30px;
+    margin: 35px 30px;
   }
 
   .underlined {
@@ -169,7 +169,7 @@
   }
 
   .hero__subtext {
-    padding-top: 1.5%;
+    padding-top: 2.5%;
     flex-wrap: wrap;
     justify-content: flex-end;
   }
@@ -185,37 +185,6 @@
 
   .hero__p > p {
     font-size: 3.5vw;
-  }
-
-  .mail-form {
-    width: 100%;
-    margin: 0px 0px;
-  }
-
-  .mail-form > .singular-form > button.trigger {
-    font-size: 5vw;
-  }
-
-  .mail-form > .singular-form > .input-container > input {
-    font-size: 3.5vw;
-    font-weight: 600;
-  }
-
-  .mail-form > .singular-form > .input-container > button {
-    font-size: 3vw;
-    font-weight: 600;
-    width: 35%;
-  }
-
-  .home__text__container > .home__text__sub__container > .home__text__item > .mail-form-container > .mail-form {
-    width: 100%;
-  }
-
-  .email-warner {
-    justify-content: left;
-    font-size: 2.5vw;
-    margin-top: 1%;
-    margin-left: 1%;
   }
 }
 
@@ -253,26 +222,6 @@
   .hero__text > .hero__subtext > img {
     display: none;
   }
-
-  .mail-form > .singular-form > button.trigger {
-    font-size: 2.4vw;
-  }
-
-  .mail-form > .singular-form > .input-container > input {
-    font-size: 1.5vw;
-  }
-
-  .mail-form > .singular-form > .input-container > button {
-    font-size: 1.5vw;
-  }
-
-  .home__text__container > .home__text__sub__container > .home__text__item > .mail-form-container > .mail-form {
-    width: 100%;
-  }
-
-  .email-warner {
-    font-size: 1vw;
-  }
 }
 
 // Medium devices (tablets, 768px and up)
@@ -301,10 +250,6 @@
     margin-top: -20%;
     margin-right: 12.5%;
     }
-
-    .mail-form > .singular-form > button.trigger {
-    font-size: 2.4vw;
-  }
 }
 
 // Large devices (desktops, 992px and up)
