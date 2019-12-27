@@ -151,6 +151,10 @@
 
 // Extra small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) {
+  .mail-form-container {
+    margin-top: 10px;
+  }
+
   .mail-form {
     width: 100%;
     margin: 0px 0px;
