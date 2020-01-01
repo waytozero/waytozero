@@ -32,6 +32,8 @@
 # Ingore ssl files
 waytozero.key
 waytozero.csr
+waytozero_com.ca-bundle
+waytozero_com.crt
 
 # Ignore Mac and Linux file system files
 *.swp
